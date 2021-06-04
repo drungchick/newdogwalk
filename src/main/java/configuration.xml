@@ -4,12 +4,12 @@
 <configuration>
 	<properties resource="dbconnect.properties" />
 	<typeAliases>
-		<typeAlias alias="booking" type="dogwalk.model.Booking" />
-		<typeAlias alias="dog" type="dogwalk.model.Dog" />
-		<typeAlias alias="license" type="dogwalk.model.License" />
+<!-- 		<typeAlias alias="booking" type="dogwalk.model.Booking" />
+ -->		<typeAlias alias="dog" type="dogwalk.model.Dog" />
+<!-- 		<typeAlias alias="license" type="dogwalk.model.License" /> -->
 		<typeAlias alias="manager" type="dogwalk.model.Manager" />
-		<typeAlias alias="mboard" type="dogwalk.model.Mboard" />
-		<typeAlias alias="member" type="dogwalk.model.Member" />
+		<typeAlias alias="mboard" type="dogwalk.model.MBoard" />
+<!-- 		<typeAlias alias="member" type="dogwalk.model.Member" /> -->
 		<typeAlias alias="notice" type="dogwalk.model.Notice" />
 	 	<typeAlias alias="owner" type="dogwalk.model.Owner" />
 		<typeAlias alias="walker" type="dogwalk.model.Walker" />
