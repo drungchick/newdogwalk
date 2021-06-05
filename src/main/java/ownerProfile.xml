@@ -21,4 +21,14 @@
 		select * from owner where own_id = #{own_id}
 	</select>
 	
+	<select id="list" parameterType="hashMap" resultMap="ownerProfileResult">
+		select * from (select a.*, rowNum rn from (
+			select * from owner order by own_reg_dt desc) a)
+			where rn between #{startRow} and #{endRow}
+	</select>
+	
+	<select id="total" resultType="int">
+		select count(*) from owner
+	</select>
+	
 </mapper>

@@ -1,6 +1,8 @@
 package dogwalk.dao;
 
 import java.io.Reader;
+import java.util.HashMap;
+import java.util.List;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -32,7 +34,19 @@ public class OwnerDao {
 			System.out.println("session 생성에러: "+e.getMessage());
 		}
 	}
+	
 	public Owner select(String own_id) {
 		return (Owner) session.selectOne("ownerProfilens.select", own_id);
+	}
+
+	public List<Owner> list(int startRow, int endRow) {
+		HashMap<String, Object> hm = new HashMap<>();
+		hm.put("startRow", startRow);
+		hm.put("endRow", endRow);
+		return session.selectList("ownerProfilens.list", hm);
+	}
+
+	public int total() {
+		return (int) session.selectOne("ownerProfilens.total");
 	}
 }

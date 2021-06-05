@@ -18,34 +18,35 @@
 <body>
 <div class="container">
 	<div id="content" align="center">
-		<h3 align="center">공지사항(매니저)</h3>
+		<h3 align="center">견주 정보</h3>
 		<table class="table table-hover">
 			<tr>
-				<th width="10%">번호</th>
-				<th width="10%">제목</th>
-				<th width="10%">작성일</th>
-				<th width="10%">조회수</th>
+				<th width="10%">등록번호</th>
+				<th width="10%">ID</th>
+				<th width="10%">이름</th>
+				<th width="10%">생년월일</th>
 			</tr>
 			<c:if test="${empty list }"> <!-- 만약 DB에 데이터가 없어 list 애트리뷰트 안이 비었을 경우 -->
 				<tr>
-					<td colspan="4">등록된 공지사항이 없습니다.</td>
+					<td colspan="4">등록된 회원 없습니다.</td>
 				</tr>
 			</c:if>
 			<c:if test="${not empty list }">
-				<c:forEach var="notice" items="${list }"> <!-- list 애트리뷰트의 정보를 notice 변수에 하나씩 받는다 -->			
+				<c:forEach var="owner" items="${list }"> <!-- list 애트리뷰트의 정보를 notice 변수에 하나씩 받는다 -->			
 					<tr>
 						<c:set var="total" value="${total }"></c:set>
 						
-						<c:if test="${notice.nt_del == 'Y' }">
-							<th colspan="4">삭제된 공지사항입니다.</th>
+						<c:if test="${notice.own_del == 'Y' }">
+							<th colspan="4">삭제된 회원입니다.</th>
 						</c:if>
 						
 						<c:if test="${notice.nt_del == 'N' }">
-						<td>${total }<c:set var="total" value="${total-1 }" /></td>
-									<!-- nt_sbjt를 클릭 시 nt_no와 pageNum의 정보를 noticeView.do로 보냄 -->
-						<td><a href="managerNoticeView.do?nt_no=${notice.nt_no }&pageNum=${currentPage }">${notice.nt_sbjt }</a></td>
-						<td>${notice.nt_reg_dt }</td>
-						<td>${notice.nt_rd_cnt }</td>
+						<%-- <td>${total }<c:set var="total" value="${total-1 }" /></td> --%>
+						<td>${owner.own_reg_no }</td>
+									<!-- own_reg_no를 클릭 시 own_reg_no와 pageNum의 정보를 managerOwnerView.do로 보냄 -->
+						<td><a href="managerOwnerView.do?own_reg_no=${owner.own_reg_no }&pageNum=${currentPage }">${owner.own_id }</a></td>
+						<td>${owner.own_id }</td>
+						<td>${owner.own_bth_dt }</td>
 						</c:if>
 					</tr>
 
@@ -56,20 +57,16 @@
 		<div align="center">
 			<c:if test="${startPage > pagePerBlock }">
 				<%-- <a href="managerNoticeList.do?pageNum=${startPage - 1 }">[이전]</a> --%>
-				<button onclick="location.href='managerNoticeList.do?pageNum=${startPage - 1 }'">[이전]</button>
+				<button onclick="location.href='managerOwnerList.do?pageNum=${startPage - 1 }'">[이전]</button>
 			</c:if>
 			<c:forEach var="i" begin="${startPage }" end="${endPage }">
 				<%-- <a href="managerNoticeList.do?pageNum=${i }">${i }</a> --%>
-				<button onclick="location.href='managerNoticeList.do?pageNum=${i }'">${i }</button>
+				<button onclick="location.href='managerOwnerList.do?pageNum=${i }'">${i }</button>
 			</c:forEach>
 			<c:if test="${endPage < totPage }">
 				<%-- <a href="managerNoticeList.do?pageNum=${endPage + 1 }">[다음]</a> --%>
-				<button onclick="location.href='managerNoticeList.do?pageNum=${endPage + 1 }'">[다음]</button>
+				<button onclick="location.href='managerOwnerList.do?pageNum=${endPage + 1 }'">[다음]</button>
 			</c:if>
-		</div>
-		
-		<div align="center">
-			<button onclick="location.href='managerNoticeWriteForm.do?mng_id=${sessionScope.mng_id }&pageNum=${currentPage }'">등록</button>
 		</div>
 		
 		<div align="center">

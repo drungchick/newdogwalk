@@ -21,7 +21,7 @@
 	<tr>
 		<th><a href="managerNoticeList.do">공지사항</a></th>
 		<th>매칭정보</th>
-		<th>견주정보</th>
+		<th><a href="managerOwnerList.do">견주정보</a></th>
 		<th>도우미정보</th>
 </table>
 </body>

@@ -17,7 +17,9 @@
 <body>
 <h3 align="center">공지사항</h3>
 <hr>
-<form action="managerNoticeInsert.do" method="post">
+<form action="managerNoticeWrite.do" method="post">
+<input type="hidden" name="mng_id" value="${mng_id }">
+<input type="hidden" name="pageNum" value="${pageNum }">
 	<table border="1">
 		<caption>공지사항 등록</caption>
 		<tr>
