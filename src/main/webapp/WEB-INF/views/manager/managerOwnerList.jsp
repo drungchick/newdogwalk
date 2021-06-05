@@ -36,15 +36,15 @@
 					<tr>
 						<c:set var="total" value="${total }"></c:set>
 						
-						<c:if test="${notice.own_del == 'Y' }">
+						<c:if test="${owner.own_del == 'Y' }">
 							<th colspan="4">삭제된 회원입니다.</th>
 						</c:if>
 						
-						<c:if test="${notice.nt_del == 'N' }">
+						<c:if test="${owner.own_del == 'N' }">
 						<%-- <td>${total }<c:set var="total" value="${total-1 }" /></td> --%>
 						<td>${owner.own_reg_no }</td>
 									<!-- own_reg_no를 클릭 시 own_reg_no와 pageNum의 정보를 managerOwnerView.do로 보냄 -->
-						<td><a href="managerOwnerView.do?own_reg_no=${owner.own_reg_no }&pageNum=${currentPage }">${owner.own_id }</a></td>
+						<td><a href="managerOwnerView.do?own_id=${owner.own_id }&pageNum=${currentPage }">${owner.own_id }</a></td>
 						<td>${owner.own_id }</td>
 						<td>${owner.own_bth_dt }</td>
 						</c:if>

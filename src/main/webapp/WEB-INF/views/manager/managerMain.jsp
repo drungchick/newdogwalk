@@ -10,19 +10,21 @@
 </style>
 </head>
 <body>
-<h1>매니저 메인</h1>
+<h1 align="center">매니저 메인</h1>
 <table>
 	<tr>
 		<th>공지사항 관리</th>
 		<th>매칭정보 관리</th>
 		<th>견주정보 관리</th>
+		<th>반려견정보 관리</th>
 		<th>도우미정보 관리</th>
 	</tr>
 	<tr>
 		<th><a href="managerNoticeList.do">공지사항</a></th>
 		<th>매칭정보</th>
 		<th><a href="managerOwnerList.do">견주정보</a></th>
-		<th>도우미정보</th>
+		<th><a href="managerDogList.do">반려견 정보</a></th>
+		<th><a href="managerWalkerList.do">도우미정보</a></th>
 </table>
 </body>
 </html>

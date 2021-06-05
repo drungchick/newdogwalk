@@ -23,7 +23,7 @@
 	
 	<select id="list" parameterType="hashMap" resultMap="ownerProfileResult">
 		select * from (select a.*, rowNum rn from (
-			select * from owner order by own_reg_dt desc) a)
+			select * from owner order by own_reg_no desc) a)
 			where rn between #{startRow} and #{endRow}
 	</select>
 	
