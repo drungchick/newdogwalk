@@ -58,4 +58,18 @@ public class DogDao {
 		hm.put("search", search);
 		return session.selectList("dogns.searchlist", hm);
 	}
+	
+	// 견주 가입 - 반려견 테이블에 데이터 넣기 - LJH
+	public int insert(Dog dog) {
+		return session.insert("dogns.insertDog", dog);
+	}
+	// 견주 로그인 후 반려견 정보 조회 - LJH
+	public Dog selectDog(String own_id) {
+		return (Dog)session.selectOne("dogns.selectDogInfo", own_id);
+	}
+	// 견주 로그인 후 반려견 정보 업데이트 - LJH
+	public int updateDog(Dog dog) {
+		return session.update("dogns.updateDog", dog);
+	}
+	
 }

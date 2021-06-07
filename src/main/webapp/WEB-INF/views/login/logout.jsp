@@ -8,8 +8,8 @@
 </head>
 <body>
 <script type="text/javascript">
+	alert("로그아웃 되었습니다");
 	location.href="loginForm.do";
-	/* location.href="views/main/Main.do"; */
 </script>
 </body>
 </html>

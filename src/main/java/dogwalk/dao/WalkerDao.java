@@ -59,4 +59,24 @@ public class WalkerDao {
 		hm.put("search", search);
 		return session.selectList("walkerns.searchlist", hm);
 	}
+	// 도우미 ID 중복체크 - LJH
+	public Walker selectAll(String wkr_id) {
+		return (Walker)session.selectOne("walkerns.selectAll", wkr_id);
+	}
+	public Walker selectWalker(String wkr_id) {
+		return (Walker)session.selectOne("walkerns.selectWalkerId", wkr_id);
+	}
+	
+	// 도우미, 자격증 테이블에 들어갈 도우미일련번호에 대한 시퀀스 생성 - LJH
+	public int seq_increase() {
+		return (int) session.selectOne("walkerns.wkr_seq_increase");
+	}
+	// 도우미 회원가입 시 정보 입력 - LJH
+	public int insert(Walker walker) {
+		return session.insert("walkerns.insertWalker", walker);
+	}
+	// 도우미 마이페이지 정보 수정 - LJH
+	public int updateWalker(Walker walker) {
+		return session.update("walkerns.updateWalker", walker);
+	}
 }

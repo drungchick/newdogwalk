@@ -35,4 +35,21 @@ public class OwnerDao {
 	public Owner select(String own_id) {
 		return (Owner) session.selectOne("ownerProfilens.select", own_id);
 	}
+	// 견주 회원가입 시 ID 중복체크 - LJH
+	public Owner selectAll(String own_id) {
+		return (Owner)session.selectOne("ownerns.selectAll", own_id);
+	}
+	// 견주 회원가입 시 견주 테이블에 삽입 - LJH
+	public int insert(Owner owner) {
+		return session.insert("ownerns.insertOwner", owner);
+	}
+	// 견주 마이페이지 회원정보 조회 - LJH
+	public Owner selectOwner(String own_id) {
+		// TODO Auto-generated method stub
+		return (Owner)session.selectOne("ownerns.selectOwnerId", own_id);
+	}
+	// 견주 마이페이지 회원정보 수정 - LJH
+	public int updateOwner(Owner owner) {
+		return session.update("ownerns.updateOwner", owner);
+	}
 }
