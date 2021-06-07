@@ -4,11 +4,14 @@
 <mapper namespace="mboardns">
 	<resultMap type="mboard" 		id="mboardResult">
 		<result property="mbd_no" 		column="mbd_no" />
+		<result property="mbd_str_dt" 		column="mbd_str_dt" />
+		<result property="mbd_fn_dt" 		column="mbd_fn_dt" />
 		<result property="mbd_sbjt" 	column="mbd_sbjt" />
 		<result property="mbd_cont" 	column="mbd_cont" />
-		<result property="mbd_rd_cnt" 	column="mbd_rd_cnt" />
 		<result property="mbd_reg_dt" 	column="mbd_reg_dt" />
+		<result property="mbd_rd_cnt" 	column="mbd_rd_cnt" />
 		<result property="mbd_del" 		column="mbd_del" />
+		<result property="own_reg_no"    column="own_reg_no" />
 		<result property="own_id" 		column="own_id" />
 	</resultMap>
 	<select id="list" parameterType="hashMap" resultMap="mboardResult">
@@ -25,8 +28,8 @@
 		select * from mboard where mbd_no = #{mbd_no}
 	</select>
 	<insert id="insert" parameterType="mboard">
-		insert into mboard(MBD_NO,MBD_STR_DT,MBD_FN_DT,MBD_SBJT,MBD_CONT,MBD_RD_CNT,OWN_REG_NO,OWN_ID) 
-		values(mbno_seq.NEXTVAL,#{mbd_str_dt},#{mbd_fn_dt},#{mbd_sbjt},#{mbd_cont},1,#{OWN_REG_NO},#{OWN_ID})
+		insert into mboard(MBD_STR_DT,MBD_FN_DT,MBD_SBJT,MBD_CONT,MBD_RD_CNT,OWN_REG_NO,OWN_ID) 
+		values(#{mbd_str_dt},#{mbd_fn_dt},#{mbd_sbjt},#{mbd_cont},1, 1, #{own_id})
 	</insert>
 	<update id="update" parameterType="mboard">
 		update mboard set mbd_sbjt=#{mbd_sbjt}, mbd_str_dt=#{mbd_str_dt}, mbd_fn_dt=#{mbd_fn_dt}, mbd_cont=#{mbd_cont} where mbd_no=#{mbd_no}
