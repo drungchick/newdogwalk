@@ -11,7 +11,8 @@
 	<c:set var="id" value="${sessionScope.id }"></c:set>
  	<c:if test="${empty id }">
  		<script type="text/javascript">
- 			location.href="loginForm.do";
+ 			alert("로그인이 필요합니다.")
+ 			history.go(-1)
  		</script>
  	</c:if>
 </body>

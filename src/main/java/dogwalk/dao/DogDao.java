@@ -39,15 +39,15 @@ public class DogDao {
 		HashMap<String, Object> hm = new HashMap<>();
 		hm.put("startRow", startRow);
 		hm.put("endRow", endRow);
-		return session.selectList("dogProfilens.list", hm);
+		return session.selectList("dogns.list", hm);
 	}
 
 	public int total() {
-		return (int) session.selectOne("dogProfilens.total");
+		return (int) session.selectOne("dogns.total");
 	}
 
 	public Dog select(String dog_no) {
-		return (Dog) session.selectOne("dogProfilens.select", dog_no);
+		return (Dog) session.selectOne("dogns.selectView", dog_no);
 	}
 
 	public List<Dog> searchlist(int startRow, int endRow, String type, String search) {
@@ -56,6 +56,6 @@ public class DogDao {
 		hm.put("endRow", endRow);
 		hm.put("type", type);
 		hm.put("search", search);
-		return session.selectList("dogProfilens.searchlist", hm);
+		return session.selectList("dogns.searchlist", hm);
 	}
 }

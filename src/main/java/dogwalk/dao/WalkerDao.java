@@ -40,15 +40,15 @@ public class WalkerDao {
 		HashMap<String, Object> hm = new HashMap<>();
 		hm.put("startRow", startRow);
 		hm.put("endRow", endRow);
-		return session.selectList("walkerProfilens.list", hm);
+		return session.selectList("walkerns.list", hm);
 	}
 
 	public int total() {
-		return (int) session.selectOne("walkerProfilens.total");
+		return (int) session.selectOne("walkerns.total");
 	}
 
 	public Walker select(String wkr_reg_no) {
-		return (Walker) session.selectOne("walkerProfilens.select", wkr_reg_no);
+		return (Walker) session.selectOne("walkerns.selectWalkerNo", wkr_reg_no);
 	}
 
 	public List<Walker> searchlist(int startRow, int endRow, String type, String search) {
@@ -57,6 +57,6 @@ public class WalkerDao {
 		hm.put("endRow", endRow);
 		hm.put("type", type);
 		hm.put("search", search);
-		return session.selectList("walkerProfilens.searchlist", hm);
+		return session.selectList("walkerns.searchlist", hm);
 	}
 }

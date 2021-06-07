@@ -11,7 +11,7 @@
 	<c:if test="${result > 0}">
 		<script type="text/javascript">
 			alert("입력 성공");
-			location.href = "mbList.do?pageNum=${pageNum}";
+			location.href = "mbList.do?";
 		</script>
 	</c:if>
 	<c:if test="${result == 0}">
