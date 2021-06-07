@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="dogProfilens">
-	<resultMap type="dog" id="dogProfileResult">
+<mapper namespace="dogns">
+	<resultMap type="dog" id="dogResult">
 		<result property="dog_no" 		column="dog_no" />
 		<result property="dog_name"   		column="dog_name" />
 		<result property="dog_gdr"   	column="dog_gdr" />
@@ -20,7 +20,7 @@
 		<result property="own_id"   column="own_id" />
 	</resultMap>
 	
-	<select id="list" parameterType="hashMap" resultMap="dogProfileResult">
+	<select id="list" parameterType="hashMap" resultMap="dogResult">
 		select * from (select a.*, rowNum rn from (
 			select * from dog order by dog_no desc) a)
 			where rn between #{startRow} and #{endRow}
@@ -30,13 +30,25 @@
 		select count(*) from dog
 	</select>
 	
-	<select id="select" parameterType="string" resultType="dog">
+	<select id="selectView" parameterType="string" resultType="dog">
 		select * from dog where dog_no=#{dog_no}
 	</select>
 	
-	<select id="searchlist" parameterType="hashMap" resultMap="dogProfileResult">
+	<select id="searchlist" parameterType="hashMap" resultMap="dogResult">
 		select * from (select a.*, rowNum rn from (
 			select * from dog where ${type} like '%'||#{search}||'%') a)
 			where rn between #{startRow} and #{endRow}
 	</select>
+	
+	<select id="selectDogInfo" parameterType="string" resultType="dog">
+		select * from dog where own_id = #{own_id}
+	</select>
+	
+	<insert id="insertDog" parameterType="dog">
+		insert into dog (dog_name, dog_gdr, dog_kind, dog_size, dog_age, dog_len, dog_wgt,
+						dog_ntl_chk, dog_agg, dog_md_hst, dog_pht_nm, own_id)
+		values (#{dog_name}, #{dog_gdr}, #{dog_kind}, #{dog_size}, #{dog_age},
+				#{dog_len},	#{dog_wgt}, #{dog_ntl_chk}, #{dog_agg}, #{dog_md_hst},
+				#{dog_pht_nm}, #{own_id} )
+	</insert>
 </mapper>
