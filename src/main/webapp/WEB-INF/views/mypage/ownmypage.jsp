@@ -9,7 +9,7 @@
 </head>
 <body>
 <a href="MypageDog.do">반려견 정보</a><br>
-<a href="#">회원탈퇴</a><br>
+<a href="deleteOwner.do">회원탈퇴</a><br>
 	<table>
 		<caption>회원정보</caption>
 		<tr>

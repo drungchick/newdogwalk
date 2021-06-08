@@ -25,7 +25,7 @@
 		<th colspan="2"><input type="submit" value="확인"></th>
 	</tr>
 </table>
-<button onclick="location.href='joinChoiceForm.do'">회원가입</button>
+<button onclick="location.href='joinChoice.do'">회원가입</button>
 </form>
 </body>
 </html>

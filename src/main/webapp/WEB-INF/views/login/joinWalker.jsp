@@ -11,7 +11,7 @@
 <c:if test="${result_walker > 0 && result_license > 0}">
 	<script type="text/javascript">
 		alert("회원가입 성공");
-		location.href="main.do";
+		location.href="loginForm.do";
 	</script>
 </c:if>
 <c:if test="${result_walker == 0 && result_license == 0}">

@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="#">회원탈퇴</a><br>
+<a href="deleteWalker.do">회원탈퇴</a><br>
 	<table>
 		<caption>회원정보</caption>
 		<tr>
