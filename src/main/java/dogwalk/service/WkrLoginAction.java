@@ -14,7 +14,7 @@ public class WkrLoginAction implements CommandProcess {
 		String mb_clf_cd = "2";
 		
 		int result = 0;
-		if (walker == null/* || walker.getWkr_del().equals("y") */) {
+		if (walker == null|| walker.getWkr_del().equals("Y")) {
 			result = -1;
 		} else {
 			String dbPass = walker.getWkr_pwd();
