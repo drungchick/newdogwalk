@@ -31,11 +31,13 @@ public class MypageAction implements CommandProcess {
 			OwnerDao od = OwnerDao.getInstance();
 			Owner owner = od.selectOwner(id);
 			request.setAttribute("owner", owner);
+			session.setAttribute("own_id", owner.getOwn_id());
 			mypage = "/mypage/ownmypage";
 		} else if (mb_clf_cd == "2") {
 			WalkerDao wd = WalkerDao.getInstance();
 			Walker walker = wd.selectWalker(id);
 			request.setAttribute("walker", walker);
+			session.setAttribute("wkr_id", walker.getWkr_id());
 			
 			LicenseDao ld = LicenseDao.getInstance();
 			List<License> licenselst = ld.selectLicense(id);
