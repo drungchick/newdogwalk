@@ -11,10 +11,10 @@ public class OwnLoginAction implements CommandProcess {
 		String own_pwd = request.getParameter("own_pwd");
 		OwnerDao od = OwnerDao.getInstance();
 		Owner owner = od.selectOwner(own_id);
-		String mb_clf_cd = "1";
+		String mb_clf_cd = "1";		
 		
 		int result = 0;
-		if (owner == null/* || owner.getOwn_del().equals("y") */) {
+		if (owner == null || owner.getOwn_del().equals("Y")) {
 			result = -1;
 		} else {
 			String dbPass = owner.getOwn_pwd();
