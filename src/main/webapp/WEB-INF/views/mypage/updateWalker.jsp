@@ -14,7 +14,7 @@
 		location.href="Mypage.do";
 	</script>
 </c:if>
-<c:if test="${result_walker < 0 && result_license < 0}">
+<c:if test="${result_walker < 0 || result_license < 0}">
 	<script type="text/javascript">
 		alert("수정 실패");
 		history.go(-1);

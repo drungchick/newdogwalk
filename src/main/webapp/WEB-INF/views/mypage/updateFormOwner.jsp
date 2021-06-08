@@ -6,14 +6,27 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript">
-	function pwchk() {
-		if (updtfrm.password.value != updtfrm.confirmPass.value) {
-			alret("암호와 암호확인이 다릅니다.");
-			updtfrm.password.focus();
-			return false;
+$(function () {
+	$("#alert-success").hide();
+	$("#alert-danger").hide();
+	$(".passchk").keyup(function(){
+		var pass = $("#pass").val();
+		var confirmPass = $("#confirmPass").val();
+		if(pass != "" || confirmPass != ""){ 
+			if(pass == confirmPass){ 
+				$("#alert-success").show(); 
+				$("#alert-danger").hide(); 
+				$("#submit").removeAttr("disabled"); 
+			}else{ 
+				$("#alert-success").hide(); 
+				$("#alert-danger").show(); 
+				$("#submit").attr("disabled", "disabled"); 
+			} 
 		}
-	}
+	});
+});
 </script>
 </head>
 <body>
@@ -28,12 +41,19 @@
 		</tr>
 		<tr>
 			<th>변경할 암호</th>
-			<td><input type="password" name="password" required="required" autofocus="autofocus">
+			<td colspan="3"><input type="password" name="password" id="pass" class="passchk" required="required" autofocus="autofocus">
 			</td>
 		</tr>
 		<tr>
 			<th>변경할 암호 확인</th>
-			<td><input type="password" name="confirmPass" required="required"></td>
+			<td colspan="3"><input type="password" name="confirmPass" id="confirmPass" class="passchk" required="required"></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td>
+				<div class="alert_msg" id="alert-success">변경한 암호가 일치합니다.</div>
+				<div class="alert_msg" id="alert-danger">변경한 암호가 일치하지 않습니다.</div>
+			</td>
 		</tr>
 		<tr>
 			<th>이름</th>
@@ -71,7 +91,9 @@
 			<td><input type="email" name="own_email" value="${owner.own_email }" required="required"></td>
 		</tr>
 		<tr>
-			<th colspan="2"><input type="submit" value="정보수정 확인"></th>
+			<th colspan="2"><input type="submit" id="submit" value="정보수정 확인">
+				<input type="reset" id="reset" value="정보수정 취소">
+			</th>
 		</tr>
 	</table>
 </form>

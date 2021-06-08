@@ -6,6 +6,16 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+	$(function() { // 반려견이 중성화한 상태인 경우 'N' 라디오버튼 비활성화
+		var dog_ntl_chk = "${dog.dog_ntl_chk}";
+		if (dog_ntl_chk = "Y") {
+			$("#dog_ntl_n").attr('disabled',true);
+		}
+	})
+</script>
+
 </head>
 <body>
 	<a href="Mypage.do">견주회원 정보</a>
@@ -56,18 +66,12 @@
 			</tr>
 			<tr>
 				<th>중성화 여부</th>
-				<td><c:if test="${dog.dog_ntl_chk eq 'Y' }">
-						<input type="radio" id="dog_ntl_y" name="dog_ntl_chk" readonly="readonly"
-							checked="checked">
-						<label for="dog_ntl_y">O</label>
-					</c:if> 
-					<c:if test="${dog.dog_ntl_chk eq 'N' }">
-						<input type="radio" id="dog_ntl_y" name="dog_ntl_chk" value="Y"
+				<td>
+					<input type="radio" id="dog_ntl_y" name="dog_ntl_chk" value="Y"
 							required="required">
-						<label for="dog_ntl_y">O</label>
-						<input type="radio" id="dog_ntl_n" name="dog_ntl_chk" value="N">
-						<label for="dog_ntl_n">X</label></td>
-					</c:if>
+					<label for="dog_ntl_y">O</label>
+					<input type="radio" id="dog_ntl_n" name="dog_ntl_chk" value="N">
+					<label for="dog_ntl_n">X</label>
 				</td>
 			</tr>
 			<tr>

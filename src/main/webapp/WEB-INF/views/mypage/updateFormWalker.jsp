@@ -8,21 +8,31 @@
 <title>Insert title here</title>
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript">
-	function pwchk() {
-		if (updtfrm.password.value != updtfrm.confirmPass.value) {
-			alret("암호와 암호확인이 다릅니다.");
-			updtfrm.password.focus();
-			return false;
-		}
-	}
-	$(function() {
-		$('#btnAdd').click(function() { // 각 입력자 추가
-			$('#lc_add').append('<tr class="lc_row"><td><input type="text" name="lc_cd"></td><td><input type="text" name="lc_name"></td><td><input type="text" name="lc_iss_ogz"></td></tr>');
-		$('#btnDel').click(function() { // 각 입력자 삭제
-			$('.lc_row').last().remove();
-			});
+	$(function () {
+		$("#alert-success").hide();
+		$("#alert-danger").hide();
+		$(".passchk").keyup(function(){
+			var pass = $("#pass").val();
+			var confirmPass = $("#confirmPass").val();
+			if(pass != "" || confirmPass != ""){ 
+				if(pass == confirmPass){ 
+					$("#alert-success").show(); 
+					$("#alert-danger").hide(); 
+					$("#submit").removeAttr("disabled"); 
+				}else{ 
+					$("#alert-success").hide(); 
+					$("#alert-danger").show(); 
+					$("#submit").attr("disabled", "disabled"); 
+				} 
+			}
 		});
 	});
+	$(document).ready(function btnAdd() { // 각 입력자 추가
+			$('#lc_add').append('<tr class="lc_row"><td><input type="text" name="lc_cd"></td><td><input type="text" name="lc_name"></td><td><input type="text" name="lc_iss_ogz"></td></tr>');
+			$(function btnDel() { // 각 입력자 삭제
+				$('.lc_row').last().remove(); 
+		});
+	});	
 </script>
 </head>
 <body>
@@ -41,16 +51,23 @@
 		</tr>
 		<tr>
 			<th>변경할 암호</th>
-			<td colspan="3"><input type="password" name="password" required="required" autofocus="autofocus">
+			<td colspan="3"><input type="password" name="password" id="pass" class="passchk" required="required" autofocus="autofocus">
 			</td>
 		</tr>
 		<tr>
 			<th>변경할 암호 확인</th>
-			<td colspan="3"><input type="password" name="confirmPass" required="required"></td>
+			<td colspan="3"><input type="password" name="confirmPass" id="confirmPass" class="passchk" required="required"></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td>
+				<div class="alert_msg" id="alert-success">변경한 암호가 일치합니다.</div>
+				<div class="alert_msg" id="alert-danger">변경한 암호가 일치하지 않습니다.</div>
+			</td>
 		</tr>
 		<tr>
 			<th>이름</th>
-			<td colspan="3"><input type="text" name="wkr_name" value="${walker.wkr_name }" required="required">
+			<td colspan="3"><input type="text" name="wkr_name" value="${walker.wkr_name }" readonly="readonly">
 		</tr>
 		<tr>
 			<th>생년월일</th>
@@ -76,7 +93,7 @@
 	 placeholder="010-1111-1111" : 초기화면에 보여주고 데이터 입력하면 사라져라	 -->
 		<tr>
 			<th>전화번호</th>
-			<td colspan="3"><input type="tel" name="wkr_tel" value="${walker.wkr_tel }" required="required"></td>
+			<td colspan="3"><input type="tel" name="wkr_tel" title="전화형식 3-3,4-4" pattern="\d{3}-\d{3,4}-\d{4}" value="${walker.wkr_tel }" required="required"></td>
 		</tr>
 		<tr>
 			<th>이메일</th>
@@ -114,21 +131,22 @@
 			<td>
 				${lc_list.lc_iss_ogz }
 			</td>
-			<td>
-			</td>
 		</tr>
 		</c:forEach>
+		<tr>			
 		<tbody id="lc_add">
 		<tr>					
 			<td><input type="text" name="lc_cd"></td>
 			<td><input type="text" name="lc_name"></td>
 			<td><input type="text" name="lc_iss_ogz"></td>
-			<td><button id="btnAdd">+</button>
-			<button id="btnDel">-</button></td>						
+			<td colspan="4"><button id="btnAdd" onclick="btnAdd();">추가</button>
+			<button id="btnDel" onclick="btnDel();">삭제</button></td>					
 		</tr>
 		</tbody>
 		<tr>
-			<th colspan="4"><input type="submit" value="정보수정 확인"></th>
+			<th colspan="4"><input type="submit" id="submit" value="정보수정 확인">
+			<input type="reset" id="reset" value="정보수정 취소">
+			</th>
 		</tr>
 	</table>
 </form>

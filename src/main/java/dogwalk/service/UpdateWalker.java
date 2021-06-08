@@ -42,14 +42,16 @@ public class UpdateWalker implements CommandProcess {
 		walker.setWkr_rs_ex(wkr_rs_ex);
 		walker.setWkr_rs_cnt(wkr_rs_cnt);
 		walker.setWkr_career(wkr_career);
-		
-		// 자격증 테이블에 대한 업데이트 변수		
+				
+		WalkerDao wd = WalkerDao.getInstance();
+	    LicenseDao ld = LicenseDao.getInstance();
+	    
+	    // 자격증 테이블에 대한 업데이트 변수
 		String wkr_reg_no = (String) session.getAttribute("wkr_reg_no");
 		
 		String[] lc_cd_list = request.getParameterValues("lc_cd");
 		String[] lc_name_list = request.getParameterValues("lc_name");
 		String[] lc_iss_ogz_list = request.getParameterValues("lc_iss_ogz");
-		
 		// 업데이트 입력한 자격증 개수만큼 도우미 일련번호를 넣어줌 
 		String[] wkr_reg_no_list = new String[lc_cd_list.length];
 		for (int i = 0; i < wkr_reg_no_list.length; i++) {
@@ -59,17 +61,15 @@ public class UpdateWalker implements CommandProcess {
 		String[] wkr_id_list = new String[lc_cd_list.length];
 		for (int i = 0; i < wkr_id_list.length; i++) {
 			wkr_id_list[i] = wkr_id;
-		}
+		}   
 		License license = null;
+		List<License> liList = new ArrayList<License>();
 		
-        List<License> liList = new ArrayList<License>();
-        
-        WalkerDao wd = WalkerDao.getInstance();
-        LicenseDao ld = LicenseDao.getInstance();
-        
-        int result_walker = wd.updateWalker(walker); // 도우미 프로필 업데이트에 대한 내용
-        int result_license;
-        
+		int result_walker = wd.updateWalker(walker); // 도우미 프로필 업데이트에 대한 내용
+		int result_license;
+		
+		// 값이 추가가 안 된 경우를 위해 작성
+        System.out.println("LENGTH = "+lc_cd_list.length);
         if (lc_cd_list.length==0) {
         	result_license = 0;
         } else {
@@ -83,15 +83,15 @@ public class UpdateWalker implements CommandProcess {
                 liList.add(license);
         	}
         	result_license = ld.insert(liList);
-        }
-
-        request.setAttribute("result_walker", result_walker);
-        request.setAttribute("result_license", result_license);
-        session.setAttribute("id", wkr_id);
+        }        
         
-        String mb_clf_cd = "2";
-		session.setAttribute("mb_clf_cd", mb_clf_cd);
-		
+        // 임시
+        System.out.println(result_license);
+        System.out.println(result_walker);
+        
+        request.setAttribute("result_walker", result_walker);
+        request.setAttribute("result_license", result_license);        
+        
         return "mypage/updateWalker";
 	}
 
