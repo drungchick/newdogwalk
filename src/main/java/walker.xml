@@ -54,10 +54,6 @@
 		select nvl(max(wkr_reg_no),0) + 1 from walker
 	</select>
 	
-	<update id="delete">
-		update walker set wkr_del='y' where wkr_id=#{wkr_id}
-	</update>
-	
 	<insert id="insertWalker" parameterType="walker"> <!-- 도우미 테이블 입력 쿼리, LJH -->
 		insert into walker
 		(wkr_reg_no, wkr_id, wkr_pwd, wkr_name, wkr_addr,
@@ -73,5 +69,9 @@
 		update walker set wkr_pwd=#{wkr_pwd}, wkr_name=#{wkr_name}, wkr_addr=#{wkr_addr}, 
 		wkr_tel=#{wkr_tel}, wkr_email=#{wkr_email}, wkr_rs_ex=#{wkr_rs_ex}, 
 		wkr_rs_cnt=#{wkr_rs_cnt}, wkr_career=#{wkr_career} where wkr_id=#{wkr_id }
+	</update>
+	
+	<update id="delete" parameterType="string"> <!-- 회원탈퇴 -->
+		update walker set wkr_del='Y' where wkr_id=#{wkr_id}
 	</update>
 </mapper>
