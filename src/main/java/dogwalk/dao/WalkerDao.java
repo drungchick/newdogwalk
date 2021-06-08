@@ -79,4 +79,8 @@ public class WalkerDao {
 	public int updateWalker(Walker walker) {
 		return session.update("walkerns.updateWalker", walker);
 	}
+	// 도우미 회원 탈퇴 - LJH
+	public int deleteWalker(String wkr_id) {
+		return session.update("walkerns.delete", wkr_id);
+	}
 }

@@ -52,4 +52,8 @@ public class OwnerDao {
 	public int updateOwner(Owner owner) {
 		return session.update("ownerns.updateOwner", owner);
 	}
+	// 견주 회원 탈퇴 - LJH
+	public int deleteOwner(String own_id) {
+		return session.update("ownerns.delete", own_id);
+	}
 }
