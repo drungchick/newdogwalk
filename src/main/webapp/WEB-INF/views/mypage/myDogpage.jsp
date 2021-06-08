@@ -44,31 +44,21 @@
 		<tr>
 			<th>중성화 여부</th>
 			<td>
-			<c:if test="${dog.dog_ntl_chk eq 'Y' }">
-				<input type="radio" id="dog_ntl_y" readonly="readonly" checked="checked"> 
-				<label for="dog_ntl_y">O</label>
-			</c:if>
-			<c:if test="${dog.dog_ntl_chk eq 'N' }">
-				<input type="radio" id="dog_ntl_n" readonly="readonly" checked="checked"> 
+				<input type="radio" id="dog_ntl_y" name="dog_ntl_chk" value="Y" readonly="readonly" <c:if test="${dog.dog_ntl_chk eq 'Y' }">checked</c:if>> 
+				<label for="dog_ntl_y">O</label>			
+				<input type="radio" id="dog_ntl_n" name="dog_ntl_chk" value="N" readonly="readonly" <c:if test="${dog.dog_ntl_chk eq 'N' }">checked</c:if>> 
 				<label for="dog_ntl_n">X</label>
-			</c:if>
 			</td>
 		</tr>
 		<tr>
 			<th>공격성</th>
-			<td>			
-			<c:if test="${dog.dog_agg eq 'LOW' }">
-				<input type="radio" id="dog_agg_low" readonly="readonly" checked="checked">
-				<label for="dog_agg_low">낮음</label>
-			</c:if>
-			<c:if test="${dog.dog_agg eq 'AVERAGE' }">
-				<input type="radio" id="dog_agg_average" readonly="readonly" checked="checked">
-				<label for="dog_agg_average">보통</label>
-			</c:if>
-			<c:if test="${dog.dog_agg eq 'HIGH' }">
-				<input type="radio" id="dog_agg_high" readonly="readonly" checked="checked">
+			<td>
+				<input type="radio" id="dog_agg_low" name="dog_agg" value="LOW" readonly="readonly" <c:if test="${dog.dog_agg eq 'LOW' }">checked</c:if>>
+				<label for="dog_agg_low">낮음</label>		
+				<input type="radio" id="dog_agg_average" name="dog_agg" value="AVERAGE" readonly="readonly" <c:if test="${dog.dog_agg eq 'AVERAGE' }">checked</c:if>>
+				<label for="dog_agg_average">보통</label>			
+				<input type="radio" id="dog_agg_high" name="dog_agg" value="HIGH" readonly="readonly" <c:if test="${dog.dog_agg eq 'HIGH' }">checked</c:if>>
 				<label for="dog_agg_high">높음</label>
-			</c:if>
 			</td>
 		</tr>
 		<tr>
