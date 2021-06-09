@@ -4,13 +4,13 @@
 <configuration>
 	<properties resource="dbconnect.properties" />
 	<typeAliases>
- 		<!-- <typeAlias alias="booking" type="dogwalk.model.Booking" /> -->	
+ 		<!-- <typeAlias alias="booking" type="dogwalk.model.Booking" />	 -->
 		<typeAlias alias="dog" type="dogwalk.model.Dog" />
  		<typeAlias alias="license" type="dogwalk.model.License" />
-		<!-- <typeAlias alias="manager" type="dogwalk.model.Manager" /> -->
-		<!-- <typeAlias alias="mboard" type="dogwalk.model.MBoard" /> -->
+		<typeAlias alias="manager" type="dogwalk.model.Manager" />
+		<typeAlias alias="mboard" type="dogwalk.model.MBoard" />
 	 	<!-- <typeAlias alias="member" type="dogwalk.model.Member" /> -->
-		<!-- <typeAlias alias="notice" type="dogwalk.model.Notice" /> -->
+		<typeAlias alias="notice" type="dogwalk.model.Notice" />
 	 	<typeAlias alias="owner" type="dogwalk.model.Owner" />
 		<typeAlias alias="walker" type="dogwalk.model.Walker" />
 	</typeAliases>
@@ -26,12 +26,12 @@
 		</environment>
 	</environments>
 	<mappers>
-		<!-- <mapper resource="mboard.xml" /> -->
-		<!-- <mapper resource="notice.xml" /> -->
+		<mapper resource="mboard.xml" />
+		<mapper resource="notice.xml" />
 		<mapper resource="dog.xml" />
 		<mapper resource="walker.xml" />
 		<mapper resource="owner.xml" />
-		<mapper resource="license.xml"/>
-		<!-- <mapper resource="manager.xml" /> -->
+		<mapper resource="manager.xml" />
+		<mapper resource="license.xml" />
 	</mappers>
 </configuration>
