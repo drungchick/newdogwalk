@@ -33,7 +33,7 @@ public class OwnerDao {
 		}
 	}
 	public Owner select(String own_id) {
-		return (Owner) session.selectOne("ownerProfilens.select", own_id);
+		return (Owner) session.selectOne("ownerns.selectOwnerId", own_id);
 	}
 	// 견주 회원가입 시 ID 중복체크 - LJH
 	public Owner selectAll(String own_id) {
