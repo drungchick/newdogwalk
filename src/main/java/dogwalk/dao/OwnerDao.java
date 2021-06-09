@@ -1,6 +1,8 @@
 package dogwalk.dao;
 
 import java.io.Reader;
+import java.util.HashMap;
+import java.util.List;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -55,5 +57,16 @@ public class OwnerDao {
 	// 견주 회원 탈퇴 - LJH
 	public int deleteOwner(String own_id) {
 		return session.update("ownerns.delete", own_id);
+	}
+
+	public List<Owner> list(int startRow, int endRow) {
+		HashMap<String, Object> hm = new HashMap<>();
+		hm.put("startRow", startRow);
+		hm.put("endRow", endRow);
+		return session.selectList("ownerns.list", hm);
+	}
+
+	public int total() {
+		return (int) session.selectOne("ownerns.total");
 	}
 }

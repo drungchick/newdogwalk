@@ -22,6 +22,7 @@
 		select count(*) from notice
 	
 	</select>
+	
 	<select id="select" parameterType="string" resultType="notice">
 		select * from notice where nt_no=#{nt_no}
 	</select>
@@ -37,4 +38,9 @@
 	<update id="delete" parameterType="string">
 		update notice set nt_del='Y' where nt_no=#{nt_no}
 	</update>
+	
+	<insert id="insert" parameterType="notice">
+		insert into notice(NT_SBJT, NT_CONT, NT_RD_CNT, MNG_ID) values(#{nt_sbjt}, #{nt_cont}, 1, #{mng_id}) 
+	</insert>
+	
 </mapper>

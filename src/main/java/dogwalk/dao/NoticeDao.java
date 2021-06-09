@@ -67,4 +67,8 @@ public class NoticeDao {
 	public int delete(String nt_no) {
 		return session.update("noticens.delete", nt_no);
 	}
+
+	public int insert(Notice notice) {
+		return session.insert("noticens.insert", notice);
+	}
 }
