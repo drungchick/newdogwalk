@@ -36,17 +36,17 @@ public class OwnerDao {
 	}
 	
 	public Owner select(String own_id) {
-		return (Owner) session.selectOne("ownerProfilens.select", own_id);
+		return (Owner) session.selectOne("ownerns.selectOwnerId", own_id);
 	}
 
 	public List<Owner> list(int startRow, int endRow) {
 		HashMap<String, Object> hm = new HashMap<>();
 		hm.put("startRow", startRow);
 		hm.put("endRow", endRow);
-		return session.selectList("ownerProfilens.list", hm);
+		return session.selectList("ownerns.list", hm);
 	}
 
 	public int total() {
-		return (int) session.selectOne("ownerProfilens.total");
+		return (int) session.selectOne("ownerns.total");
 	}
 }
