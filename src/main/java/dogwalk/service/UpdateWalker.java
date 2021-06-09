@@ -68,9 +68,9 @@ public class UpdateWalker implements CommandProcess {
 		int result_walker = wd.updateWalker(walker); // 도우미 프로필 업데이트에 대한 내용
 		int result_license;
 		
-		// 값이 추가가 안 된 경우를 위해 작성
-        System.out.println("LENGTH = "+lc_cd_list.length);
-        if (lc_cd_list.length==0) {
+//		// 값이 추가가 안 된 경우를 위해 작성
+//        System.out.println("LENGTH = "+lc_cd_list.length);
+        if (lc_cd_list[0]==null || lc_cd_list == null || lc_cd_list[0].equals("")) {
         	result_license = 0;
         } else {
         	for (int i =0; i < lc_cd_list.length;i++) {
@@ -85,9 +85,9 @@ public class UpdateWalker implements CommandProcess {
         	result_license = ld.insert(liList);
         }        
         
-        // 임시
-        System.out.println(result_license);
-        System.out.println(result_walker);
+//        // 임시
+//        System.out.println(result_license);
+//        System.out.println(result_walker);
         
         request.setAttribute("result_walker", result_walker);
         request.setAttribute("result_license", result_license);        
