@@ -10600,3 +10600,9 @@ legend {
 .list-group-item h6 {
   color: inherit;
 }
+
+div.a {
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+}
