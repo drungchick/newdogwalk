@@ -21,6 +21,7 @@
 <div class="container">
 	<div id="content" align="center">
 		<h1 align="center">공지사항</h1>
+		<br>
 		<table class="table table-striped">
 			  <thead>
 			    <tr align="center">
