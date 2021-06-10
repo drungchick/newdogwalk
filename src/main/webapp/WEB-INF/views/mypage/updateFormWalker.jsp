@@ -152,10 +152,9 @@
 		</tr>
 		</tbody>
 		<tr>
-			<th></th>
-			<td>
+			<th colspan="4">
 				<div id="lc_check"></div>
-			</td>
+			</th>
 		</tr>
 		<tr>
 			<th colspan="4"><input type="submit" id="submit" value="정보수정 확인">
