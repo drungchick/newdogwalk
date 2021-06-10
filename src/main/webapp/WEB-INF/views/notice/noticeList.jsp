@@ -4,41 +4,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-<!-- <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1"> -->
-<title>Insert title here</title>
-<!-- <link href="../../css/bootstrap.min.css" rel="stylesheet">
-<script type="text/javascript" src="../../js/jquery.js"></script>
-<script src="../../js/bootstrap.min.js"></script> -->
-<style type="text/css">
-	@import url("common.css");
-</style>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Insert title here</title>
+	<!-- css 연결 -->
+	<link rel="stylesheet" href="css/bootstrap.css">
 </head>
 <body>
+<jsp:include page="../main/mainNav.jsp"></jsp:include>
+<br>
+<br>
+<br>
+<br>
+<br>
 <div class="container">
 	<div id="content" align="center">
-		<h3 align="center">공지사항</h3>
-		<table class="table table-hover">
-			<tr>
-				<th width="10%">번호</th>
-				<th width="10%">제목</th>
-				<th width="10%">작성일</th>
-				<th width="10%">조회수</th>
-			</tr>
+		<h1 align="center">Notice</h1>
+		<br>
+		<table class="table table-striped">
+			  <thead>
+			    <tr align="center">
+			      <th scope="col" align="center">No</th>
+			      <th scope="col" align="center">Subject</th>
+			      <th scope="col" align="center">Date</th>
+			      <th scope="col" align="center">R.D</th>
+			    </tr>
+			  </thead> 
 			<c:if test="${empty list }"> <!-- 만약 DB에 데이터가 없어 list 애트리뷰트 안이 비었을 경우 -->
-			<tr>
-				<td colspan="4">등록된 공지사항이 없습니다.</td>
-			</tr>
+			<tr class="table-danger" align="center">
+      			<th scope="row" colspan="4">등록된 공지사항이 없습니다.</th>
+    		</tr>
 			</c:if>
 			<c:if test="${not empty list }">
 				<c:forEach var="notice" items="${list }"> <!-- list 애트리뷰트의 정보를 notice 변수에 하나씩 받는다 -->
-					<tr>
-						
+					<tr align="center">			
 						<c:set var="total" value="${total }"></c:set>
 						
 						<c:if test="${notice.nt_del == 'Y' }">
-							<th colspan="4">삭제된 공지사항입니다.</th>
+							<th colspan="4" scope="row">삭제된 공지사항입니다.</th>
 						</c:if>
 						
 						<c:if test="${notice.nt_del == 'N' }">
@@ -51,32 +55,36 @@
 					</tr>
 				</c:forEach>		
 			</c:if>
-		</table>
-		
-		<div align="center">
-			<c:if test="${startPage > pagePerBlock }">
-				<%-- <a href="noticeList.do?pageNum=${startPage - 1 }">[이전]</a> --%>
-				<button onclick="location.href='noticeList.do?pageNum=${startPage - 1 }'">[이전]</button>
-			</c:if>
-			<c:forEach var="i" begin="${startPage }" end="${endPage }">
-				<%-- <a href="noticeList.do?pageNum=${i }">${i }</a> --%>
-				<button onclick="location.href='noticeList.do?pageNum=${i }'">${i }</button>
-			</c:forEach>
-			<c:if test="${endPage < totPage }">
-				<%-- <a href="noticeList.do?pageNum=${endPage + 1 }">[다음]</a> --%>
-				<button onclick="location.href='noticeList.do?pageNum=${endPage + 1 }'">[다음]</button>
-			</c:if>
-		</div>
-		
-		<div align="center">
-			<!-- <a href="dogProfileList.do">반려견 프로필</a> -->
-			<button onclick="location.href='dogProfileList.do'">반려견 프로필</button>
-		</div>
-		<div align="center">
-			<!-- <a href="walkerProfileList.do">도우미 프로필</a> -->
-			<button onclick="location.href='walkerProfileList.do'">도우미 프로필</button>
-		</div>
+		</table>	
+	</div>
+	<br>	
+	<div align="center" class="pageMiddle">
+	  <ul class="pagination pagination-lg" class="a">
+	    <c:if test="${startPage > pagePerBlock }">
+	    <li class="page-item">
+	      <a class="page-link" href="noticeList.do?pageNum=${startPage - 1 }">&laquo;</a>
+	    </li>
+	    </c:if>
+	    <c:forEach var="i" begin="${startPage }" end="${endPage }">
+	    <li class="page-item">
+	      <a class="page-link" href="noticeList.do?pageNum=${i }">${i }</a>
+	    </li>
+	    </c:forEach>
+	    <c:if test="${endPage < totPage }">
+	    <li class="page-item">
+	      <a class="page-link" href="noticeList.do?pageNum=${endPage + 1 }">&raquo;</a>
+	    </li>
+	    </c:if>
+	  </ul>
+	</div>
 </div>
-</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+   integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+   integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+   integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
 </body>
 </html>

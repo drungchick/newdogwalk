@@ -36,6 +36,7 @@ public class OwnerDao {
 	}
 	public Owner select(String own_id) {
 		return (Owner) session.selectOne("ownerns.selectOwnerId", own_id);
+//<<<<<<< HEAD
 	}
 	// 견주 회원가입 시 ID 중복체크 - LJH
 	public Owner selectAll(String own_id) {
@@ -68,5 +69,7 @@ public class OwnerDao {
 
 	public int total() {
 		return (int) session.selectOne("ownerns.total");
+//=======
+//>>>>>>> refs/heads/master
 	}
 }

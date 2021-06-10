@@ -14,6 +14,7 @@ public class MBView implements CommandProcess {
 		int mbd_no = Integer.parseInt(request.getParameter("mbd_no"));
 		MBoardDao mbd = MBoardDao.getInstance();
 		MBoard mboard = mbd.select(mbd_no);
+		int result = mbd.readCountUpdate(mbd_no);
 		request.setAttribute("mboard", mboard);
 		return "mboard/mbView";
 	}

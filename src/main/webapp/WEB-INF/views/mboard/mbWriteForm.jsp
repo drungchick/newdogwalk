@@ -11,17 +11,25 @@
 <body>
 <form action="mbWrite.do" method="post" name="frm">
 <input type="hidden" name="mbd_no" value="${mboard.mbd_no}">
+<<<<<<< HEAD
 <%-- <input type="hidden" name="own_id" value="${member.own_id}"> --%>
+=======
+<input type="hidden" name="own_id" value="TEST">
+>>>>>>> refs/heads/master
 <input type="hidden" name="pageNum" value="${pageNum}">
 	<table>
 		<caption>산책 요청 작성</caption>
 		<!-- 작성자, 작성자 등록일은 히든으로 받아서 넘길 예정. -->
 		<tr>
 			<th>작성자</th>
+<<<<<<< HEAD
 			<%-- <td>${mboard.own_id }</td> --%>
 			<td>
 				<input type="text" name="own_id" required="required">
 			</td>
+=======
+			<td>TEST</td>
+>>>>>>> refs/heads/master
 		</tr>
 		<tr>
 			<th>제목</th>

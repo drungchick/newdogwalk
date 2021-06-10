@@ -1,2 +1,25 @@
+<<<<<<< HEAD
 /license.xml
 /dogwalk/
+=======
+<<<<<<< HEAD
+/booking.xml
+/dog.xml
+=======
+/dogProfile.xml
+>>>>>>> branch 'master' of https://github.com/drungchick/newdogwalk
+/manager.xml
+/notice.xml
+<<<<<<< HEAD
+=======
+/ownerProfile.xml
+/walkerProfile.xml
+/dogwalk/
+/applymboard.xml
+/applyboard.xml
+/booking.xml
+/dog.xml
+>>>>>>> branch 'master' of https://github.com/drungchick/newdogwalk
+/owner.xml
+/walker.xml
+>>>>>>> refs/heads/master

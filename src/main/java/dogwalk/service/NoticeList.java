@@ -13,7 +13,7 @@ public class NoticeList implements CommandProcess{
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		// 페이징
 		int rowPerPage = 10;	// 1페이지에 10개의 행
-		int pagePerBlock = 10;	// 한 블럭에 10페이지
+		int pagePerBlock = 5;	// 한 블럭에 10페이지
 		String pageNum = request.getParameter("pageNum");
 		if (pageNum == null || pageNum.equals("")) { // 처음 실행했을때 pageNum은 null값이기 때문에 조건문으로 조정
 			pageNum = "1";
@@ -26,7 +26,7 @@ public class NoticeList implements CommandProcess{
 		List<Notice> list = nd.list(startRow, endRow);		// NoticeDao의 list함수를 사용하여 Notice데이터형의 list객체에 데이터를 저장(리스트를 보여주기 위함)
 		int tot = nd.total();								// NoticeDao의 list함수를 사용하여 Notice DB의 총 갯수를 저장
 		int total = tot - startRow + 1;
-		int startPage = currentPage - (currentPage - 1) % 10;
+		int startPage = currentPage - (currentPage - 1) % 5;
 		int endPage = startPage + pagePerBlock - 1;
 		int totPage = (int)Math.ceil((double)tot/rowPerPage);
 		if (endPage > totPage) {

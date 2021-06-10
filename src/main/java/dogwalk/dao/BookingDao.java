@@ -9,14 +9,14 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import dogwalk.model.MBoard;
+import dogwalk.model.Booking;
 
-public class MBoardDao {
+public class BookingDao {
 
 	// singleton
-	private static MBoardDao instance = new MBoardDao();
-	private MBoardDao() {}
-	public static MBoardDao getInstance() {
+	private static BookingDao instance = new BookingDao();
+	private BookingDao() {}
+	public static BookingDao getInstance() {
 		return instance;
 	}
 	private static SqlSession session;
@@ -32,7 +32,7 @@ public class MBoardDao {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public List<MBoard> list(int startRow, int endRow) {
+	public List<Booking> list(int startRow, int endRow) {
 		// 파라미터로는 단수개의 정보만 전달 가능
 		// List는 특정틀의 동일한 유형을 가진 정보를 전달 가능 But Array로 집합, 정렬, 배열해야 함
 		// Hash은 다수의 정보 전달 가능. key값으로 해당 정보 더미들 구분
@@ -40,32 +40,31 @@ public class MBoardDao {
 		HashMap<String, Object> hm = new HashMap<>();
 			hm.put("startRow", startRow);
 			hm.put("endRow", endRow);
-		return session.selectList("mboardns.list", hm);
+		return session.selectList("bookingns.list", hm);
 	}
 	
 	// 게시글 총 개수
 	public int total() {
-		return (int) session.selectOne("mboardns.total");
+		return (int) session.selectOne("bookingns.total");
 	}
 	
-	public MBoard select(String mbd_no) {
-		return (MBoard) session.selectOne("mboardns.select", mbd_no);
+	public Booking select(String mbd_no) {
+		return (Booking) session.selectOne("bookingns.select", mbd_no);
 	}
 	
-	public int insert(MBoard mboard) {
+	public int insert(Booking booking) {
 		// TODO Auto-generated method stub
-		return session.insert("mboardns.insert", mboard);
+		return session.insert("bookingns.insert", booking);
 	}
-	public int update(MBoard mboard) {
+	public int accept(Booking booking) {
 		// TODO Auto-generated method stub
-		return session.update("mboardns.update", mboard);
+		return session.update("bookingns.accept", booking);
 	}
-	public int delete(String mbd_no) {
+	
+	public int deny(Booking booking) {
 		// TODO Auto-generated method stub
-		return session.delete("mboardns.delete", mbd_no);
+		return session.update("bookingns.deny", booking);
 	}
-	public int readCountUpdate(int mbd_no) {
-		return (int) session.update("mboardns.rcupdate", mbd_no);
-	}
+	
 
 }

@@ -18,7 +18,7 @@ public class MBUpdate implements CommandProcess {
 		String mbd_str_dt = request.getParameter("mbd_str_dt");
 		String mbd_fn_dt = request.getParameter("mbd_fn_dt");
 		String mbd_cont = request.getParameter("mbd_cont");
-		int mbd_no = Integer.parseInt(request.getParameter("mbd_no"));
+		String mbd_no = request.getParameter("mbd_no");
 		
 		MBoard mboard = new MBoard();
 		mboard.setOwn_id(own_id);
