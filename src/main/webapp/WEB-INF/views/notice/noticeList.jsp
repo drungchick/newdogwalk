@@ -20,15 +20,15 @@
 <br>
 <div class="container">
 	<div id="content" align="center">
-		<h1 align="center">공지사항</h1>
+		<h1 align="center">Notice</h1>
 		<br>
 		<table class="table table-striped">
 			  <thead>
 			    <tr align="center">
-			      <th scope="col" align="center">번호</th>
-			      <th scope="col" align="center">제목</th>
-			      <th scope="col" align="center">작성일</th>
-			      <th scope="col" align="center">조회수</th>
+			      <th scope="col" align="center">No</th>
+			      <th scope="col" align="center">Subject</th>
+			      <th scope="col" align="center">Date</th>
+			      <th scope="col" align="center">R.D</th>
 			    </tr>
 			  </thead> 
 			<c:if test="${empty list }"> <!-- 만약 DB에 데이터가 없어 list 애트리뷰트 안이 비었을 경우 -->
@@ -85,5 +85,6 @@
    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
 </body>
 </html>

@@ -28,21 +28,27 @@
 		      	<td>${notice.nt_sbjt }</td>
     		</tr>
     		<tr align="center">
-      			<th scope="row">Reporting Date</th>
+      			<th scope="row">Date</th>
 		      	<td>${notice.nt_reg_dt }</td>
     		</tr>
     		<tr align="center">
-      			<th scope="row">Content</th>
-		      	<td><textarea rows="5" cols="40">${notice.nt_reg_dt }</textarea></td>
+      			<th class="th" scope="row">Content</th>
+		      	<td><textarea rows="10" cols="70" style="border:none;">${notice.nt_reg_dt }</textarea></td>
     		</tr>
 		</table>
 	</div>
+
+	<div align="center">
+		<button type="button" class="btn btn-primary btn-lg" onclick="location.href='noticeList.do?pageNum=${pageNum }'">List</button>
+	</div>
 </div>
 
-<div align="center">
-	<%-- <button onclick="location.href='noticeList.do?pageNum=${pageNum }'">목록</button> --%>
-	<button type="button" class="btn btn-primary" onclick="location.href='noticeList.do?pageNum=${pageNum }'">list</button>
-</div>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+   integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+   integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+   integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
 </body>
 </html>
