@@ -58,7 +58,7 @@
 		</table>	
 	</div>
 	<br>	
-	<div align="center" class="a">
+	<div align="center" class="pageMiddle">
 	  <ul class="pagination pagination-lg" class="a">
 	    <c:if test="${startPage > pagePerBlock }">
 	    <li class="page-item">

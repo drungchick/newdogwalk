@@ -6,5 +6,4 @@ public class OwnLoginForm implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		return "login/ownloginForm";
 	}
-
 }
