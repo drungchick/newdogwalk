@@ -3,44 +3,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>견주 가입</title>
-<style>
-.container {
-	text-align: center;
-}
-
-.title_outer {
-	text-align: center;
-	width: 500px;e
-	height: 150px;
-	background: gray;
-}
-
-.title_inner {
-	display: inline-block;
-	width: 400px;
-	height: 100px;
-	background: white;
-}
-
-textarea {
-	width: 80%;
-	height: 100px;
-}
-
-#alert-success {
-	color: blue;
-}
-
-#alert-danger {
-	color: red;
-}
-
-#id_check {
-	color: red;
-}
-</style>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Insert title here</title>
+	<!-- css 연결 -->
+	<link rel="stylesheet" href="css/bootstrap.css">
 <!-- jquery 경로 지정 주의!!! -->
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript">
@@ -79,8 +47,191 @@ textarea {
 </script>
 </head>
 <body>
-	<form action="joinOwner.do" method="post" enctype="multipart/form-data"
-		name="frm">
+<form action="joinOwner.do" method="post" enctype="multipart/form-data" name="frm">
+	<div class="JoinWrapper">
+		<div class="form-group">
+    		<fieldset>
+    			<h1 align="center">Owner Profile</h1>
+    			<br>
+    			<div class="form-group">
+      				<h4><label for="id">Owner ID</label></h4>
+      				<input type="text" class="form-control" id="id" name="own_id" required="required" autofocus="autofocus">
+      				<button type="button" class="btn btn-outline-primary" onclick="idchk()">Check</button>
+    			</div>
+    			
+    			<div class="form-group">
+				    <h4><label for="password">Password</label></h4>
+				    <input type="password" class="form-control" id="password" name="password" required="required" class="passchk">
+    			</div>
+  
+    			<div class="form-group">
+				    <h4><label for="confirmPass">Password(Confirm)</label></h4>
+				    <input type="password" class="form-control" id="confirmPass" name="confirmPass" required="required" class="passchk">
+    			</div>
+    			<!-- alert 뭔지 몰라서 못햇어요 -->
+    			
+    			<div class="form-group">
+      				<h4><label for="name">Name</label></h4>
+      				<input type="text" class="form-control" id="name" name="name" required="required">
+    			</div>
+    			
+    			<div class="form-group">
+      				<h4><label for="birth">Birth Date</label></h4>
+      				<input type="date" class="form-control" id="birth" name="birth_date" required="required">
+    			</div>
+    			
+    			<br>
+    			<fieldset class="form-group">
+			      	<legend>Owner Gender</legend>
+			      		<div class="form-check">
+			        		<label class="form-check-label">
+			          		<input type="radio" class="form-check-input" name="gender" id="male" value="M">Man</label>
+			      		</div>
+			      		<div class="form-check">
+			        		<label class="form-check-label">
+			          		<input type="radio" class="form-check-input" name="gender" id="female" value="F">Woman</label>
+			      		</div>
+    			</fieldset>
+    			<br>
+    			
+    			<div class="form-group">
+      				<h4><label for="addr">Address</label></h4>
+      				<input type="text" class="form-control" id="addr" name="address" required="required">
+    			</div>
+    			
+    			<div class="form-group">
+      				<h4><label for="email">E-mail</label></h4>
+      				<input type="text" class="form-control" id="email" name="email" required="required">
+    			</div>
+    			
+    			<div class="form-group">
+      				<h4><label for="tel">Tel</label></h4>
+      				<input type="tel" class="form-control" id="tel" name="tel" required="required" 
+      				title="전화형식 3-3,4-4" pattern="\d{3}-\d{3,4}-\d{4}" placeholder="010-1111-1111">
+    			</div>
+    			
+    			<br>
+    			<br>
+    			<br>
+    			<br>
+    			<br>
+    			<h1 align="center">Dog Profile</h1>
+    			<br>
+    			
+    			<div class="form-group">
+      				<h4><label for="dog_name">Dog Name</label></h4>
+      				<input type="text" class="form-control" id="dog_name" name="dog_name" required="required">
+    			</div>
+    			
+    			<br>
+    			<fieldset class="form-group">
+			      	<legend>Dog Gender</legend>
+			      		<div class="form-check">
+			        		<label class="form-check-label">
+			          		<input type="radio" class="form-check-input" name="dog_gdr" id="dog_male" value="M">Man</label>
+			      		</div>
+			      		<div class="form-check">
+			        		<label class="form-check-label">
+			          		<input type="radio" class="form-check-input" name="dog_gdr" id="dog_female" value="F">Woman</label>
+			      		</div>
+    			</fieldset>
+    			<br>
+    			
+    			<div class="form-group">
+      				<h4><label for="kind">Dog Kind</label></h4>
+      				<input type="text" class="form-control" id="kind" name="dog_kind" required="required">
+    			</div>
+    			
+    			<br>
+    			<fieldset class="form-group">
+			      	<legend>Dog Size</legend>
+			      		<div class="form-check">
+			        		<label class="form-check-label">
+			          		<input type="radio" class="form-check-input" name="dog_size" id="dog_small" value="SMALL">SMALL</label>
+			      		</div>
+			      		<div class="form-check">
+			        		<label class="form-check-label">
+			          		<input type="radio" class="form-check-input" name="dog_size" id="dog_medium" value="MEDIUM">MEDIUM</label>
+			      		</div>
+			      		<div class="form-check">
+			        		<label class="form-check-label">
+			          		<input type="radio" class="form-check-input" name="dog_size" id="dog_big" value="BIG">BIG</label>
+			      		</div>
+    			</fieldset>
+    			<br>
+    			
+    			<div class="form-group">
+      				<h4><label for="age">Dog Age</label></h4>
+      				<input type="number" class="form-control" id="age" name="dog_age" max="50" min="0" required="required">
+    			</div>
+    			
+    			<div class="form-group">
+      				<h4><label for="length">Dog Length(Meter)</label></h4>
+      				<input type="number" class="form-control" id="length" name="dog_len" max="3.00" min="0.00" step="0.01" required="required">
+    			</div>
+    			
+    			<div class="form-group">
+      				<h4><label for="weight">Dog Weight(Kg)</label></h4>
+      				<input type="number" class="form-control" id="weight" name="dog_wgt" max="100.00" min="0.00" step="0.1" required="required">
+    			</div>
+    			
+    			<br>
+    			<fieldset class="form-group">
+			      	<legend>Dog Neutralization</legend>
+			      		<div class="form-check">
+			        		<label class="form-check-label">
+			          		<input type="radio" class="form-check-input" name="dog_ntl_chk" id="dog_ntl_y" value="Y">YES</label>
+			      		</div>
+			      		<div class="form-check">
+			        		<label class="form-check-label">
+			          		<input type="radio" class="form-check-input" name="dog_ntl_chk" id="dog_ntl_n" value="N">NO</label>
+			      		</div>
+    			</fieldset>
+    			
+    			<br>
+    			
+    			<fieldset class="form-group">
+			      	<legend>Dog Aggression</legend>
+			      		<div class="form-check">
+			        		<label class="form-check-label">
+			          		<input type="radio" class="form-check-input" name="dog_agg" id="dog_agg_low" value="LOW">Low</label>
+			      		</div>
+			      		<div class="form-check">
+			        		<label class="form-check-label">
+			          		<input type="radio" class="form-check-input" name="dog_agg" id="dog_agg_medium" value="AVERAGE">Average</label>
+			      		</div>
+			      		<div class="form-check">
+			        		<label class="form-check-label">
+			          		<input type="radio" class="form-check-input" name="dog_agg" id="dog_agg_big" value="HIGH">High</label>
+			      		</div>
+    			</fieldset>
+    			<br>
+    			
+    			<div class="form-group">
+      				<h4><label for="mh">Medical History</label></h4>
+      				<textarea class="form-control" name="dog_md_hst" id="mh" rows="8" placeholder="Write Medical History"></textarea>
+    			</div>
+    			
+    			<br>
+    			
+    			<div class="form-group">
+			      	<h4><label for="picture">Dog Picture</label></h4>
+			      	<input type="file" class="form-control-file" name="dog_image" id="picture" required="required" aria-describedby="fileHelp">
+					 <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input.</small>
+   				</div>
+   				
+   				<br>
+   				<br>
+   				
+   				<div align="center">
+   					<button type="submit" class="btn btn-primary btn-lg">Submit</button>
+   				</div>
+    			
+			</fieldset>
+    	</div>
+	</div>
+</form>
+	<!-- <form action="joinOwner.do" method="post" enctype="multipart/form-data" name="frm">
 		<div class="container">
 			<div class="form_box">
 				<table>
@@ -142,9 +293,9 @@ textarea {
 					</tr>
 
 
-					<!-- title="전화형식 3-3,4-4" : 에러가 발생하면 보여줄 메세지에 추가
+					title="전화형식 3-3,4-4" : 에러가 발생하면 보여줄 메세지에 추가
 	 pattern="\d{3}-\d{3,4}-\d{4}" : 	숫자3-숫자3또는4-숫자4자리
-	 placeholder="010-1111-1111" : 초기화면에 보여주고 데이터 입력하면 사라져라	 -->
+	 placeholder="010-1111-1111" : 초기화면에 보여주고 데이터 입력하면 사라져라	
 					<tr>
 						<th>전화번호</th>
 						<td><input type="tel" name="tel" title="전화형식 3-3,4-4"
@@ -230,6 +381,6 @@ textarea {
 				</table>
 			</div>
 		</div>
-	</form>
+	</form> -->
 </body>
 </html>

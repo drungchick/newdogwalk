@@ -10629,3 +10629,24 @@ div.SelectInnerWrapper {
 	border-radius: 0.4rem;
 	text-align: center;
 }
+
+div.LoginInnerWrapper {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	border: solid 2px white;
+	height: 300px;
+	width: 400px;
+	margin: -150px 0px 0px -200px;
+	border-radius: 0.4rem;
+	text-align: center;
+}
+
+div.JoinWrapper {
+	position: absolute;
+	left: 50%;
+	height: auto;
+	width: 600px;
+	margin: 0px 0px 0px -300px;
+	border: solid 2px white;
+}

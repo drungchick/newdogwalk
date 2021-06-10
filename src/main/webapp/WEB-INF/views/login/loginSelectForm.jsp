@@ -9,16 +9,11 @@
 	<title>Insert title here</title>
 	<!-- css 연결 -->
 	<link rel="stylesheet" href="css/bootstrap.css">
-	<script type="text/javascript">
-		function goBack() {
-			history.back();	
-		}
-	</script>
 </head>
 <body>
 	<div class="SelectOuterWrapper">
 		<div class="SelectInnerWrapper" >
-			<h3 align="center">Select!</h3>
+			<h3 align="center">Login</h3>
 			<br>
 			<br>
 			<button type="button" class="btn btn-primary btn-lg" onclick="location.href='ownLoginForm.do'">Owner</button>
@@ -27,7 +22,8 @@
 		</div>
 	</div>
 	<div align="left">
-		<button type="button" class="btn btn-outline-primary" onclick="goBack();">Back</button>
+		<button type="button" class="btn btn-outline-primary" onclick="location.href='main.do'">Main</button>
+		<button type="button" class="btn btn-primary" onclick="location.href='joinChoice.do'">Join</button>
 	</div>
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
