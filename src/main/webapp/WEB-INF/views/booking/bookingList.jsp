@@ -37,7 +37,7 @@
 							<a href="mbView.do?mbd_no=${booking.mbd_no }&pageNum=${currentPage}">${booking.mbd_sbjt }</a>
 						</td>
 						<td><!-- 도우미 프로필 상세보기 -->
-							<a href="wpView.do?wkr_reg_no=${booking.wkr_reg_no }">${booking.wkr_id }</a>
+							<a href="walkerProfileView.do?wkr_reg_no=${booking.wkr_reg_no }">${booking.wkr_id }</a>
 						</td>
 						<td>
 								<c:choose>
