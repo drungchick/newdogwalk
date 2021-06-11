@@ -23,10 +23,17 @@ OWN_ID		VARCHAR2(20)	견주아이디
 	private String mbd_del;
 	private String own_reg_no;
 	private String own_id;
+	private String dog_no;
 //	private String bk_mc_chk;
 //	private String bk_chk;
 	
-//	public String getBk_mc_chk() {
+public String getDog_no() {
+		return dog_no;
+	}
+	public void setDog_no(String dog_no) {
+		this.dog_no = dog_no;
+	}
+	//	public String getBk_mc_chk() {
 //		return bk_mc_chk;
 //	}
 //	public void setBk_mc_chk(String bk_mc_chk) {

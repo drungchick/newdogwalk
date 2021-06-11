@@ -13,6 +13,7 @@
 		<result property="mbd_del" 		column="mbd_del" />
 		<result property="own_reg_no"    column="own_reg_no" />
 		<result property="own_id" 		column="own_id" />
+		<result property="dog_no" 		column="dog_no" />
 	</resultMap>
 	<select id="list" parameterType="hashMap" resultMap="mboardResult">
 	<!-- a를 ()로 지정해주고 a의 모든 것을 골름.  -->
@@ -25,7 +26,7 @@
 		update mboard set mbd_rd_cnt = mbd_rd_cnt + 1 where mbd_no=#{mbd_no}
 	</update>
 	<select id="select" parameterType="string" resultType="mboard">
-		select * from mboard where mbd_no = #{mbd_no}
+		select * from mboard m, dog g where m.OWN_REG_NO=g.OWN_REG_NO and mbd_no = #{mbd_no}
 	</select>
 	<insert id="insert" parameterType="mboard">
 		insert into mboard(MBD_STR_DT,MBD_FN_DT,MBD_SBJT,MBD_CONT,MBD_RD_CNT,OWN_REG_NO,OWN_ID) 

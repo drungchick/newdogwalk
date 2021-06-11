@@ -38,7 +38,7 @@
 	</tr>
 	<tr>
 		<th colspan="2">
-			<input type="button" value="강아지 프로필" onclick="location.href='dogProfileView.do'">
+			<input type="button" value="강아지 프로필" onclick="location.href='dogProfileView.do?dog_no=${mboard.dog_no}&pageNum=${pageNum}'">
 			<input type="button" value="신청" onclick="location.href='bookingAction.do'">
 			<input type="button" value="내 예약 보기" onclick="location.href='bookingList.do'">
 		</th>
