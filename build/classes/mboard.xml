@@ -21,7 +21,7 @@
 	<select id="total" resultType="int"> 
 		select count(*) from mboard
 	</select>
-	<update id="readcountUpdate" parameterType="integer">
+	<update id="readcountUpdate" parameterType="String">
 		update mboard set mbd_rd_cnt = mbd_rd_cnt + 1 where mbd_no=#{mbd_no}
 	</update>
 	<select id="select" parameterType="string" resultType="mboard">

@@ -64,7 +64,7 @@ public class MBoardDao {
 		// TODO Auto-generated method stub
 		return session.delete("mboardns.delete", mbd_no);
 	}
-	public int readCountUpdate(int mbd_no) {
+	public int readCountUpdate(String mbd_no) {
 		return (int) session.update("mboardns.rcupdate", mbd_no);
 	}
 
