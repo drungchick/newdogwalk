@@ -10650,3 +10650,13 @@ div.JoinWrapper {
 	margin: 0px 0px 0px -300px;
 	border: solid 2px white;
 }
+
+#alert-success {
+	color: blue;
+}
+#alert-danger {
+	color: red;
+}
+#id_check {
+	color: red;
+}

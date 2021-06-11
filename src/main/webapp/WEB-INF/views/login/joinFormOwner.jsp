@@ -57,18 +57,20 @@
       				<h4><label for="id">Owner ID</label></h4>
       				<input type="text" class="form-control" id="id" name="own_id" required="required" autofocus="autofocus">
       				<button type="button" class="btn btn-outline-primary" onclick="idchk()">Check</button>
+      				<div id="id_check"></div>
     			</div>
     			
     			<div class="form-group">
-				    <h4><label for="password">Password</label></h4>
-				    <input type="password" class="form-control" id="password" name="password" required="required" class="passchk">
+				    <h4><label for="pass">Password</label></h4>
+				    <input type="password" class="form-control passchk" id="pass" name="password" required="required">
     			</div>
   
     			<div class="form-group">
 				    <h4><label for="confirmPass">Password(Confirm)</label></h4>
-				    <input type="password" class="form-control" id="confirmPass" name="confirmPass" required="required" class="passchk">
+				    <input type="password" class="form-control passchk" id="confirmPass" name="confirmPass" required="required">
+				    <div class="alert_msg" id="alert-success">비밀번호가 일치합니다.</div>
+					<div class="alert_msg" id="alert-danger">비밀번호가 일치하지 않습니다.</div>
     			</div>
-    			<!-- alert 뭔지 몰라서 못햇어요 -->
     			
     			<div class="form-group">
       				<h4><label for="name">Name</label></h4>
@@ -82,7 +84,7 @@
     			
     			<br>
     			<fieldset class="form-group">
-			      	<legend>Owner Gender</legend>
+			      	<h4>Owner Gender</h4>
 			      		<div class="form-check">
 			        		<label class="form-check-label">
 			          		<input type="radio" class="form-check-input" name="gender" id="male" value="M">Man</label>
@@ -125,7 +127,7 @@
     			
     			<br>
     			<fieldset class="form-group">
-			      	<legend>Dog Gender</legend>
+			      	<h4>Dog Gender</h4>
 			      		<div class="form-check">
 			        		<label class="form-check-label">
 			          		<input type="radio" class="form-check-input" name="dog_gdr" id="dog_male" value="M">Man</label>
@@ -144,7 +146,7 @@
     			
     			<br>
     			<fieldset class="form-group">
-			      	<legend>Dog Size</legend>
+			      	<h4>Dog Size</h4>
 			      		<div class="form-check">
 			        		<label class="form-check-label">
 			          		<input type="radio" class="form-check-input" name="dog_size" id="dog_small" value="SMALL">SMALL</label>
@@ -177,7 +179,7 @@
     			
     			<br>
     			<fieldset class="form-group">
-			      	<legend>Dog Neutralization</legend>
+			      	<h4>Dog Neutralization</h4>
 			      		<div class="form-check">
 			        		<label class="form-check-label">
 			          		<input type="radio" class="form-check-input" name="dog_ntl_chk" id="dog_ntl_y" value="Y">YES</label>
@@ -191,7 +193,7 @@
     			<br>
     			
     			<fieldset class="form-group">
-			      	<legend>Dog Aggression</legend>
+			      	<h4>Dog Aggression</h4>
 			      		<div class="form-check">
 			        		<label class="form-check-label">
 			          		<input type="radio" class="form-check-input" name="dog_agg" id="dog_agg_low" value="LOW">Low</label>
