@@ -5,16 +5,16 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dogwalk.dao.MBoardDao;
-import dogwalk.model.MBoard;
+import dogwalk.dao.WBookingDao;
+import dogwalk.model.WBooking;
 
-public class MBList implements CommandProcess {
+public class WBookingList implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		
 		int rowPerPage = 10;
-		int pagePerBlock = 5;
+		int pagePerBlock = 10;
 		String pageNum = request.getParameter("pageNum");
 		if (pageNum == null || pageNum.equals("")) {
 			pageNum = "1";
@@ -23,9 +23,9 @@ public class MBList implements CommandProcess {
 		int currentPage = Integer.parseInt(pageNum);
 		int startRow = (currentPage - 1) * rowPerPage + 1;
 		int endRow = startRow + rowPerPage - 1;
-		MBoardDao mbd = MBoardDao.getInstance();
-		List<MBoard> list = mbd.list(startRow, endRow);
-		int tot = mbd.total();
+		WBookingDao wbd = WBookingDao.getInstance();
+		List<WBooking> list = wbd.list(startRow, endRow);
+		int tot = wbd.total();
 		int total = tot - startRow + 1;
 		int startPage = currentPage - (currentPage - 1) % 10;
 		int endPage = startPage + pagePerBlock - 1;
@@ -42,7 +42,7 @@ public class MBList implements CommandProcess {
 		request.setAttribute("pagePerBlock", pagePerBlock);
 		request.setAttribute("currentPage", currentPage);
 		
-		return "mboard/mbList";
+		return "wbooking/wbookingList";
 		
 	}
 

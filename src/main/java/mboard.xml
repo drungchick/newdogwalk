@@ -34,6 +34,7 @@
 	<update id="update" parameterType="mboard">
 		update mboard set mbd_sbjt=#{mbd_sbjt}, mbd_str_dt=#{mbd_str_dt}, mbd_fn_dt=#{mbd_fn_dt}, mbd_cont=#{mbd_cont} where mbd_no=#{mbd_no}
 	</update>
+	
 	<update id="delete">
 		update mboard set mbd_del='Y' where mbd_no=#{mbd_no}
 	</update>

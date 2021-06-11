@@ -4,17 +4,10 @@
 <configuration>
 	<properties resource="dbconnect.properties" />
 	<typeAliases>
-<!-- <<<<<<< HEAD -->
- 		<!-- <typeAlias alias="booking" type="dogwalk.model.Booking" />	 -->
-<!-- ======= -->
- 		<typeAlias alias="booking" type="dogwalk.model.Booking" />	
-<!-- >>>>>>> refs/heads/master -->
+ 		<typeAlias alias="booking" type="dogwalk.model.Booking" />
+ 		<typeAlias alias="wbooking" type="dogwalk.model.WBooking" />		
 		<typeAlias alias="dog" type="dogwalk.model.Dog" />
-<!-- <<<<<<< HEAD -->
  		<typeAlias alias="license" type="dogwalk.model.License" />
-<!-- ======= -->
- 		<!-- <typeAlias alias="license" type="dogwalk.model.License" /> -->
-<!-- >>>>>>> refs/heads/master -->
 		<typeAlias alias="manager" type="dogwalk.model.Manager" />
 		<typeAlias alias="mboard" type="dogwalk.model.MBoard" />
 	 	<!-- <typeAlias alias="member" type="dogwalk.model.Member" /> -->
@@ -40,10 +33,8 @@
 		<mapper resource="walker.xml" />
 		<mapper resource="owner.xml" />
 		<mapper resource="manager.xml" />
-<!-- <<<<<<< HEAD -->
 		<mapper resource="license.xml" />
-<!-- ======= -->
 		<mapper resource="booking.xml" />
-<!-- >>>>>>> refs/heads/master -->
+		<mapper resource="wbooking.xml" />
 	</mappers>
 </configuration>

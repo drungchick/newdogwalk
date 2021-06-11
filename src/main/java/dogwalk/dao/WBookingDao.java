@@ -9,14 +9,14 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import dogwalk.model.MBoard;
+import dogwalk.model.WBooking;
 
-public class MBoardDao {
+public class WBookingDao {
 
 	// singleton
-	private static MBoardDao instance = new MBoardDao();
-	private MBoardDao() {}
-	public static MBoardDao getInstance() {
+	private static WBookingDao instance = new WBookingDao();
+	private WBookingDao() {}
+	public static WBookingDao getInstance() {
 		return instance;
 	}
 	private static SqlSession session;
@@ -31,8 +31,9 @@ public class MBoardDao {
 		}
 	}
 	
+	// 워커 전용 게시판 리스트
 	@SuppressWarnings("unchecked")
-	public List<MBoard> list(int startRow, int endRow) {
+	public List<WBooking> list(int startRow, int endRow) {
 		// 파라미터로는 단수개의 정보만 전달 가능
 		// List는 특정틀의 동일한 유형을 가진 정보를 전달 가능 But Array로 집합, 정렬, 배열해야 함
 		// Hash은 다수의 정보 전달 가능. key값으로 해당 정보 더미들 구분
@@ -40,32 +41,12 @@ public class MBoardDao {
 		HashMap<String, Object> hm = new HashMap<>();
 			hm.put("startRow", startRow);
 			hm.put("endRow", endRow);
-		return session.selectList("mboardns.list", hm);
+		return session.selectList("wbookingns.list", hm);
 	}
 	
 	// 게시글 총 개수
 	public int total() {
-		return (int) session.selectOne("mboardns.total");
+		return (int) session.selectOne("bookingns.total");
 	}
 	
-	public MBoard select(String mbd_no) {
-		return (MBoard) session.selectOne("mboardns.select", mbd_no);
-	}
-	
-	public int insert(MBoard mboard) {
-		// TODO Auto-generated method stub
-		return session.insert("mboardns.insert", mboard);
-	}
-	public int update(MBoard mboard) {
-		// TODO Auto-generated method stub
-		return session.update("mboardns.update", mboard);
-	}
-	public int delete(String mbd_no) {
-		// TODO Auto-generated method stub
-		return session.delete("mboardns.delete", mbd_no);
-	}
-	public int readCountUpdate(String mbd_no) {
-		return (int) session.update("mboardns.rcupdate", mbd_no);
-	}
-
 }

@@ -47,12 +47,9 @@
 		update owner set own_pwd=#{own_pwd}, own_name=#{own_name}, own_addr=#{own_addr}, 
 		own_tel=#{own_tel}, own_email=#{own_email} where own_id=#{own_id }
 	</update>
-	
-<!-- <<<<<<< HEAD -->
+
 	<update id="delete" parameterType="string"> <!-- 회원탈퇴 -->
 		update owner set own_del='Y' where own_id=#{own_id}
 	</update>
-	
-<!-- =======
->>>>>>> refs/heads/master -->
+
 </mapper>

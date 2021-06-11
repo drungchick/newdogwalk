@@ -15,6 +15,7 @@ public class BookingAccept implements CommandProcess {
 		String bk_mc_chk = request.getParameter("bk_mc_chk");
 		String bk_chk = request.getParameter("bk_chk");
 		String wkr_reg_no = request.getParameter("wkr_reg_no");
+		String wkr_id = request.getParameter("wkr_id");
 		
 		Booking booking = new Booking();
 		booking.setMbd_no(mbd_no);
