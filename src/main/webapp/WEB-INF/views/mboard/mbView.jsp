@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%-- <%@ include file="sessionChk.jsp" %> --%>
 <!DOCTYPE html>
 <html>
@@ -38,7 +39,8 @@
 	<tr>
 		<th colspan="2">
 			<input type="button" value="강아지 프로필" onclick="location.href='dpView.do'">
-			<input type="button" value="신청" onclick="location.href='applyAction.do'">
+			<input type="button" value="신청" onclick="location.href='bookingAction.do'">
+			<input type="button" value="내 예약 보기" onclick="location.href='bookingList.do'">
 		</th>
 	</tr>
 </table>

@@ -184,8 +184,9 @@ textarea {
 							<td><input type="text" name="lc_cd" required="required"></td>
 							<td><input type="text" name="lc_name" required="required"></td>
 							<td><input type="text" name="lc_iss_ogz" required="required"></td>
-							<td><button id="btnAdd">+</button>
-								<button id="btnDel">-</button></td>						
+							<td><input type="button" id="btnAdd" value="추가">
+								<input type="button" id="btnDel" value="삭제">
+							</td>						
 						</tr>
 					</tbody>
 					<tr>

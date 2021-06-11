@@ -1,12 +1,37 @@
 package dogwalk.model;
 
 public class Booking {
+////<<<<<<< HEAD
+//	private String bk_no;
+//	private String mbd_no;
+//	private String bk_mc_chk;
+//	private String bk_chk;
+//	private String wkr_reg_no;
+//	private String wkr_id;
+////=======
+/*
+BK_NO
+MBD_NO
+BK_MC_CHK
+BK_CHK
+WKR_REG_NO
+WKR_ID
+ */
+	
 	private String bk_no;
 	private String mbd_no;
 	private String bk_mc_chk;
 	private String bk_chk;
 	private String wkr_reg_no;
 	private String wkr_id;
+	private String mbd_sbjt;
+	public String getMbd_sbjt() {
+		return mbd_sbjt;
+	}
+	public void setMbd_sbjt(String mbd_sbjt) {
+		this.mbd_sbjt = mbd_sbjt;
+	}
+//>>>>>>> refs/heads/master
 	public String getBk_no() {
 		return bk_no;
 	}

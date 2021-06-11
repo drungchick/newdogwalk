@@ -13,7 +13,7 @@ MBD_DEL		CHAR(1)			매칭글 삭제
 OWN_REG_NO	VARCHAR2(10)	견주등록번호
 OWN_ID		VARCHAR2(20)	견주아이디
 */
-	private int mbd_no;
+	private String mbd_no;
 	private Date mbd_str_dt;
 	private Date mbd_fn_dt;
 	private String mbd_sbjt;
@@ -23,11 +23,25 @@ OWN_ID		VARCHAR2(20)	견주아이디
 	private String mbd_del;
 	private String own_reg_no;
 	private String own_id;
+//	private String bk_mc_chk;
+//	private String bk_chk;
 	
-	public int getMbd_no() {
+//	public String getBk_mc_chk() {
+//		return bk_mc_chk;
+//	}
+//	public void setBk_mc_chk(String bk_mc_chk) {
+//		this.bk_mc_chk = bk_mc_chk;
+//	}
+//	public String getBk_chk() {
+//		return bk_chk;
+//	}
+//	public void setBk_chk(String bk_chk) {
+//		this.bk_chk = bk_chk;
+//	}
+	public String getMbd_no() {
 		return mbd_no;
 	}
-	public void setMbd_no(int mbd_no) {
+	public void setMbd_no(String mbd_no) {
 		this.mbd_no = mbd_no;
 	}
 	public Date getMbd_str_dt() {

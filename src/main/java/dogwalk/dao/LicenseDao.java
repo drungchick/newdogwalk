@@ -13,6 +13,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 // 자바와 연동할 데이터 모델을 불러오기
 import dogwalk.model.License;
+import dogwalk.model.Owner;
 import dogwalk.model.Walker;
 
 public class LicenseDao {
@@ -59,5 +60,9 @@ public class LicenseDao {
 		HashMap<String, Object> lc_map = new HashMap<>();
 		lc_map.put("wkr_id", wkr_id);
 		return session.selectList("licenseInfo.selectLicense", lc_map);
+	}
+	
+	public License selectLc(String lc_cd) {
+		return (License) session.selectOne("licenseInfo.selectLccd", lc_cd);
 	}
 }

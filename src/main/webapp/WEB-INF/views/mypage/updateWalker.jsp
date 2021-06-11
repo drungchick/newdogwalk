@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:if test="${result_walker >= 0 && result_license >= 0} ">
+<c:if test="${result_walker >= 0 && result_license >= 0}">
 	<script type="text/javascript">
 		alert("회원정보 수정 성공");
 		location.href="Mypage.do";

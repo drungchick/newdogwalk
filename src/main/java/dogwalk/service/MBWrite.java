@@ -14,7 +14,6 @@ public class MBWrite implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
 		MBoard mboard = new MBoard();
-//		int num = Integer.parseInt(request.getParameter("num"));
 		String mbd_sbjt = request.getParameter("mbd_sbjt");
 		String own_id = request.getParameter("own_id");
 		String mbd_cont = request.getParameter("mbd_cont");
@@ -22,7 +21,6 @@ public class MBWrite implements CommandProcess {
 		Date mbd_str_dt = Date.valueOf(request.getParameter("mbd_str_dt"));
 		Date mbd_fn_dt = Date.valueOf(request.getParameter("mbd_fn_dt"));
 		
-//		mboard.setNum(num);
 		mboard.setMbd_sbjt(mbd_sbjt);
 		mboard.setOwn_id(own_id);
 		mboard.setMbd_cont(mbd_cont);

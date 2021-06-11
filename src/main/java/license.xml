@@ -26,4 +26,7 @@
 		resultMap="lcInfoResult">
 		select * from license where wkr_id = #{wkr_id}
 	</select>
+	<select id="selectLccd" parameterType="string" resultType="License">
+		select lc_cd from license where lc_cd = #{lc_cd}
+	</select>
 </mapper>

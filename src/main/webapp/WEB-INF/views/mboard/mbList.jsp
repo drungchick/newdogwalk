@@ -33,17 +33,19 @@
 				<th colspan="5">게시글이 없습니다.</th>
 			</tr>
 		</c:if>
-		
 		<c:if test="${not empty list }">
 			<c:forEach var="mboard" items="${list }">
 				<tr>
-					<td>${mboard.mbd_no }<c:set var="mbd_no" value="${mboard.mbd_no - 1 }"></c:set></td>
-					<c:if test="${mboard.mbd_del == 'Y' }">
+					<td>${mboard.mbd_no }<c:set var="mbd_no" value="${mboard.mbd_no }"></c:set></td>
+					<c:if test="${mboard.mbd_del == 'Y'}">
 						<th colspan="4">삭제된 게시글입니다.</th>
 					</c:if>
+					<%-- <c:if test="${mboard.bk_mc_chk == 'Y' and mboard.bk_chk == 'Y' }">
+						<th colspan="4">매칭이 완료되었습니다.</th>
+					</c:if> --%>
 					<!-- 작성일과 현재날짜 비교 후 2 미만 차이나면 new 아이콘 표시로 바꿀 예정. -->
 					<c:if test="${mboard.mbd_del != 'Y' }">
-						<td title="${mboard.mbd_cont }">
+						<td>
 							<a href="mbView.do?mbd_no=${mboard.mbd_no }&pageNum=${currentPage}">${mboard.mbd_sbjt }</a>
 							<c:if test="${mboard.mbd_rd_cnt < 1 }">
 								<img alt="" src="images/hot.gif">

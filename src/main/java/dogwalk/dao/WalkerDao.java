@@ -58,6 +58,7 @@ public class WalkerDao {
 		hm.put("type", type);
 		hm.put("search", search);
 		return session.selectList("walkerns.searchlist", hm);
+//<<<<<<< HEAD
 	}
 	// 도우미 ID 중복체크 - LJH
 	public Walker selectAll(String wkr_id) {
@@ -82,5 +83,7 @@ public class WalkerDao {
 	// 도우미 회원 탈퇴 - LJH
 	public int deleteWalker(String wkr_id) {
 		return session.update("walkerns.delete", wkr_id);
+//=======
+//>>>>>>> refs/heads/master
 	}
 }

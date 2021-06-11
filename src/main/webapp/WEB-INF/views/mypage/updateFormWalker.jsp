@@ -8,7 +8,14 @@
 <title>Insert title here</title>
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript">
-	$(function () {
+	// 자격증 중복체크
+	function lcchk() {		
+		$.post("confirmLicense.do", "lc_cd=" + updtfrm.lc_cd.value, function(data) {
+			$("#lc_check").html(data);
+		})
+	}
+	
+	$(function () { // 비밀번호 중복 체크
 		$("#alert-success").hide();
 		$("#alert-danger").hide();
 		$(".passchk").keyup(function(){
@@ -27,12 +34,14 @@
 			}
 		});
 	});
-	$(document).ready(function btnAdd() { // 각 입력자 추가
+	$(function() { // 자격증 입력 태그 추가
+		$('#btnAdd').click(function() { // 각 입력자 추가
 			$('#lc_add').append('<tr class="lc_row"><td><input type="text" name="lc_cd"></td><td><input type="text" name="lc_name"></td><td><input type="text" name="lc_iss_ogz"></td></tr>');
-			$(function btnDel() { // 각 입력자 삭제
-				$('.lc_row').last().remove(); 
+		$('#btnDel').on('click', function() { // 각 입력자 삭제
+			$('.lc_row').last().remove();
+			});
 		});
-	});	
+	});
 </script>
 </head>
 <body>
@@ -105,7 +114,7 @@
 		<tr>
 		<tr>
 			<th>양육년수</th>
-			<td colspan="3"><input type="number" name="wkr_rs_cnt" value="${walker.wkr_rs_cnt }" required="required"></td>
+			<td colspan="3"><input type="number" name="wkr_rs_cnt" value="${walker.wkr_rs_cnt }" min="${walker.wkr_rs_cnt }" required="required"></td>
 		<tr>
 		<tr>
 			<th>경력사항</th>
@@ -132,17 +141,21 @@
 				${lc_list.lc_iss_ogz }
 			</td>
 		</tr>
-		</c:forEach>
-		<tr>			
+		</c:forEach>			
 		<tbody id="lc_add">
 		<tr>					
-			<td><input type="text" name="lc_cd"></td>
+			<td><input type="text" name="lc_cd" onkeyup="lcchk()"></td>
 			<td><input type="text" name="lc_name"></td>
 			<td><input type="text" name="lc_iss_ogz"></td>
-			<td colspan="4"><button id="btnAdd" onclick="btnAdd();">추가</button>
-			<button id="btnDel" onclick="btnDel();">삭제</button></td>					
+			<td colspan="4"><input type="button" id="btnAdd" onclick="btnAdd();" value="추가">
+			<input type="button" id="btnDel" onclick="btnDel();" value="삭제"></td>					
 		</tr>
 		</tbody>
+		<tr>
+			<th colspan="4">
+				<div id="lc_check"></div>
+			</th>
+		</tr>
 		<tr>
 			<th colspan="4"><input type="submit" id="submit" value="정보수정 확인">
 			<input type="reset" id="reset" value="정보수정 취소">
