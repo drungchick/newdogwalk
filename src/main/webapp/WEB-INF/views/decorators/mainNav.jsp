@@ -24,17 +24,17 @@
         <a class="nav-link" href="noticeList.do">Notice</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="loginRequest.do">Walk!</a>
+        <a class="nav-link" href="mbList.do">Walk!</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Profile</a>
         <div class="dropdown-menu">
-          <a class="dropdown-item" href="loginRequest.do">Dog</a>
-          <a class="dropdown-item" href="loginRequest.do">Walker</a>
+          <a class="dropdown-item" href="dogProfileList.do">Dog</a>
+          <a class="dropdown-item" href="walkerProfileList.do">Walker</a>
         </div>
       </li>
       <li class="nav-item">
-      	<a class="nav-link" href="loginRequest.do">Reservation</a>
+      	<a class="nav-link" href="loginForm.do">Reservation</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">To Use</a>

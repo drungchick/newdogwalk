@@ -4,13 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="stylesheet" href="css/bootstrap.css">
 <title>Insert title here</title>
 </head>
 <body>
-<footer class="footer">  
-    Copyright Team01 2021
-</footer>
+<script type="text/javascript">
+	alert("이용하시려면 로그인이 필요합니다.");
+	location.href="loginForm.do";
+</script>
 </body>
 </html>

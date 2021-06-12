@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<decorators defaultdir="/WEB-INF/views/decorators">
+	<decorator name="main" page="main.jsp">
+		<pattern>/login/*</pattern> <!-- 로그인 부분 메인-->
+		<pattern>/notice/*</pattern> <!-- Notice 부분 -->
+	</decorator>
+	<!-- <decorator name="member_main" page="mem_main_decorator.jsp">
+		<pattern>/news/*</pattern> news 폴더 안에 있는 경우 news_decorator를 따름
+	</decorator> -->
+	<!-- <excludes> hello, news 안에 있는 경우 안 따라도 됨
+		<pattern>/hello/exclude.jsp</pattern>
+		<pattern>/news/exclude.jsp</pattern>
+	</excludes> -->
+</decorators>
