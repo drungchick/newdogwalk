@@ -10669,4 +10669,7 @@ div.SearchWrapper {
 	background-color: #78c2ad;
 	border-radius: 0.4rem;
 	text-align: center;
+	margin-left: auto;
+  	margin-right: auto;
+  	display: table;
 }

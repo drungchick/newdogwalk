@@ -54,19 +54,21 @@
 				<td>${dog.dog_agg }</td>
 			</tr>
 			<tr align="center">
-      			<th scope="row">Character</th>
+      			<th scope="row" class="align-middle">Character</th>
 		      	<td><textarea rows="10" cols="70" style="border:none;">${dog.dog_chr }</textarea></td>
     		</tr>
     		<tr align="center">
-      			<th scope="row">Medical History</th>
+      			<th scope="row" class="align-middle">Medical History</th>
 		      	<td><textarea rows="10" cols="70" style="border:none;">${dog.dog_md_hst }</textarea></td>
     		</tr>
-    		<tr align="center">
+    		<%-- <tr align="center">
 				<th scope="row">Owner</th>
 				<td><a href="ownerProfileView.do?own_id=${dog.own_id }">${dog.own_id }</a></td>
-			</tr>
+			</tr> --%>
 		</table>
 	</div>
+	
+	<br>
 	
 	<div align="center">
 		<button type="button" class="btn btn-primary btn-lg" onclick="goBack();">Back</button>

@@ -11,8 +11,8 @@ import dogwalk.model.Walker;
 public class WalkerProfileSearchList implements CommandProcess {
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
-		int rowPerPage = 10;
-		int pagePerBlock = 10;
+		int rowPerPage = 9;
+		int pagePerBlock = 5;
 		String pageNum = request.getParameter("pageNum");
 		String type = request.getParameter("type");
 		String search = request.getParameter("search");
@@ -28,13 +28,13 @@ public class WalkerProfileSearchList implements CommandProcess {
 		List<Walker> list = wd.searchlist(startRow, endRow, type, search);
 		int tot = wd.total();
 		int total = tot - startRow + 1;
-		int startPage = currentPage - (currentPage - 1) % 10;
+		int startPage = currentPage - (currentPage - 1) % 5;
 		int endPage = startPage + pagePerBlock - 1;
 		int totPage = (int)Math.ceil((double)tot/rowPerPage);
 		if (endPage > totPage) {
 			endPage = totPage;
 		}
-		String[] tt = {"이름","양육년수","등급"};
+		String[] tt = {"ID","Rearing Period","Grade"};
 		request.setAttribute("total", total);
 		request.setAttribute("list", list);
 		request.setAttribute("startPage", startPage);
