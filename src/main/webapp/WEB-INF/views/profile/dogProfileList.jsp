@@ -12,58 +12,59 @@
 <link rel="stylesheet" href="css/bootstrap.css">
 </head>
 <body>
-	<!-- <div class="container">
-<div align="center">
-	<h3>반려견 검색</h3>
-	<form action="dogProfileList.do">
-	<form action="dogProfileSearchList.do">
-		<fieldset>
-				<select name="type">
-					<option value = "dog_name">이름</option>
-					<option value = "dog_gdr">성별</option>
-					<option value = "dog_age">나이</option>
-				</select>
-				<input type="text" name="search" >
-				<input type="submit" value="검색">
-		</fieldset>
-	</form>
-</div>
-</div> -->
+<div class="container">
+	<h1 align="center">Dog Profile</h1>
+	<br>
+	<div class="SearchWrapper" align="center">
+		<!-- <form action="dogProfileList.do"> -->
+		<form action="dogProfileSearchList.do">
+					<select class="form-control" name="type">
+						<option value = "dog_name">이름</option>
+						<option value = "dog_gdr">성별</option>
+						<option value = "dog_age">나이</option>
+					</select>
+					<input class="form-control" type="text" name="search" >
+					<input class="form-control" type="submit" value="검색">
+		</form>
+	</div>
 
-	<div class="container">
-		<h1 align="center">Dog Profile</h1>
+	<!-- <div class="container"> -->
 		<table class="table table-hover">
 		<br>
 			<c:if test="${empty list }">
-				<tr class="table-danger">
+				<tr class="table-danger" align="center">
 					<td colspan="3">등록된 반려견이 없습니다.</td>
 				</tr>
 			</c:if>
 			<c:if test="${not empty list }">
 				<c:forEach var="dog" items="${list }" varStatus="thumnails">
 					<c:if test="${thumnails.index / 3 == 0 }">
+						<tr align="center">
+						<td>
 						<div class="row">
 					</c:if>
-						<!-- <div class="row"> -->
 							<div class="col-sm-6 col-md-4">
 								<div class="thumbnail">
 									<img src="..." alt="...">
 									<div class="caption">
-										<h3>Thumbnail label</h3>
-										<p>...</p>
+										<h3>${dog.dog_name }</h3>
+										<p>${dog.dog_gdr }/${dog.dog_age }/${dog.dog_kind }</p>
 										<p>
-											<a href="#" class="btn btn-primary" role="button">Button</a>
-											<a href="#" class="btn btn-default" role="button">Button</a>
+											<a href="dogProfileView.do?dog_no=${dog.dog_no }&pageNum=${currentPage}" class="btn btn-primary btn-lg" role="button">Dog</a>
+											<a href="ownerProfileView.do?own_id=${dog.own_id }" class="btn btn-secondary btn-lg" role="button">Owner</a>
 										</p>
 									</div>
 								</div>
 							</div>
 					<c:if test="${thumnails.index / 3 == 3 }">
 						</div>
+						</td>
+						</tr>
 					</c:if>
 				</c:forEach>
 			</c:if>
 		</table>
+		</div>
 		<br>
 		<div align="center" class="pageMiddle">
 		  <ul class="pagination pagination-lg" class="a">
@@ -83,12 +84,9 @@
 		    </li>
 		    </c:if>
 		  </ul>
-		</div>		
+		 </div>
 
-
-
-
-		<%-- 
+	<%-- 
 	<div id="content" align="center">
 		<h3 align="center">Dog Profile</h3>
 		<table class="table table-hover">
@@ -121,6 +119,5 @@
 				</c:forEach>		
 			</c:if>
 		</table> --%>
-	</div>s
 </body>
 </html>
