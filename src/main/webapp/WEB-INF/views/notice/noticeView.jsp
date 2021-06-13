@@ -32,7 +32,7 @@
 		      	<td>${notice.nt_reg_dt }</td>
     		</tr>
     		<tr align="center">
-      			<th class="th" scope="row">Content</th>
+      			<th class="align-middle" scope="row">Content</th>
 		      	<td><textarea rows="10" cols="70" style="border:none;">${notice.nt_reg_dt }</textarea></td>
     		</tr>
 		</table>

@@ -156,13 +156,13 @@
     			</div>
     			
     			<div class="form-group">
-      				<h4><label for="re">Rearing Experience</label></h4>
-      				<textarea class="form-control" name="wkr_rs_ex" id="re" rows="8" placeholder="Rearing Experience"></textarea>
+      				<h4><label for="rp">Rearing Period(Year)</label></h4>
+      				<input type="number" class="form-control" id="rp" name="wkr_rs_cnt" max="100" min="0" required="required">
     			</div>
     			
     			<div class="form-group">
-      				<h4><label for="rp">Rearing Period(Year)</label></h4>
-      				<input type="number" class="form-control" id="rp" name="wkr_rs_cnt" max="100" min="0" required="required">
+      				<h4><label for="re">Rearing Experience</label></h4>
+      				<textarea class="form-control" name="wkr_rs_ex" id="re" rows="8" placeholder="Rearing Experience"></textarea>
     			</div>
     			
     			<div class="form-group">

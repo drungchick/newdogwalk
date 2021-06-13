@@ -11,8 +11,8 @@ import dogwalk.model.Walker;
 public class WalkerProfileList implements CommandProcess {
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
-		int rowPerPage = 10;
-		int pagePerBlock = 10;
+		int rowPerPage = 9;
+		int pagePerBlock = 5;
 		String pageNum = request.getParameter("pageNum");
 		if (pageNum == null || pageNum.equals("")) {
 			pageNum = "1";
@@ -25,7 +25,7 @@ public class WalkerProfileList implements CommandProcess {
 		List<Walker> list = wd.list(startRow, endRow);
 		int tot = wd.total();
 		int total = tot - startRow + 1;
-		int startPage = currentPage - (currentPage - 1) % 10;
+		int startPage = currentPage - (currentPage - 1) % 5;
 		int endPage = startPage + pagePerBlock - 1;
 		int totPage = (int)Math.ceil((double)tot/rowPerPage);
 		if (endPage > totPage) {
