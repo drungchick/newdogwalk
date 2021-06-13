@@ -15,7 +15,7 @@ public class MypageDog implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response)
 			throws UnsupportedEncodingException {
 		HttpSession session = request.getSession();
-		String own_id = (String) session.getAttribute("id");
+		String own_id = (String) session.getAttribute("own_id");
 		
 		DogDao dd = DogDao.getInstance();
 		Dog dog = dd.selectDog(own_id); // 견주 id로 강아지 정보를 모두 찾아옴

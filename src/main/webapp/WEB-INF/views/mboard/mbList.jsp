@@ -79,7 +79,8 @@
 </div>
 <div align="center"><br>
 	<!-- <button onclick="location.href='mbWriteForm.do?mbd_no=0&pageNum=1'">글쓰기</button> -->
-	<button onclick="location.href='mbWriteForm.do?'">글쓰기</button>
+	<!-- <button onclick="location.href='mbWriteForm.do?'">글쓰기</button> -->
+	<button onclick="location.href='mbWriteCheck.do?mb_clf_cd=${sessionScope.mb_clf_cd }'">글쓰기</button>
 	<button onclick="location.href='main.do'">메인화면</button>
 </div>
 </body>

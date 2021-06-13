@@ -22,7 +22,7 @@
 		<tr>
 			<th>제목</th>
 			<td>
-				<input type="text" name="mbd_sbjt" required="required" value="${mboard.mbd_sbjt }">
+				<input type="text" name="mbd_sbjt" required="required" value="${mboard.mbd_sbjt }" readonly="readonly">
 			</td>
 		</tr>
 		<tr>
@@ -40,7 +40,7 @@
 		<tr>
 			<th>내용</th>
 			<td>
-				<input type="text" name="mbd_cont" required="required" value="${mboard.mbd_cont }">
+				<textarea name="mbd_cont" required="required">${mboard.mbd_cont }</textarea>
 			</td>
 		</tr>
 		<tr>

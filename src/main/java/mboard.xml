@@ -30,7 +30,7 @@
 	</select>
 	<insert id="insert" parameterType="mboard">
 		insert into mboard(MBD_STR_DT,MBD_FN_DT,MBD_SBJT,MBD_CONT,MBD_RD_CNT,OWN_REG_NO,OWN_ID) 
-		values(#{mbd_str_dt},#{mbd_fn_dt},#{mbd_sbjt},#{mbd_cont},1, 1, #{own_id})
+		values(#{mbd_str_dt},#{mbd_fn_dt},#{mbd_sbjt},#{mbd_cont},1, #{own_reg_no}, #{own_id})
 	</insert>
 	<update id="update" parameterType="mboard">
 		update mboard set mbd_sbjt=#{mbd_sbjt}, mbd_str_dt=#{mbd_str_dt}, mbd_fn_dt=#{mbd_fn_dt}, mbd_cont=#{mbd_cont} where mbd_no=#{mbd_no}

@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dogwalk.dao.MBoardDao;
 import dogwalk.model.MBoard;
@@ -12,6 +13,12 @@ public class MBList implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
+		
+		HttpSession session = request.getSession();
+		String mb_clf_cd = (String) session.getAttribute("mb_clf_cd");
+		String own_id = (String) session.getAttribute("id");
+		session.setAttribute("own_id", own_id);
+		session.setAttribute("mb_clf_cd", mb_clf_cd);
 		
 		int rowPerPage = 10;
 		int pagePerBlock = 10;

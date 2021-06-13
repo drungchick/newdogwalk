@@ -11,7 +11,7 @@ public class OwnLoginAction implements CommandProcess {
 		String own_pwd = request.getParameter("own_pwd");
 		OwnerDao od = OwnerDao.getInstance();
 		Owner owner = od.selectOwner(own_id);
-		String mb_clf_cd = "1";		
+		String mb_clf_cd = "1"; // mb_clf_cd는 null 값으로 오류 발생 때문에 사전에 정의		
 		
 		int result = 0;
 		if (owner == null || owner.getOwn_del().equals("Y")) {
@@ -21,7 +21,7 @@ public class OwnLoginAction implements CommandProcess {
 			if(dbPass.equals(own_pwd)) {
 				HttpSession session = request.getSession();
 				session.setAttribute("id", own_id);
-				
+				session.setAttribute("own_reg_no", owner.getOwn_reg_no());
 				// 세션 구분을 위한 mb_clf_cd를 보내줌
 				session.setAttribute("mb_clf_cd", mb_clf_cd);
 				

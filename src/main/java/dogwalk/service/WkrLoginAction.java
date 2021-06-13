@@ -11,7 +11,7 @@ public class WkrLoginAction implements CommandProcess {
 		String wkr_pwd = request.getParameter("wkr_pwd");
 		WalkerDao wd = WalkerDao.getInstance();
 		Walker walker = wd.selectWalker(wkr_id);
-		String mb_clf_cd = "2";
+		String mb_clf_cd = "2"; // mb_clf_cd는 null 값으로 오류 발생 때문에 사전에 정의
 		
 		int result = 0;
 		if (walker == null|| walker.getWkr_del().equals("Y")) {
@@ -21,6 +21,7 @@ public class WkrLoginAction implements CommandProcess {
 			if(dbPass.equals(wkr_pwd)) {
 				HttpSession session = request.getSession();
 				session.setAttribute("id", wkr_id);
+				session.setAttribute("wkr_reg_no", walker.getWkr_reg_no());
 				// 세션 구분을 위한 mb_clf_cd를 보내줌
 				session.setAttribute("mb_clf_cd", mb_clf_cd);			
 				

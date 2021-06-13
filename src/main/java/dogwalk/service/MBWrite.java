@@ -13,23 +13,32 @@ public class MBWrite implements CommandProcess {
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
-		MBoard mboard = new MBoard();
+//		폼에서 입력한 데이터 갖고 오기
+//		String mbd_no = request.getParameter("mbd_no");
+		/*String str_dt = request.getParameter("mbd_str_dt");*/
+		Date mbd_str_dt = Date.valueOf(request.getParameter("mbd_str_dt")); // 수정
+		/* String fn_dt = request.getParameter("mbd_fn_dt"); */
+		Date mbd_fn_dt = Date.valueOf(request.getParameter("mbd_fn_dt")); // 수정
 		String mbd_sbjt = request.getParameter("mbd_sbjt");
-		String own_id = request.getParameter("own_id");
 		String mbd_cont = request.getParameter("mbd_cont");
-		/* String pageNum = request.getParameter("pageNum"); */
-		Date mbd_str_dt = Date.valueOf(request.getParameter("mbd_str_dt"));
-		Date mbd_fn_dt = Date.valueOf(request.getParameter("mbd_fn_dt"));
+		String own_id = request.getParameter("own_id");
+		String own_reg_no = request.getParameter("own_reg_no"); // 추가
+//		String pageNum = request.getParameter("pageNum");	//Write에서 무의미
 		
-		mboard.setMbd_sbjt(mbd_sbjt);
-		mboard.setOwn_id(own_id);
-		mboard.setMbd_cont(mbd_cont);
+		MBoard mboard = new MBoard();
 		mboard.setMbd_str_dt(mbd_str_dt);
 		mboard.setMbd_fn_dt(mbd_fn_dt);
+		mboard.setMbd_sbjt(mbd_sbjt);
+		mboard.setMbd_cont(mbd_cont);
+		mboard.setOwn_id(own_id);
+		mboard.setOwn_reg_no(own_reg_no);
+//		mboard.setMbd_rd_cnt(mbd_rd_cnt);
+//		mboard.setMbd_no(mbd_no);
 		MBoardDao mbd = MBoardDao.getInstance();
 		int result = mbd.insert(mboard);
 		
 		request.setAttribute("result", result);
+//		request.setAttribute("pageNum", pageNum);
 		return "mboard/mbWrite";
 	}
 

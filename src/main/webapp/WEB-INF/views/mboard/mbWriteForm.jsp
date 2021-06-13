@@ -10,22 +10,21 @@
 </head>
 <body>
 <form action="mbWrite.do" method="post" name="frm">
-<input type="hidden" name="mbd_no" value="${mboard.mbd_no}">
-<%-- <input type="hidden" name="own_id" value="${member.own_id}"> --%>
-<input type="hidden" name="own_id" value="TEST">
-<input type="hidden" name="pageNum" value="${pageNum}">
+<%-- <input type="hidden" name="mbd_no" value="${mbd_no}"> --%><!-- 작성시에 mbd_no 필요x -->
+<input type="hidden" name="own_id" value="${own_id}">
+<input type="hidden" name="own_reg_no" value="${own_reg_no}"> <!-- 추가 -->
+<%-- <input type="hidden" name="pageNum" value="${pageNum}"> --%>
+
 	<table>
 		<caption>산책 요청 작성</caption>
 		<!-- 작성자, 작성자 등록일은 히든으로 받아서 넘길 예정. -->
-		<tr>
+		<%-- <tr>
 			<th>작성자</th>
-			<%-- <td>${mboard.own_id }</td> --%>
-			<td>
+			<td>${own_id }</td>
+			<!-- <td>
 				<input type="text" name="own_id" required="required">
-			</td>
-			<td>TEST</td>
-
-		</tr>
+			</td> -->
+		</tr> --%>
 		<tr>
 			<th>제목</th>
 			<td>
