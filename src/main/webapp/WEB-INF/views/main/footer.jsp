@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<footer class="fixed-bottom">  
+<footer class="footerCustom">  
     Copyright Team01 2021
 </footer>
 </body>

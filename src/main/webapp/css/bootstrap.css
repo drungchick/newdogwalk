@@ -10673,3 +10673,14 @@ div.SearchWrapper {
   	margin-right: auto;
   	display: table;
 }
+
+.footerCustom {
+   width:100%;
+   height:40px;
+   position:absolute;
+   bottom:0;
+   background:#55b298;
+   text-align: center;
+   color: white;
+   font-size: 14pt;
+}
