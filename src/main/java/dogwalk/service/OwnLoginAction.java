@@ -20,7 +20,7 @@ public class OwnLoginAction implements CommandProcess {
 			String dbPass = owner.getOwn_pwd();
 			if(dbPass.equals(own_pwd)) {
 				HttpSession session = request.getSession();
-				session.setAttribute("id", own_id);
+				session.setAttribute("own_id", own_id);
 				session.setAttribute("own_reg_no", owner.getOwn_reg_no());
 				// 세션 구분을 위한 mb_clf_cd를 보내줌
 				session.setAttribute("mb_clf_cd", mb_clf_cd);

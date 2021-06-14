@@ -9,13 +9,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<!-- <footer class="footer">  
-  <span>
+<footer class="footer">  
     Copyright Team01 2021
-  </span>  
-</footer> -->
-<footer class="container-fluid navbar-fixed-bottom">
-	Copyright Team01 2021
 </footer>
 </body>
 </html>

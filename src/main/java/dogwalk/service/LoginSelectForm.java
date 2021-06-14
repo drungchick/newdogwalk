@@ -4,6 +4,6 @@ import javax.servlet.http.HttpServletResponse;
 public class LoginSelectForm implements CommandProcess {
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
-		return "login/loginSelectForm";
+		return "/login/loginSelectForm";
 	}
 }

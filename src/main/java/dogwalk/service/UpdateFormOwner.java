@@ -17,7 +17,7 @@ public class UpdateFormOwner implements CommandProcess {
 			throws UnsupportedEncodingException {
 		
 		HttpSession session = request.getSession();
-		String own_id = (String)session.getAttribute("id");
+		String own_id = (String)session.getAttribute("own_id");
 		
 		OwnerDao od = OwnerDao.getInstance();
 		Owner owner = od.selectOwner(own_id);

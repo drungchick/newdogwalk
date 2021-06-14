@@ -19,7 +19,7 @@ public class UpdateFormWalker implements CommandProcess {
 			throws UnsupportedEncodingException {
 		
 		HttpSession session = request.getSession();
-		String wkr_id = (String)session.getAttribute("id");		
+		String wkr_id = (String)session.getAttribute("wkr_id");		
 		
 		WalkerDao wd = WalkerDao.getInstance();
 		Walker walker = wd.selectWalker(wkr_id);
