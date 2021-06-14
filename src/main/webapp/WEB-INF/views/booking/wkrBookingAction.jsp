@@ -10,13 +10,15 @@
 <body>
 	<c:if test="${result > 0}">
 		<script type="text/javascript">
-			alert("거절 성공");
-			location.href = "bookingList.do";
+			alert("신청 성공");
+			/* location.href = "bookingList.do"; */
+			/* location.href = "mbWalkerView.do?mbd_no=${mbd_no }"; */
+			location.href = "mbWalkerView.do?mbd_no=${mbd_no }&wkr_reg_no=${sessionScope.wkr_reg_no }&wkr_id=${sessionScope.wkr_id }";
 		</script>
 	</c:if>
 	<c:if test="${result == 0}">
 		<script type="text/javascript">
-			alert('거절 실패');
+			alert('신청 실패');
 			history.go(-1);
 		</script>
 	</c:if>

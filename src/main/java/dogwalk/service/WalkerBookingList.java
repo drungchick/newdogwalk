@@ -4,22 +4,14 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import dogwalk.dao.MBoardDao;
-import dogwalk.model.MBoard;
+import dogwalk.dao.BookingDao;
+import dogwalk.model.Booking;
 
-public class MBList implements CommandProcess {
+public class WalkerBookingList implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
-		
-//		HttpSession session = request.getSession();
-//		String mb_clf_cd = (String) session.getAttribute("mb_clf_cd");
-//		String own_id = (String) session.getAttribute("id");
-//		session.setAttribute("own_id", own_id);
-//		session.setAttribute("mb_clf_cd", mb_clf_cd);
-		
 		int rowPerPage = 10;
 		int pagePerBlock = 10;
 		String pageNum = request.getParameter("pageNum");
@@ -30,9 +22,11 @@ public class MBList implements CommandProcess {
 		int currentPage = Integer.parseInt(pageNum);
 		int startRow = (currentPage - 1) * rowPerPage + 1;
 		int endRow = startRow + rowPerPage - 1;
-		MBoardDao mbd = MBoardDao.getInstance();
-		List<MBoard> list = mbd.list(startRow, endRow);
-		int tot = mbd.total();
+		String wkr_id = request.getParameter("wkr_id");
+		String wkr_reg_no = request.getParameter("wkr_reg_no");
+		BookingDao bd = BookingDao.getInstance();
+		List<Booking> wkrlist = bd.wkrlist(startRow, endRow, wkr_id, wkr_reg_no);
+		int tot = bd.total();
 		int total = tot - startRow + 1;
 		int startPage = currentPage - (currentPage - 1) % 10;
 		int endPage = startPage + pagePerBlock - 1;
@@ -42,15 +36,14 @@ public class MBList implements CommandProcess {
 		}
 		
 		request.setAttribute("total", total);
-		request.setAttribute("list", list);
+		request.setAttribute("wkrlist", wkrlist);
 		request.setAttribute("startPage", startPage);
 		request.setAttribute("endPage", endPage);
 		request.setAttribute("totPage", totPage);
 		request.setAttribute("pagePerBlock", pagePerBlock);
 		request.setAttribute("currentPage", currentPage);
 		
-		return "mboard/mbList";
-		
+		return "booking/walkerBookingList";
 	}
 
 }

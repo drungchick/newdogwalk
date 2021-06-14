@@ -43,6 +43,15 @@ public class BookingDao {
 		return session.selectList("bookingns.list", hm);
 	}
 	
+	/*
+	 * @SuppressWarnings("unchecked") public List<Booking> wkrlist(int startRow, int
+	 * endRow) { // 파라미터로는 단수개의 정보만 전달 가능 // List는 특정틀의 동일한 유형을 가진 정보를 전달 가능 But
+	 * Array로 집합, 정렬, 배열해야 함 // Hash은 다수의 정보 전달 가능. key값으로 해당 정보 더미들 구분 // key값은
+	 * 문자열로 받고, 정보값은 문자와 숫자 모두로 받을 수 있게 Object로 지정 HashMap<String, Object> hm = new
+	 * HashMap<>(); hm.put("startRow", startRow); hm.put("endRow", endRow); return
+	 * session.selectList("bookingns.wkrlist", hm); }
+	 */
+	
 	// 게시글 총 개수
 	public int total() {
 		return (int) session.selectOne("bookingns.total");
@@ -54,7 +63,7 @@ public class BookingDao {
 	
 	public int insert(Booking booking) {
 		// TODO Auto-generated method stub
-		return session.insert("bookingns.insert", booking);
+		return (int) session.insert("bookingns.insert", booking);
 	}
 	public int accept(Booking booking) {
 		// TODO Auto-generated method stub
@@ -65,6 +74,21 @@ public class BookingDao {
 		// TODO Auto-generated method stub
 		return session.update("bookingns.deny", booking);
 	}
-	
+	public List<Booking> ownlist(int startRow, int endRow, String own_id, String own_reg_no) {
+			HashMap<String, Object> hm = new HashMap<>();
+			hm.put("startRow", startRow);
+			hm.put("endRow", endRow);
+			hm.put("own_id", own_id);
+			hm.put("own_reg_no", own_reg_no);
+		return session.selectList("bookingns.ownlist", hm);
+	}
+	public List<Booking> wkrlist(int startRow, int endRow, String wkr_id, String wkr_reg_no) {
+		HashMap<String, Object> hm = new HashMap<>();
+		hm.put("startRow", startRow);
+		hm.put("endRow", endRow);
+		hm.put("wkr_id", wkr_id);
+		hm.put("wkr_reg_no", wkr_reg_no);
+	return session.selectList("bookingns.wkrlist", hm);
+	}
 
 }

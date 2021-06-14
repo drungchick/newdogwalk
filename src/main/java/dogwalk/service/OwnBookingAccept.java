@@ -1,10 +1,12 @@
 package dogwalk.service;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import dogwalk.dao.BookingDao;
 import dogwalk.model.Booking;
 
-public class BookingDeny implements CommandProcess {
+public class OwnBookingAccept implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
@@ -21,9 +23,9 @@ public class BookingDeny implements CommandProcess {
 		booking.setBk_chk(bk_chk);
 		booking.setWkr_reg_no(wkr_reg_no);
 		BookingDao bd = BookingDao.getInstance();
-		int result = bd.deny(booking);
+		int result = bd.accept(booking);
 		request.setAttribute("result", result);
-		return "booking/bookingDeny";
+		return "booking/bookingAccept";
 	}
 
 }

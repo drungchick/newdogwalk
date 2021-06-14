@@ -1,23 +1,8 @@
 package dogwalk.model;
 
+import java.sql.Date;
+
 public class Booking {
-////<<<<<<< HEAD
-//	private String bk_no;
-//	private String mbd_no;
-//	private String bk_mc_chk;
-//	private String bk_chk;
-//	private String wkr_reg_no;
-//	private String wkr_id;
-////=======
-/*
-BK_NO
-MBD_NO
-BK_MC_CHK
-BK_CHK
-WKR_REG_NO
-WKR_ID
- */
-	
 	private String bk_no;
 	private String mbd_no;
 	private String bk_mc_chk;
@@ -25,13 +10,27 @@ WKR_ID
 	private String wkr_reg_no;
 	private String wkr_id;
 	private String mbd_sbjt;
+	private Date mbd_reg_dt;
+	private String own_id;
+	
+	public Date getMbd_reg_dt() {
+		return mbd_reg_dt;
+	}
+	public void setMbd_reg_dt(Date mbd_reg_dt) {
+		this.mbd_reg_dt = mbd_reg_dt;
+	}
+	public String getOwn_id() {
+		return own_id;
+	}
+	public void setOwn_id(String own_id) {
+		this.own_id = own_id;
+	}
 	public String getMbd_sbjt() {
 		return mbd_sbjt;
 	}
 	public void setMbd_sbjt(String mbd_sbjt) {
 		this.mbd_sbjt = mbd_sbjt;
 	}
-//>>>>>>> refs/heads/master
 	public String getBk_no() {
 		return bk_no;
 	}
