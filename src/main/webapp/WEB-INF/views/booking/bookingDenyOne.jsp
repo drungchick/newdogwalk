@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<c:if test="${result > 0}">
+<c:if test="${result > 0}">
 		<script type="text/javascript">
 			location.href = "mbOwnerView.do?mbd_no=${mbd_no}";
 		</script>
