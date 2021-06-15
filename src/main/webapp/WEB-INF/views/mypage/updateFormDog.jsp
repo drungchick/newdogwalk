@@ -24,12 +24,12 @@
 	<br>
 	<form action="updateDog.do" method="post" name="updtfrm" method="post">
 		<table>
+			<caption>반려견 정보</caption>
 			<tr>
 				<td colspan="2">
-				<img src="/dogimg/${dog.dog_pht_nm }" width="500" height="300">
+				<img src="/Dogwalk/dogimg/${dog.dog_pht_nm }" alt="${dog.dog_pht_nm }"  width="400" height="400">
 				</td>
 			</tr>
-			<caption>반려견 정보</caption>
 			<tr>
 				<th>반려견 이름</th>
 				<td><input type="text" name="dog_name" value="${dog.dog_name}"

@@ -115,7 +115,7 @@
 					</c:if>
 					<div class="col-sm-6 col-md-4">
 						<div class="thumbnail">
-							<img src="..." alt="...">
+							<img src="/Dogwalk/walkerimg/${walker.wkr_pht_nm }" width="300" height="350" alt="${walker.wkr_pht_nm}">
 							<div class="caption">
 								<h3>${walker.wkr_id }</h3>
 								<p>${walker.wkr_name }/${walker.wkr_rs_cnt }/${walker.wkr_gd }</p>

@@ -46,7 +46,7 @@
 					</c:if>
 					<div class="col-sm-6 col-md-4">
 						<div class="thumbnail">
-							<img src="..." alt="...">
+							<img src="/Dogwalk/dogimg/${dog.dog_pht_nm }" width="300" height="350" alt="${dog.dog_pht_nm}">
 							<div class="caption">
 								<h3>${dog.dog_name }</h3>
 								<p>${dog.dog_gdr }/${dog.dog_age }/${dog.dog_kind }</p>

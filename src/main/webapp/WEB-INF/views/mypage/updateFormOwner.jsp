@@ -57,7 +57,7 @@ $(function () {
 		</tr>
 		<tr>
 			<th>이름</th>
-			<td><input type="text" name="own_name" value="${owner.own_name }" required="required">
+			<td><input type="text" name="own_name" value="${owner.own_name }" readonly="readonly">
 		</tr>
 		<tr>
 			<th>생년월일</th>

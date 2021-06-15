@@ -51,7 +51,7 @@
 		<caption>회원정보</caption>
 		<tr>
 			<td colspan="4">
-			<img src="/walkerimg/ ${walker.wkr_pht_nm }" width="500" height="300">
+			<img src="/Dogwalk/walkerimg/${walker.wkr_pht_nm }" alt="${walker.wkr_pht_nm}"  width="400" height="400">
 			</td>
 		</tr>
 		<tr>
