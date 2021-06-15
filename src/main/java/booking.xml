@@ -54,10 +54,12 @@
 		bk_chk='Y')) set bk_chk='N' where bk_mc_chk='N'
 	</update>
 
-	<select id="ownlist" parameterType="hashMap" resultMap="bookingResult">
-		select * from (select a.*, rowNum rn from (select * from where order by nt_reg_dt desc) a)
-		where rn between #{startRow} and #{endRow}
-	</select>
+	<select id="ownlist" parameterType="hashMap" resultMap="bookingResult2">
+      select * from (select rowNum rn, e.* from (select b.bk_no, b.mbd_no, m.mbd_sbjt,
+               b.wkr_id, b.wkr_reg_no, b.bk_mc_chk, b.bk_chk, m.own_id, m.mbd_reg_dt
+      from booking b, mboard m where b.mbd_no=m.mbd_no and m.own_id=#{own_id} order by bk_no desc) e)
+      where rn between #{startRow} and ${endRow}
+   </select>
 	
 	<select id="wkrlist" parameterType="hashMap" resultMap="bookingResult2">
 	select * from (select rowNum rn, e.* from (select b.bk_no, b.mbd_no, m.mbd_sbjt, b.wkr_id, b.wkr_reg_no, b.bk_mc_chk, b.bk_chk, m.own_id, m.mbd_reg_dt from booking b, mboard m where b.mbd_no=m.mbd_no and b.wkr_id=#{wkr_id} order by bk_no desc) e)
