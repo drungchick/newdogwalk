@@ -43,8 +43,9 @@
 						<td>
 								<c:choose>
 									<c:when test="${booking.bk_mc_chk == 'N' and booking.bk_chk == 'Y'}">
-										<button type="button" onclick="location.href='OwnBookingAccept.do?bk_no=${booking.bk_no}&mbd_no=${booking.mbd_no }'">수락</button>
-										<button type="button" onclick="location.href='bookingDenyOne.do?bk_no=${booking.bk_no}'">거절</button>
+										<%-- <button type="button" onclick="location.href='OwnBookingAccept.do?bk_no=${booking.bk_no}&mbd_no=${booking.mbd_no }'">수락</button>
+										<button type="button" onclick="location.href='bookingDenyOne.do?bk_no=${booking.bk_no}'">거절</button> --%>
+										매칭 진행중
 									</c:when>
 									<c:when test="${booking.bk_mc_chk == 'Y' and booking.bk_chk == 'Y' }">
 										매칭 성공

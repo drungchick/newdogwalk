@@ -32,6 +32,7 @@ public class BookingDeny implements CommandProcess {
 		 * BookingDao bd = BookingDao.getInstance(); int result = bd.deny(booking);
 		 */
 		request.setAttribute("result", result);
+		request.setAttribute("mbd_no", mbd_no);
 		return "booking/bookingDeny";
 	}
 

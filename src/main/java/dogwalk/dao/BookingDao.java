@@ -93,5 +93,11 @@ public class BookingDao {
 		hm.put("wkr_reg_no", wkr_reg_no);
 	return session.selectList("bookingns.wkrlist", hm);
 	}
+	public List<Booking> bklist(String mbd_no) {
+		return session.selectList("bookingns.bklist", mbd_no);
+	}
+	public int denyOne(String bk_no) {
+		return session.update("bookingns.denyOne", bk_no);
+	}
 
 }
