@@ -12,7 +12,7 @@
 	<c:if test="${result > 0 }">
 		<script type="text/javascript">
 			alert("수락 성공!");
-			location.href="bookingDeny.do";
+			location.href="BookingDeny.do?bk_no=${bk_no }&mbd_no=${mbd_no }";
 		</script>
 	</c:if>
 	<c:if test="${result == 0 }">

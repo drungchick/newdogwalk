@@ -25,13 +25,13 @@
 	</resultMap>
 
 	<select id="list" parameterType="hashMap"
-		resultMap="bookingResult">
-		select * from (select rowNum rn, e.* from (select b.bk_no,
-		b.mbd_no, m.mbd_sbjt, b.wkr_id, b.bk_mc_chk, b.bk_chk, b.wkr_reg_no
-		from booking b,
-		mboard m where b.mbd_no=m.mbd_no order by mbd_no desc, bk_no desc) e)
-		where rn between #{startRow} and #{endRow}
-	</select>
+      resultMap="bookingResult">
+      <!-- a를 ()로 지정해주고 a의 모든 것을 골름. -->
+      select * from (select rowNum rn, e.* from (select b.bk_no, b.mbd_no,
+      m.mbd_sbjt, b.wkr_id, b.bk_mc_chk, b.bk_chk from booking b, mboard m
+      where b.mbd_no=m.mbd_no order by bk_no desc) e)
+      where rn between #{startRow} and ${endRow}
+   </select>
 
 	<insert id="insert" parameterType="booking">
 		insert into booking(mbd_no,
@@ -45,25 +45,41 @@
 
 	<update id="accept" parameterType="booking">
 		update booking set
-		bk_mc_chk='Y', bk_chk='Y' where bk_no=#{bk_no}
+		bk_mc_chk='Y' where bk_no=#{bk_no}
 	</update>
 
-	<update id="deny" parameterType="booking">
+	<!-- <update id="deny" parameterType="booking">
 		update (select * from booking
 		where mbd_no in (select mbd_no from booking where bk_mc_chk='Y' and
 		bk_chk='Y')) set bk_chk='N' where bk_mc_chk='N'
-	</update>
+	</update> -->
+	<update id="deny" parameterType="booking">
+      update booking set
+      bk_mc_chk='N', bk_chk='N' where mbd_no=#{mbd_no} and bk_no!=#{bk_no}
+   </update>
 
-	<select id="ownlist" parameterType="hashMap" resultMap="bookingResult2">
+	<select id="ownlist" parameterType="hashMap"
+      resultMap="bookingResult2">
       select * from (select rowNum rn, e.* from (select b.bk_no, b.mbd_no, m.mbd_sbjt,
                b.wkr_id, b.wkr_reg_no, b.bk_mc_chk, b.bk_chk, m.own_id, m.mbd_reg_dt
-      from booking b, mboard m where b.mbd_no=m.mbd_no and m.own_id=#{own_id} order by bk_no desc) e)
+      from booking b, mboard m
+      where b.mbd_no=m.mbd_no and m.own_id=#{own_id} order by bk_no desc) e)
       where rn between #{startRow} and ${endRow}
    </select>
 	
-	<select id="wkrlist" parameterType="hashMap" resultMap="bookingResult2">
-	select * from (select rowNum rn, e.* from (select b.bk_no, b.mbd_no, m.mbd_sbjt, b.wkr_id, b.wkr_reg_no, b.bk_mc_chk, b.bk_chk, m.own_id, m.mbd_reg_dt from booking b, mboard m where b.mbd_no=m.mbd_no and b.wkr_id=#{wkr_id} order by bk_no desc) e)
-	where rn between #{startRow} and ${endRow}
-	</select>
+	<select id="wkrlist" parameterType="hashMap"
+      resultMap="bookingResult2">
+      select * from (select rowNum rn, e.* from (select b.bk_no, b.mbd_no,
+      m.mbd_sbjt, b.wkr_id, b.wkr_reg_no, b.bk_mc_chk, b.bk_chk, m.own_id,
+      m.mbd_reg_dt from
+      booking b, mboard m
+      where b.mbd_no=m.mbd_no and b.wkr_id=#{wkr_id} order by bk_no desc) e)
+      where rn between #{startRow} and ${endRow}
+
+
+      <!-- select * from (select a.*, rowNum rn from ( select * from booking 
+         where wkr_reg_no=#{wkr_reg_no } and wkr_id=#{wkr_id} order by bk_no desc) 
+         a) where rn between #{startRow} and #{endRow} -->
+   </select>
 
 </mapper>
