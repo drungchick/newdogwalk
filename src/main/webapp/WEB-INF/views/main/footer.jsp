@@ -10,7 +10,7 @@
 </head>
 <body>
 <footer class="footerCustom">  
-    Copyright Team01 2021
+ Copyright Team01 Mid-Project 2021
 </footer>
 </body>
 </html>

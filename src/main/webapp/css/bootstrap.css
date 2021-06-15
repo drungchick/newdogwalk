@@ -65,7 +65,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1rem;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 3;
   color: #888;
   text-align: left;
   background-color: #fff;
@@ -203,6 +203,7 @@ figure {
 img {
   vertical-align: middle;
   border-style: none;
+  border-radius: 8rem;
 }
 
 svg {
@@ -10679,8 +10680,17 @@ div.SearchWrapper {
    height:40px;
    position:absolute;
    bottom:0;
-   background:#55b298;
+   background:#78c2ad;
    text-align: center;
    color: white;
    font-size: 14pt;
+}
+
+div.MypageWrapper {
+	position: absolute;
+	left: 50%;
+	height: auto;
+	width: 600px;
+	margin: 0px 0px 0px -300px;
+	border: solid 2px white;
 }
