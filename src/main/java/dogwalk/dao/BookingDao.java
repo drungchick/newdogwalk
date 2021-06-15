@@ -70,10 +70,13 @@ public class BookingDao {
 		return session.update("bookingns.accept", booking);
 	}
 	
-	public int deny(Booking booking) {
-		// TODO Auto-generated method stub
-		return session.update("bookingns.deny", booking);
-	}
+	public int deny(String mbd_no, String bk_no) {
+	      HashMap<String, Object> hm = new HashMap<>();
+	      hm.put("mbd_no", mbd_no);
+	      hm.put("bk_no", bk_no);
+	      return session.update("bookingns.deny", hm);
+	   }
+	
 	public List<Booking> ownlist(int startRow, int endRow, String own_id, String own_reg_no) {
 			HashMap<String, Object> hm = new HashMap<>();
 			hm.put("startRow", startRow);

@@ -20,6 +20,7 @@ public class MBWriteCheck implements CommandProcess {
 		 * String own_reg_no = (String) request.getAttribute("own_reg_no");
 		 */
 		
+		
 		int result = 0;
 		if(mb_clf_cd.equals("1")) {
 			result = 1;

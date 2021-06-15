@@ -24,6 +24,7 @@ public class WalkerBookingList implements CommandProcess {
 		int endRow = startRow + rowPerPage - 1;
 		String wkr_id = request.getParameter("wkr_id");
 		String wkr_reg_no = request.getParameter("wkr_reg_no");
+		
 		BookingDao bd = BookingDao.getInstance();
 		List<Booking> wkrlist = bd.wkrlist(startRow, endRow, wkr_id, wkr_reg_no);
 		int tot = bd.total();

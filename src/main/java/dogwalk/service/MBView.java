@@ -11,14 +11,7 @@ public class MBView implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
-//		// TODO Auto-generated method stub
-//		String mbd_no = request.getParameter("mbd_no");
-//		MBoardDao mbd = MBoardDao.getInstance();
-//		MBoard mboard = mbd.select(mbd_no);
-//		int result = mbd.readCountUpdate(mbd_no);
-//		request.setAttribute("mboard", mboard);
-//		return "mboard/mbView";
-		
+		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
 		String mb_clf_cd = (String)session.getAttribute("mb_clf_cd");
 		int result = 0;
