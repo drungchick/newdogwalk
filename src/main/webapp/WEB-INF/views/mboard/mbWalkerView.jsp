@@ -37,7 +37,7 @@
 	</tr>
 	<tr>
 		<th colspan="2">
-			<input type="button" value="강아지 프로필" onclick="location.href='#'">
+			<input type="button" value="강아지 프로필" onclick="location.href='mbDogProfileView.do?own_id=${mboard.own_id }'">
 			<input type="button" value="신청" onclick="location.href='WkrBookingAction.do?mbd_no=${mboard.mbd_no }&wkr_reg_no=${wkr_reg_no }&wkr_id=${wkr_id }'">
 			<%-- <input type="button" value="신청" onclick="location.href='bookingAction.do?mbd_no=${mboard.mbd_no }&wkr_reg_no=${sessionScope.wkr_reg_no }&wkr_id=${sessionScope.wkr_id }'"> --%>
 		</th>
