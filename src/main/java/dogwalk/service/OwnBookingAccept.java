@@ -19,25 +19,40 @@ public class OwnBookingAccept implements CommandProcess {
 		 * request.getParameter("wkr_reg_no");
 		 */
 		
-		Booking booking = new Booking();
-		booking.setBk_no(bk_no);
 		BookingDao bd = BookingDao.getInstance();
-		int result = bd.accept(booking);
-		request.setAttribute("bk_no", bk_no);
-		request.setAttribute("mbd_no", mbd_no);
+		int bkcount = bd.bkcount(mbd_no);
+		System.out.println(bkcount);
 		
-		request.setAttribute("result", result);
-		
-		
-		
-		/*
-		 * Booking booking = new Booking(); booking.setMbd_no(mbd_no);
-		 * booking.setBk_no(bk_no); booking.setBk_mc_chk(bk_mc_chk);
-		 * booking.setBk_chk(bk_chk); booking.setWkr_reg_no(wkr_reg_no); BookingDao bd =
-		 * BookingDao.getInstance(); int result = bd.accept(booking);
-		 * request.setAttribute("result", result);
-		 */
-		return "booking/bookingAccept";
+		if (bkcount == 1) {
+			Booking booking = new Booking();
+			booking.setBk_no(bk_no);
+	//		BookingDao bd = BookingDao.getInstance();
+			int result = bd.acceptOne(booking);
+			request.setAttribute("bk_no", bk_no);
+			request.setAttribute("mbd_no", mbd_no);
+			request.setAttribute("result", result);
+			
+			return "booking/bookingAcceptOne";
+					
+		} else {
+			Booking booking = new Booking();
+			booking.setBk_no(bk_no);
+	//		BookingDao bd = BookingDao.getInstance();
+			int result = bd.accept(booking);
+			request.setAttribute("bk_no", bk_no);
+			request.setAttribute("mbd_no", mbd_no);
+			request.setAttribute("result", result);
+			
+			
+			
+			/*
+			 * Booking booking = new Booking(); booking.setMbd_no(mbd_no);
+			 * booking.setBk_no(bk_no); booking.setBk_mc_chk(bk_mc_chk);
+			 * booking.setBk_chk(bk_chk); booking.setWkr_reg_no(wkr_reg_no); BookingDao bd =
+			 * BookingDao.getInstance(); int result = bd.accept(booking);
+			 * request.setAttribute("result", result);
+			 */
+			return "booking/bookingAccept";
+		}
 	}
-
 }

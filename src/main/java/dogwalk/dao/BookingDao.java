@@ -112,5 +112,11 @@ public class BookingDao {
 	public int accheck(String mbd_no) { // 매칭완료글 신청못하게
 		return (int) session.selectOne("bookingns.accheck", mbd_no);
 	}
+	public int bkcount(String mbd_no) {
+		return (int) session.selectOne("bookingns.bkcount", mbd_no);
+	}
+	public int acceptOne(Booking booking) {
+		return session.update("bookingns.acceptOne", booking);
+	}
 
 }

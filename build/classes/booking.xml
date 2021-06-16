@@ -103,4 +103,13 @@
 	<select id="accheck" resultType="integer">
 		select count(*) from booking where mbd_no=#{mbd_no } and bk_mc_chk='Y' and bk_chk='Y'
 	</select> <!-- 오류나면 지워 -->
+	
+	<select id="bkcount" resultType="integer">
+		select count(*) from booking where mbd_no=#{mbd_no }
+	</select> <!-- 오류나면 지워 -->
+	
+	<update id="acceptOne" parameterType="booking">
+		update booking set
+		bk_mc_chk='Y', bk_chk='Y' where bk_no=#{bk_no}
+	</update>
 </mapper>
