@@ -84,7 +84,7 @@
     			
     			<br>
     			<fieldset class="form-group">
-			      	<h4>Owner Gender</h4>
+			      	<h4>Gender</h4>
 			      		<div class="form-check">
 			        		<label class="form-check-label">
 			          		<input type="radio" class="form-check-input" name="gender" id="male" value="M">Man</label>

@@ -12,6 +12,12 @@
 <!-- jquery 경로 지정 주의!!! -->
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript">
+	// 자격증 중복체크
+	function lcchk() {		
+		$.post("confirmLicense.do", "lc_cd=" + frm.lc_cd.value, function(data) {
+			$("#lc_check").html(data);
+		})
+	}
 	// ID 중복 체크기능
 	function idchk() {
 		if (!frm.wkr_id.value) {
@@ -48,7 +54,7 @@
 	// jquery 적용한 버튼 추가 기능
 	$(function() {
 		$('#btnAdd').click(function() { // 각 입력자 추가
-			$('#lc_add').append('<tr class="lc_row"><td><input type="text" class="form-control" name="lc_cd" required="required"></td><td><input type="text" class="form-control" name="lc_name" required="required"></td><td><input type="text" class="form-control" name="lc_iss_ogz" required="required"></td></tr>');
+			$('#lc_add').append('<tr class="lc_row"><td><input type="text" class="form-control" name="lc_cd" required="required" onkeyup="lcchk()"></td><td><input type="text" class="form-control" name="lc_name" required="required"></td><td><input type="text" class="form-control" name="lc_iss_ogz" required="required"></td></tr>');
 		$('#btnDel').on('click', function() { // 각 입력자 삭제
 			$('.lc_row').last().remove();
 			});
@@ -94,7 +100,7 @@
     			
     			<br>
     			<fieldset class="form-group">
-			      	<h4>Owner Gender</h4>
+			      	<h4>Gender</h4>
 			      		<div class="form-check">
 			        		<label class="form-check-label">
 			          		<input type="radio" class="form-check-input" name="gender" id="male" value="M">Man</label>
@@ -136,7 +142,7 @@
   						<tbody id="lc_add">
   							<tr align="center">
 							    <td>
-							    	<input type="text" class="form-control" name="lc_cd" required="required">
+							    	<input type="text" class="form-control" name="lc_cd" required="required" onkeyup="lcchk()">
 							    </td>
 							    <td>
 							    	<input type="text" class="form-control" name="lc_name" required="required">
@@ -152,6 +158,11 @@
 							    </td>
    							</tr>
   						</tbody>
+  						<tr>
+							<th colspan="4">
+							<div id="lc_check"></div>
+							</th>
+						</tr>
   					</table>
     			</div>
     			
