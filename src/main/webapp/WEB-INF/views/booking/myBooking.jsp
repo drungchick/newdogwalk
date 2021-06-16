@@ -10,12 +10,12 @@
 <body>
 	<c:if test="${result == 1 }">
 	<script type="text/javascript">
-		location.href="ownerBookingList.do?own_id=${own_id }&own_reg_no=${own_reg_no }";
+		location.href="ownerBookingList.do?own_id=${own_id }&own_reg_no=${own_reg_no }&pageNum=${pageNum}";
 	</script>
 </c:if>
 <c:if test="${result == 2 }">
 	<script type="text/javascript">
-		location.href="walkerBookingList.do?wkr_id=${wkr_id }&wkr_reg_no=${wkr_reg_no }";	
+		location.href="walkerBookingList.do?wkr_id=${wkr_id }&wkr_reg_no=${wkr_reg_no }&pageNum=${pageNum}";	
 	</script>
 </c:if>
 <c:if test="${result != 1 && result != 2 }">

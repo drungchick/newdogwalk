@@ -71,5 +71,10 @@ public class DogDao {
 	public int updateDog(Dog dog) {
 		return session.update("dogns.updateDog", dog);
 	}
+
+	// 매칭게시판에서 게시글에서 강아지 프로필 볼때 사용하는 로직
+	public Dog selectbmbdog(String own_id) {
+		return (Dog) session.selectOne("dogns.selectmbdog", own_id);
+	}
 	
 }

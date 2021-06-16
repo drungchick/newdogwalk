@@ -43,14 +43,15 @@
 
 
 			<tr>
-				<th colspan="2"><input type="button" value="강아지 프로필"
-					onclick="location.href='dpView.do'"></th>
+				<th colspan="2"><input type="button" value="강아지 프로필" onclick="location.href='mbDogProfileView.do?own_id=${mboard.own_id }'"></th>
 			</tr>
 
 		</table>
 		</div>
 		
 		<div>
+		
+		<c:if test="${mboard.own_id == sessionScope.own_id }">
 		<table>
 			<h3>예약 신청자</h3>
 			<tr>
@@ -61,7 +62,7 @@
 			
 			<c:if test="${empty booking }">
 			<tr>
-				<th colspan="3">게시글이 없습니다.</th>
+				<th colspan="3">신청자가 없습니다.</th>
 			</tr>
 			</c:if>
 			
@@ -69,7 +70,7 @@
 				<c:forEach var="bookinglist" items="${booking }">
 					<tr>
 						<td>${bookinglist.bk_no }</td>
-						<td><a href="walkerProfileView.do?wkr_reg_no='${bookinglist.wkr_reg_no }'">${bookinglist.wkr_id }</a></td>
+						<td><a href="walkerProfileView.do?wkr_reg_no=${bookinglist.wkr_reg_no }">${bookinglist.wkr_id }</a></td>
 						<td>
 	                        <c:choose>
 	                           <c:when test="${bookinglist.bk_mc_chk == 'N' and bookinglist.bk_chk == 'Y'}">
@@ -88,12 +89,16 @@
 				</c:forEach>
 			</c:if>
 		</table>
+		</c:if>
 		</div>
 		
 		<div align="center">
-			<a href="mbList.do">매칭게시판</a> <a
-				href="mbUpdateForm.do?mbd_no=${mboard.mbd_no }&pageNum=${pageNum}">내용수정</a>
-
+			<a href="mbList.do">매칭게시판</a>
+		
+		<c:if test="${mboard.own_id == sessionScope.own_id }">
+			<a href="mbUpdateForm.do?mbd_no=${mboard.mbd_no }&pageNum=${pageNum} onclick=">내용수정</a>
+		</c:if>
+		
 			<a href="mbDelete.do?mbd_no=${mboard.mbd_no }">요청삭제</a> <a
 				href="logout.do">로그아웃</a>
 		</div>

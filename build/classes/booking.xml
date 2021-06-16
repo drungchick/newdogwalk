@@ -62,14 +62,14 @@
       update booking set bk_chk='N' where bk_no = #{bk_no}
    </update>
 
-	<select id="ownlist" parameterType="hashMap"
+	<!-- <select id="ownlist" parameterType="hashMap"
       resultMap="bookingResult2">
       select * from (select rowNum rn, e.* from (select b.bk_no, b.mbd_no, m.mbd_sbjt,
                b.wkr_id, b.wkr_reg_no, b.bk_mc_chk, b.bk_chk, m.own_id, m.mbd_reg_dt
       from booking b, mboard m
       where b.mbd_no=m.mbd_no and m.own_id=#{own_id} order by bk_no desc) e)
       where rn between #{startRow} and ${endRow}
-   </select>
+   </select> -->
 	
 	<select id="wkrlist" parameterType="hashMap"
       resultMap="bookingResult2">
@@ -95,5 +95,21 @@
       where rn between #{startRow} and ${endRow} -->
       select * from booking where mbd_no=#{mbd_no }
    </select>
+   
+   <select id="selectbk" resultType="integer">
+		select count(*) from booking where mbd_no=#{mbd_no } and wkr_id=#{wkr_id }
+	</select> <!-- 오류나면 지워 -->
 
+	<select id="accheck" resultType="integer">
+		select count(*) from booking where mbd_no=#{mbd_no } and bk_mc_chk='Y' and bk_chk='Y'
+	</select> <!-- 오류나면 지워 -->
+	
+	<select id="bkcount" resultType="integer">
+		select count(*) from booking where mbd_no=#{mbd_no }
+	</select> <!-- 오류나면 지워 -->
+	
+	<update id="acceptOne" parameterType="booking">
+		update booking set
+		bk_mc_chk='Y', bk_chk='Y' where bk_no=#{bk_no}
+	</update>
 </mapper>

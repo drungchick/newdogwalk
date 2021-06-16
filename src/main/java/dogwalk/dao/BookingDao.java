@@ -77,14 +77,14 @@ public class BookingDao {
 	      return session.update("bookingns.deny", hm);
 	   }
 	
-	public List<Booking> ownlist(int startRow, int endRow, String own_id, String own_reg_no) {
-			HashMap<String, Object> hm = new HashMap<>();
-			hm.put("startRow", startRow);
-			hm.put("endRow", endRow);
-			hm.put("own_id", own_id);
-			hm.put("own_reg_no", own_reg_no);
-		return session.selectList("bookingns.ownlist", hm);
-	}
+		/*
+		 * public List<Booking> ownlist(int startRow, int endRow, String own_id, String
+		 * own_reg_no) { HashMap<String, Object> hm = new HashMap<>();
+		 * hm.put("startRow", startRow); hm.put("endRow", endRow); hm.put("own_id",
+		 * own_id); hm.put("own_reg_no", own_reg_no); return
+		 * session.selectList("bookingns.ownlist", hm); }
+		 */
+	
 	public List<Booking> wkrlist(int startRow, int endRow, String wkr_id, String wkr_reg_no) {
 		HashMap<String, Object> hm = new HashMap<>();
 		hm.put("startRow", startRow);
@@ -93,11 +93,30 @@ public class BookingDao {
 		hm.put("wkr_reg_no", wkr_reg_no);
 	return session.selectList("bookingns.wkrlist", hm);
 	}
+	
 	public List<Booking> bklist(String mbd_no) {
 		return session.selectList("bookingns.bklist", mbd_no);
 	}
+	
 	public int denyOne(String bk_no) {
 		return session.update("bookingns.denyOne", bk_no);
+	}
+	
+	public int bkcheck(String mbd_no, String wkr_id) { // 중복신청 안되게
+		HashMap<String, Object> hm = new HashMap<>();
+	      hm.put("mbd_no", mbd_no);
+	      hm.put("wkr_id", wkr_id);
+		return (int) session.selectOne("bookingns.selectbk", hm);
+	}
+	
+	public int accheck(String mbd_no) { // 매칭완료글 신청못하게
+		return (int) session.selectOne("bookingns.accheck", mbd_no);
+	}
+	public int bkcount(String mbd_no) {
+		return (int) session.selectOne("bookingns.bkcount", mbd_no);
+	}
+	public int acceptOne(Booking booking) {
+		return session.update("bookingns.acceptOne", booking);
 	}
 
 }

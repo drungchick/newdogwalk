@@ -57,5 +57,9 @@
 		dog_ntl_chk=#{dog_ntl_chk}, dog_agg=#{dog_agg}, dog_md_hst=#{dog_md_hst, jdbcType=VARCHAR}
 		where dog_no=#{dog_no}
 	</update>
+	
+	<select id="selectmbdog" parameterType="string" resultType="dog">
+		select * from dog where own_id=#{own_id }
+	</select>
 
 </mapper>

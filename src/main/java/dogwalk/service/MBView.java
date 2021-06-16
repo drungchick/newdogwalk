@@ -15,6 +15,7 @@ public class MBView implements CommandProcess {
 		HttpSession session = request.getSession();
 		String mb_clf_cd = (String)session.getAttribute("mb_clf_cd");
 		int result = 0;
+		int readcount = 0;
 		if(mb_clf_cd.equals("1")) {
 			result = 1;
 		} else {
@@ -25,7 +26,8 @@ public class MBView implements CommandProcess {
 		/* int mbd_no = Integer.parseInt(request.getParameter("mbd_no")); */
 		String mbd_no = request.getParameter("mbd_no");
 		
-		System.out.println(mbd_no);
+		MBoardDao md = MBoardDao.getInstance();
+		readcount = md.readCountUpdate(mbd_no);
 		/*
 		 * MBoardDao mbd = MBoardDao.getInstance(); MBoard mboard = mbd.select(mbd_no);
 		 * request.setAttribute("mboard", mboard);

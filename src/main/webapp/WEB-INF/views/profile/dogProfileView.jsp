@@ -61,10 +61,10 @@
       			<th scope="row" class="align-middle">Medical History</th>
 		      	<td><textarea rows="10" cols="70" style="border:none;">${dog.dog_md_hst }</textarea></td>
     		</tr>
-    		<%-- <tr align="center">
+    		<tr align="center">
 				<th scope="row">Owner</th>
 				<td><a href="ownerProfileView.do?own_id=${dog.own_id }">${dog.own_id }</a></td>
-			</tr> --%>
+			</tr>
 		</table>
 	</div>
 	
