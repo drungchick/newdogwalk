@@ -102,11 +102,15 @@ public class BookingDao {
 		return session.update("bookingns.denyOne", bk_no);
 	}
 	
-	public int bkcheck(String mbd_no, String wkr_id) { // 오류나면 지워
+	public int bkcheck(String mbd_no, String wkr_id) { // 중복신청 안되게
 		HashMap<String, Object> hm = new HashMap<>();
 	      hm.put("mbd_no", mbd_no);
 	      hm.put("wkr_id", wkr_id);
 		return (int) session.selectOne("bookingns.selectbk", hm);
+	}
+	
+	public int accheck(String mbd_no) { // 매칭완료글 신청못하게
+		return (int) session.selectOne("bookingns.accheck", mbd_no);
 	}
 
 }
