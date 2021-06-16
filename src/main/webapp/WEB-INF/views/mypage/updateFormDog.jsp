@@ -5,7 +5,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>반려견 정보 수정</title>
+<!-- css 연결 -->
+<link rel="stylesheet" href="css/bootstrap.css">
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript">
 	$(function() { // 반려견이 중성화한 상태인 경우 'N' 라디오버튼 비활성화
@@ -18,12 +22,87 @@
 
 </head>
 <body>
+<form action="updateDog.do" method="post" name="updtfrm" method="post">
 	<a href="Mypage.do">견주회원 정보</a>
-	<br>
-	<a href="#">회원탈퇴</a>
-	<br>
-	<form action="updateDog.do" method="post" name="updtfrm" method="post">
-		<table>
+	<a href="deleteOwner.do">회원탈퇴</a><br>
+	<div class="container">
+		<div id="content" align="center">
+		<br>
+		<table class="table table-striped">
+			<tr align="center">
+				<th scope="row" colspan="2">
+				<img src="/Dogwalk/dogimg/${dog.dog_pht_nm }" alt="${dog.dog_pht_nm }"  width="400" height="400" >
+				</th>
+			</tr>
+			<tr align="center">
+				<th scope="row">Dog Name</th>
+				<td><input class="form-control" type="text" name="dog_name" value="${dog.dog_name}" readonly="readonly">
+			</tr>
+			<tr align="center">
+				<th scope="row">Dog Gender</th>
+				<c:if test="${dog.dog_gdr eq 'M' }">
+				<td align="left">Male</td>
+				</c:if>
+				<c:if test="${dog.dog_gdr eq 'F' }">
+				<td align="left">Female</td>
+				</c:if>
+			</tr>
+			<tr align="center">
+				<th scope="row">Dog Kind</th>
+				<td align="left">${dog.dog_kind}</td>
+			</tr>
+			<tr align="center">
+				<th scope="row">Dog Age</th>
+				<td><input class="form-control" type="number" name="dog_age" required="required"
+					max="50" min="${dog.dog_age }"></td>
+			</tr>
+			<tr align="center">
+				<th scope="row">Dog Length(Meter)</th>
+				<td><input class="form-control" type="number" name="dog_len" required="required"
+					max="3.00" min="${dog.dog_len }" step="0.01"></td>
+			</tr>
+			<tr align="center">
+				<th scope="row">Dog Weight(Kg)</th>
+				<td><input class="form-control" type="number" name="dog_wgt" required="required"
+					max="100.00" min="0.0" step="0.1"></td>
+			</tr>
+			<tr align="center">
+				<th scope="row">Dog Neutralization</th>
+				<td>				
+					<input type="radio" id="dog_ntl_y" name="dog_ntl_chk" value="Y" required="required"> 
+					<label for="dog_ntl_y" >YES</label>		
+					<input type="radio" id="dog_ntl_n" name="dog_ntl_chk" value="N" required="required"> 
+					<label for="dog_ntl_n" >NO</label>
+				</td>
+			</tr>
+			<tr align="center">
+				<th scope="row">Dog Aggression</th>
+				<td>						
+					<input type="radio" id="dog_agg_low" name="dog_agg" value="LOW" required="required"> 
+					<label for="dog_agg_low" >Low</label>
+					<input type="radio" id="dog_agg_average" name="dog_agg" value="AVERAGE" required="required">
+					<label for="dog_agg_average" >Average</label>					
+					<input type="radio" id="dog_agg_high" name="dog_agg" value="HIGH" required="required">
+					<label for="dog_agg_high" >High</label>
+				</td>
+			</tr>
+			<tr align="center">
+				<th scope="row">Medical History</th>
+				<td><textarea class="form-control" name="dog_md_hst">${dog.dog_md_hst }</textarea></td>
+			</tr>						
+		</table>		
+		</div>
+		<br>
+		<div align="center">
+			<button type="submit" class="btn btn-primary btn-lg" id="submit">Submit</button>
+			<button type="reset" class="btn btn-primary btn-lg" onclick="history.go(-1)">Cancel</button>
+		</div>
+	</div>
+</form>
+</body>
+</html>
+
+<%-- <table>
 			<caption>반려견 정보</caption>
 			<tr>
 				<td colspan="2">
@@ -91,7 +170,4 @@
 			<tr>
 				<th colspan="2"><input type="submit" value="정보수정 확인"></th>
 			</tr>
-		</table>
-	</form>
-</body>
-</html>
+		</table> --%>

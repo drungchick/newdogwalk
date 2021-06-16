@@ -5,20 +5,75 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Insert title here</title>
+<!-- css 연결 -->
+<link rel="stylesheet" href="css/bootstrap.css">
 </head>
 <body>
 <a href="MypageDog.do">반려견 정보</a><br>
 <a href="deleteOwner.do">회원탈퇴</a><br>
-	<table>
+<div class="container">
+	<div id="content" align="center">
+	<h1 align="center">회원정보</h1>
+	<br>
+	<table class="table table-striped">
+		<tr align="center">
+			<th scope="row">ID</th>
+			<td><input class="form-control" type="text" name="own_id" value="${owner.own_id }" readonly="readonly">
+			</td>
+		</tr>
+		<tr align="center">
+			<th scope="row">Name</th>
+			<td><input class="form-control" type="text" name="own_name" value="${owner.own_name }" readonly="readonly">
+			</td> 
+		</tr>
+		<tr align="center">
+			<th scope="row">Brithday</th>
+			<td id="own_bth_dt" align="left">${owner.own_bth_dt }</td>
+		</tr>
+		<tr align="center">
+			<th scope="row">Gender</th>
+			<c:if test="${owner.own_gdr eq 'M' }">
+				<td align="left">Male</td>
+			</c:if>
+			<c:if test="${owner.own_gdr eq 'F' }">
+				<td align="left">Female</td>
+			</c:if>
+		</tr>
+		<tr align="center">
+			<th scope="row">Address</th>
+			<td><input class="form-control" type="text" name="own_addr" value="${owner.own_addr }" readonly="readonly" >
+			</td>
+		</tr>
+		<tr align="center">
+			<th scope="row">Tel</th>
+			<td><input class="form-control" type="tel" name="own_tel" value="${owner.own_tel }" readonly="readonly"></td>
+		</tr>
+		<tr align="center">
+			<th scope="row">E-mail</th>
+			<td><input class="form-control" type="email" name="own_email" value="${owner.own_email }" readonly="readonly"></td>
+		</tr>
+	</table>
+	</div>
+	<br>	
+	<div align="center">
+		<button type="button" class="btn btn-primary btn-lg" onclick ="location.href = 'updateFormOwner.do'" >정보 수정</button>
+	</div>	
+</div>
+</body>
+</html>
+<%-- 	<table>
 		<caption>회원정보</caption>
 		<tr>
 			<th>아이디</th>
-			<td><input type="text" name="own_id" value="${owner.own_id }" readonly="readonly">
+			<td><input type="text" name="own_id" value="${owner.own_id }" readonly="readonly"></td>
 		</tr>
+	
 		<tr>
 			<th>이름</th>
-			<td><input type="text" name="own_name" value="${owner.own_name }" readonly="readonly">
+			<td><input type="text" name="own_name" value="${owner.own_name }" readonly="readonly"></td>
 		</tr>
 		<tr>
 			<th>생년월일</th>
@@ -53,6 +108,4 @@
 		<tr>
 			<th colspan="3"><button onclick ="location.href = 'updateFormOwner.do'" >정보 수정</button></th>
 		</tr>
-	</table>
-</body>
-</html>
+	</table> --%>

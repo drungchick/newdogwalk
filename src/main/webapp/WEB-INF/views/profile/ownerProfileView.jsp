@@ -17,7 +17,7 @@
 </head>
 <body>
 <div class="container">
-	<div id="content align="center>
+	<div id="content" align="center">
 		<h1 align="center">${owner.own_id } Profile</h1>
 		<br>
 		<table class="table table-striped">
