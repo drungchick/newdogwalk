@@ -51,4 +51,9 @@
 	<update id="rcupdate" parameterType="string">
 		update mboard set mbd_rd_cnt = mbd_rd_cnt + 1 where mbd_no=#{mbd_no }
 	</update>
+	
+	<select id="ownlist" parameterType="hashMap" resultMap="mboardResult">
+	<!-- a를 ()로 지정해주고 a의 모든 것을 골름.  -->
+		select * from (select rowNum rn, e.* from (select * from mboard where own_id=#{own_id} and own_reg_no=#{own_reg_no} order by mbd_no desc) e) where rn between #{startRow} and #{endRow}
+	</select>
 </mapper>

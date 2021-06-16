@@ -67,5 +67,13 @@ public class MBoardDao {
 	public int readCountUpdate(String mbd_no) {
 		return (int) session.update("mboardns.rcupdate", mbd_no);
 	}
+	public List<MBoard> ownlist(int startRow, int endRow, String own_id, String own_reg_no) {
+			HashMap<String, Object> hm = new HashMap<>();
+			hm.put("startRow", startRow);
+			hm.put("endRow", endRow);
+			hm.put("own_id", own_id);
+			hm.put("own_reg_no", own_reg_no);
+		return session.selectList("mboardns.ownlist", hm);
+	}
 
 }

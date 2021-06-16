@@ -70,7 +70,7 @@
 				<c:forEach var="bookinglist" items="${booking }">
 					<tr>
 						<td>${bookinglist.bk_no }</td>
-						<td><a href="walkerProfileView.do?wkr_reg_no='${bookinglist.wkr_reg_no }'">${bookinglist.wkr_id }</a></td>
+						<td><a href="walkerProfileView.do?wkr_reg_no=${bookinglist.wkr_reg_no }">${bookinglist.wkr_id }</a></td>
 						<td>
 	                        <c:choose>
 	                           <c:when test="${bookinglist.bk_mc_chk == 'N' and bookinglist.bk_chk == 'Y'}">

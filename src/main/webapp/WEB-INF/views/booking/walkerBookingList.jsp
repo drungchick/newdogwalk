@@ -55,7 +55,7 @@
 									<c:when test="${booking.bk_mc_chk == 'Y' and booking.bk_chk == 'Y' }">
 										매칭 성공
 									</c:when>
-									<c:when test="${booking.bk_mc_chk == 'Y' and booking.bk_chk == 'N' }">
+									<c:when test="${booking.bk_mc_chk == 'N' and booking.bk_chk == 'N' }">
 										거절
 									</c:when>
 									<c:otherwise>${booking.bk_mc_chk}, ${booking.bk_chk}</c:otherwise>
@@ -68,13 +68,13 @@
 <!-- 페이징 -->	
 <div align="center"><br>
 	<c:if test="${startPage > PAGE_PER_BLOCK}">
-		<button onclick="location.href='bookingList.do?pageNum=${startPage - 1}'">이전</button>	
+		<button onclick="location.href='MyBooking.do?pageNum=${startPage - 1}'">이전</button>	
 	</c:if>
 	<c:forEach var="i" begin="${startPage }" end="${endPage }">
-		<button onclick="location.href='bookingList.do?pageNum=${i}'">${i }</button>
+		<button onclick="location.href='MyBooking.do?pageNum=${i}'">${i }</button>
 	</c:forEach>
 	<c:if test="${startPage< totalPage}">
-		<button onclick="location.href='bookingList.do?pageNum=${endPage + 1 }'">다음</button>	
+		<button onclick="location.href='MyBooking.do?pageNum=${endPage + 1 }'">다음</button>	
 	</c:if>
 </div>
 <div align="center"><br>
