@@ -46,13 +46,13 @@
 <!-- 페이징 -->	
 <div align="center"><br>
 	<c:if test="${startPage > PAGE_PER_BLOCK}">
-		<button onclick="location.href='bookingList.do?pageNum=${startPage - 1}'">이전</button>	
+		<button onclick="location.href='MyBooking.do?pageNum=${startPage - 1}'">이전</button>	
 	</c:if>
 	<c:forEach var="i" begin="${startPage }" end="${endPage }">
-		<button onclick="location.href='bookingList.do?pageNum=${i}'">${i }</button>
+		<button onclick="location.href='MyBooking.do?pageNum=${i}'">${i }</button>
 	</c:forEach>
 	<c:if test="${startPage< totalPage}">
-		<button onclick="location.href='bookingList.do?pageNum=${endPage + 1 }'">다음</button>	
+		<button onclick="location.href='MyBooking.do?pageNum=${endPage + 1 }'">다음</button>	
 	</c:if>
 </div>
 <div align="center"><br>
