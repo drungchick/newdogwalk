@@ -10,13 +10,14 @@
 	<title>Insert title here</title>
 	<!-- css 연결 -->
 	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script>
 		$(function() {
 			//시작일
 			$('#mbd_str_dt').datepicker({
-				showOn : "both", // 달력을 표시할 타이밍 (both: focus or button)
+				// showOn : "both", // 달력을 표시할 타이밍 (both: focus or button)
 				dateFormat : "yy-mm-dd", // 날짜의 형식
 				changeMonth : true, // 월을 이동하기 위한 선택상자 표시여부
 				minDate: 0,  // 선택할수있는 최소날짜, (0: 오늘 이전 날짜 선택 불가)
@@ -27,7 +28,7 @@
 			});
 			//종료일
 			$('#mbd_fn_dt').datepicker({
-				showOn : "both",
+				// showOn : "both",
 				dateFormat : "yy-mm-dd",
 				changeMonth : true,
 				onClose : function(selectedDate) {
@@ -63,13 +64,17 @@
     		</div>
     		
     		<div class="form-group">
-      				<h4><label for="start">Start Date</label></h4>
-      				<input type="date" class="form-control" id="start" name="mbd_str_dt" required="required" value="${mboard.mbd_str_dt }">
+    			<div id="datepicker">
+      				<h4><label for="mbd_str_dt">Start Date</label></h4>
+      				<input type="text" class="form-control" id="mbd_str_dt" name="mbd_str_dt" required="required" value="${mboard.mbd_str_dt }">
+      			</div>
     		</div>
     		
     		<div class="form-group">
-      				<h4><label for="end">End Date</label></h4>
-      				<input type="date" class="form-control" id="end" name="mbd_fn_dt" required="required" value="${mboard.mbd_fn_dt }">
+    			<div id="datepicker">
+      				<h4><label for="mbd_fn_dt">End Date</label></h4>
+      				<input type="text" class="form-control" id="mbd_fn_dt" name="mbd_fn_dt" required="required" value="${mboard.mbd_fn_dt }">
+      			</div>
     		</div>
     		
     		<div class="form-group">

@@ -45,7 +45,7 @@
     		</tr>
     		<tr align="center">
       			<th class="align-middle" scope="row">Content</th>
-		      	<td><textarea rows="5" cols="70" style="border:none;">${mboard.mbd_cont }</textarea></td>
+		      	<td><textarea rows="5" cols="70" style="border:none;" readonly="readonly">${mboard.mbd_cont }</textarea></td>
     		</tr>
     		<tr align="center">
     			<th class="align-middle" scope="row">Profile</th>
