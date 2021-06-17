@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="css/bootstrap.css">
 </head>
 <body>
+<jsp:include page="../main/mainNav.jsp"></jsp:include><br><br><br><br><br>
 	<!-- <div align="center">
 	<h3>도우미 검색</h3>
 	<form action="walkerProfileList.do">

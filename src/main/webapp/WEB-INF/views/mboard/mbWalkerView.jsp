@@ -17,6 +17,7 @@
 	</script>
 </head>
 <body>
+<jsp:include page="../main/mainNav.jsp"></jsp:include><br><br><br><br><br>
 <div class="container">
 	<div id="content" align="center">
 		<h1 align="center">Walk!</h1>

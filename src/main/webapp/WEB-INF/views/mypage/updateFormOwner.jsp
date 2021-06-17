@@ -34,6 +34,7 @@ $(function () {
 </script>
 </head>
 <body>
+<jsp:include page="../main/mainNav.jsp"></jsp:include><br><br><br><br><br>
 <form action="updateOwner.do" name="updtfrm" method="post" onsubmit="return pwchk()">
 <div class="container">
 	<div id="content" align="center">

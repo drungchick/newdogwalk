@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="css/bootstrap.css">
 </head>
 <body>
+<jsp:include page="../main/mainNav.jsp"></jsp:include><br><br><br><br><br>
 <form action="ownLogin.do">
 	<div class="SelectOuterWrapper" align="center">
 		<div class="LoginInnerWrapper" >
@@ -27,9 +28,9 @@
 		</div>
 	</div>
 </form>
-	<div align="left">
+	<!-- <div align="left">
 		<button type="button" class="btn btn-outline-primary" onclick="location.href='main.do'">Main</button>
 		<button type="button" class="btn btn-primary" onclick="location.href='joinChoice.do'">Join</button>
-	</div>
+	</div> -->
 </body>
 </html>

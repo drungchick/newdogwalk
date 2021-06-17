@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="css/bootstrap.css">
 </head>
 <body>
+<jsp:include page="../main/mainNav.jsp"></jsp:include><br><br><br><br><br>
 	<div class="SelectOuterWrapper">
 		<div class="SelectInnerWrapper" >
 			<h3 align="center">Login</h3>
@@ -21,10 +22,10 @@
 			<button type="button" class="btn btn-primary btn-lg" onclick="location.href='wkrLoginForm.do'">Walker</button>
 		</div>
 	</div>
-	<div align="left">
+	<!-- <div align="left">
 		<button type="button" class="btn btn-outline-primary" onclick="location.href='main.do'">Main</button>
 		<button type="button" class="btn btn-primary" onclick="location.href='joinChoice.do'">Join</button>
-	</div>
+	</div> -->
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

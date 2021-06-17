@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="css/bootstrap.css">
 </head>
 <body>
+<jsp:include page="../main/mainNav.jsp"></jsp:include><br><br><br><br><br>
 	<div class="container">
 		<h1 align="center">Dog Profile</h1>
 		<br>

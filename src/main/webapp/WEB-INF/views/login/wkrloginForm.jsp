@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="css/bootstrap.css">
 </head>
 <body>
+<jsp:include page="../main/mainNav.jsp"></jsp:include><br><br><br><br><br>
 <!-- <form action="wkrLogin.do">
 <table>
 	<caption>도우미 로그인</caption>
@@ -47,9 +48,9 @@
 		</div>
 	</div>
 </form>
-	<div align="left">
+	<!-- <div align="left">
 		<button type="button" class="btn btn-outline-primary" onclick="location.href='main.do'">Main</button>
 		<button type="button" class="btn btn-primary" onclick="location.href='joinChoice.do'">Join</button>
-	</div>
+	</div> -->
 </body>
 </html>

@@ -41,6 +41,7 @@
 </script>
 </head>
 <body>
+<jsp:include page="../main/mainNav.jsp"></jsp:include><br><br><br><br><br>
 <form action="mbWrite.do" method="post" name="frm">
 <input type="hidden" name="own_id" value="${own_id}">
 <input type="hidden" name="own_reg_no" value="${own_reg_no}"> <!-- 추가 -->
