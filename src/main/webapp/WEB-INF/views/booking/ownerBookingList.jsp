@@ -1,63 +1,89 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Insert title here</title>
-<style type="text/css">
-	@import url("common.css");
-</style>
+<link rel="stylesheet" href="css/bootstrap.css">
 </head>
 <body>
-	<table>
-		<caption>예약 내역</caption>
-		<tr>
-			<th>게시글번호</th>
-			<th>제목</th>
-			<th>작성자</th>
-			<th>등록일</th>
-		</tr>
-		
-		<!-- 게시글이 없는 경우. -->
-		<c:if test="${empty ownlist }">
-			<tr>
-				<th colspan="5">예약이 없습니다.</th>
-			</tr>
-		</c:if>
-		
-		<c:if test="${not empty ownlist}">
-			<c:forEach var="booking" items="${ownlist }">
-				<tr>
-						<td>${booking.mbd_no }</td>
-						<td><!-- 요청 상세보기 -->
-							<a href="mbView.do?mbd_no=${booking.mbd_no }&pageNum=${currentPage}">${booking.mbd_sbjt }</a>
-						</td>
-						<%-- <td><!-- 도우미 프로필 상세보기 -->
+	<jsp:include page="../main/mainNav.jsp"></jsp:include>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<div class="container">
+		<div id="content" align="center">
+			<h1 align="center">Matching List</h1>
+			<br>
+			<table class="table table-striped">
+				<thead>
+					<tr align="center">
+						<th scope="col" align="center">게시글번호</th>
+						<th scope="col" align="center">제목</th>
+						<th scope="col" align="center">작성자</th>
+						<th scope="col" align="center">등록일</th>
+					</tr>
+				</thead>
+				<!-- 게시글이 없는 경우. -->
+				<c:if test="${empty ownlist }">
+					<tr class="table-danger" align="center">
+						<th scope="row" colspan="5">예약 내역이 없습니다.</th>
+					</tr>
+				</c:if>
+
+				<c:if test="${not empty ownlist}">
+					<c:forEach var="booking" items="${ownlist }">
+						<tr align="center">
+							<td>${booking.mbd_no }</td>
+							<td>
+								<!-- 요청 상세보기 --> <a
+								href="mbView.do?mbd_no=${booking.mbd_no }&pageNum=${currentPage}">${booking.mbd_sbjt }</a>
+							</td>
+							<%-- <td><!-- 도우미 프로필 상세보기 -->
 							<a href="wpView.do?wkr_reg_no=${booking.wkr_reg_no }">${booking.wkr_id }</a>
 						</td> --%>
-						<td>${booking.own_id }</td>
-						<td>${booking.mbd_reg_dt }</td>
-				</tr>
-			</c:forEach>
-		</c:if>
-	</table>
-<!-- 페이징 -->	
-<div align="center"><br>
-	<c:if test="${startPage > PAGE_PER_BLOCK}">
-		<button onclick="location.href='MyBooking.do?pageNum=${startPage - 1}'">이전</button>	
-	</c:if>
-	<c:forEach var="i" begin="${startPage }" end="${endPage }">
-		<button onclick="location.href='MyBooking.do?pageNum=${i}'">${i }</button>
-	</c:forEach>
-	<c:if test="${startPage< totalPage}">
-		<button onclick="location.href='MyBooking.do?pageNum=${endPage + 1 }'">다음</button>	
-	</c:if>
-</div>
-<div align="center"><br>
-	<button onclick="location.href='Membermain.do'">메인화면</button>
-	<button onclick="history.back()">이전화면</button>
-</div>
+							<td>${booking.own_id }</td>
+							<td>${booking.mbd_reg_dt }</td>
+						</tr>
+					</c:forEach>
+				</c:if>
+			</table>
+		</div>
+		<br>
+		<!-- 페이징 -->
+		<div align="center" class="pageMiddle">
+			<ul class="pagination pagination-lg" class="a">
+				<c:if test="${startPage > PAGE_PER_BLOCK}">
+					<%-- <button onclick="location.href='MyBooking.do?pageNum=${startPage - 1}'">이전</button> --%>
+					<li class="page-item">
+						<a class="page-link" href="MyBooking.do?pageNum=${startPage - 1}">&laquo;</a>
+					</li>
+				</c:if>
+				<c:forEach var="i" begin="${startPage }" end="${endPage }">
+					<%-- <button onclick="location.href='MyBooking.do?pageNum=${i}'">${i }</button> --%>
+					<li class="page-item">
+	      				<a class="page-link" href="MyBooking.do?pageNum=${i}">${i }</a>
+	    			</li>
+				</c:forEach>
+				<c:if test="${startPage< totalPage}">
+					<%-- <button onclick="location.href='MyBooking.do?pageNum=${endPage + 1 }'">다음</button> --%>
+					<li class="page-item">
+	      				<a class="page-link" href="MyBooking.do?pageNum=${endPage + 1 }">&raquo;</a>
+	    			</li>
+				</c:if>
+			</ul>
+		</div>
+		<!-- <div align="center">
+			<br>
+			<button onclick="location.href='Membermain.do'">메인화면</button>
+			<button onclick="history.back()">이전화면</button>
+		</div> -->
+	</div>
 </body>
 </html>
