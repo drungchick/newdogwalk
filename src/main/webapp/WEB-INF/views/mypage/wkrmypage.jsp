@@ -12,7 +12,6 @@
 <link rel="stylesheet" href="css/bootstrap.css">
 </head>
 <body>
-<a href="deleteWalker.do">회원탈퇴</a><br>
 <div class="container">
 	<div id="content" align="center">
 		<h1 align="center">도우미 정보</h1>

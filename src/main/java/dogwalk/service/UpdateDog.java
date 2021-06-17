@@ -17,7 +17,7 @@ public class UpdateDog implements CommandProcess {
 		
 		HttpSession session = request.getSession();
 		String dog_no = (String) session.getAttribute("dog_no");
-		System.out.println(dog_no);
+//		System.out.println(dog_no);
 		
 		// 변하는 값들에 대해서만 파라미터 값을 가져옴
 		int dog_age = Integer.parseInt(request.getParameter("dog_age"));
@@ -25,6 +25,7 @@ public class UpdateDog implements CommandProcess {
 		Double dog_wgt = Double.parseDouble(request.getParameter("dog_wgt"));
 		String dog_ntl_chk = request.getParameter("dog_ntl_chk");
 		String dog_agg = request.getParameter("dog_agg");
+		String dog_chr = request.getParameter("dog_chr");
 		String dog_md_hst = request.getParameter("dog_md_hst");
 		
 		Dog dog = new Dog();
@@ -34,6 +35,7 @@ public class UpdateDog implements CommandProcess {
 		dog.setDog_wgt(dog_wgt);
 		dog.setDog_ntl_chk(dog_ntl_chk);
 		dog.setDog_agg(dog_agg);
+		dog.setDog_chr(dog_chr);
 		dog.setDog_md_hst(dog_md_hst);
 		
 		DogDao dd = DogDao.getInstance();

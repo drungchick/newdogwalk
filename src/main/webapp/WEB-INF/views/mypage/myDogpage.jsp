@@ -12,8 +12,6 @@
 <link rel="stylesheet" href="css/bootstrap.css">
 </head>
 <body>
-<a href="Mypage.do">견주회원 정보</a><br>
-<a href="deleteOwner.do">회원탈퇴</a><br>
 <div class="container">
 	<div id="content" align="center">
 		<h1 align="center">반려견 정보</h1>
@@ -46,8 +44,8 @@
 				<td align="left">${dog.dog_age} 년</td>
 			</tr>
 			<tr align="center">
-				<th scope="row">Dog Length(Meter)</th>
-				<td align="left">${dog.dog_len} m</td>
+				<th scope="row">Dog Length(Centimeter)</th>
+				<td align="left">${dog.dog_len} cm</td>
 			</tr>
 			<tr align="center">
 				<th scope="row">Dog Weight(Kg)</th>
@@ -72,6 +70,10 @@
 					<input type="radio" id="dog_agg_high" name="dog_agg" value="HIGH" readonly="readonly" <c:if test="${dog.dog_agg eq 'HIGH' }">checked</c:if>>
 					<label for="dog_agg_high">High</label>				
 				</td>
+			</tr>
+			<tr align="center">
+				<th scope="row">Dog Character</th>
+				<td><textarea class="form-control" name="dog_chr" readonly="readonly">${dog.dog_chr }</textarea></td>
 			</tr>
 			<tr align="center">
 				<th scope="row">Medical History</th>

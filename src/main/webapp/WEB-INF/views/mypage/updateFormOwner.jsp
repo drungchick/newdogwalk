@@ -34,8 +34,6 @@ $(function () {
 </script>
 </head>
 <body>
-<a href="MypageDog.do">반려견 정보</a><br>
-<a href="deleteOwner.do">회원탈퇴</a><br>
 <form action="updateOwner.do" name="updtfrm" method="post" onsubmit="return pwchk()">
 <div class="container">
 	<div id="content" align="center">

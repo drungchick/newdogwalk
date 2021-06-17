@@ -168,8 +168,8 @@
     			</div>
     			
     			<div class="form-group">
-      				<h4><label for="length">Dog Length(Meter)</label></h4>
-      				<input type="number" class="form-control" id="length" name="dog_len" max="3.00" min="0.00" step="0.01" required="required">
+      				<h4><label for="length">Dog Length(Centimeter)</label></h4>
+      				<input type="number" class="form-control" id="length" name="dog_len" max="250.0" min="0.0" step="0.1" required="required">
     			</div>
     			
     			<div class="form-group">

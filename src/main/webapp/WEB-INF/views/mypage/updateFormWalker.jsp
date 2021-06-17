@@ -49,7 +49,6 @@
 </script>
 </head>
 <body>
-<a href="#">회원탈퇴</a><br>
 <form action="updateWalker.do" name="updtfrm" method="post" onsubmit="return pwchk()">
 <div class="container">
 	<div id="content" align="center">

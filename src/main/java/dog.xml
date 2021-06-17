@@ -54,7 +54,7 @@
 
 	<update id="updateDog" parameterType="dog">
 		update dog set dog_age=#{dog_age}, dog_len =#{dog_len}, dog_wgt=#{dog_wgt}, 
-		dog_ntl_chk=#{dog_ntl_chk}, dog_agg=#{dog_agg}, dog_md_hst=#{dog_md_hst, jdbcType=VARCHAR}
+		dog_ntl_chk=#{dog_ntl_chk}, dog_agg=#{dog_agg}, dog_chr=#{dog_chr, jdbcType=VARCHAR}, dog_md_hst=#{dog_md_hst, jdbcType=VARCHAR}
 		where dog_no=#{dog_no}
 	</update>
 	
