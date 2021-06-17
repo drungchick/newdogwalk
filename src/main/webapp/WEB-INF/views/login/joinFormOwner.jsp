@@ -210,6 +210,13 @@
     			<br>
     			
     			<div class="form-group">
+      				<h4><label for="mh">Dog Character</label></h4>
+      				<textarea class="form-control" name="dog_chr" id="mh" rows="8" placeholder="Write Dog Character"></textarea>
+    			</div>
+    			
+    			<br>
+    			
+    			<div class="form-group">
       				<h4><label for="mh">Medical History</label></h4>
       				<textarea class="form-control" name="dog_md_hst" id="mh" rows="8" placeholder="Write Medical History"></textarea>
     			</div>

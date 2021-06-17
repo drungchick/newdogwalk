@@ -70,7 +70,8 @@ public class JoinOwner implements CommandProcess {
 				Double dog_wgt = Double.parseDouble(multi.getParameter("dog_wgt"));
 				String dog_ntl_chk = multi.getParameter("dog_ntl_chk");
 				String dog_agg = multi.getParameter("dog_agg");
-				String dog_md_hst = multi.getParameter("dog_md_hst");	
+				String dog_md_hst = multi.getParameter("dog_md_hst");
+				String dog_chr = multi.getParameter("dog_chr"); // 강아지 특징 추가 (6/17)
 				
 				// 폼에서 파일 이름 가져오기
 		        String dog_pht_nm = multi.getFilesystemName("dog_image");		
@@ -89,6 +90,7 @@ public class JoinOwner implements CommandProcess {
 				dog.setDog_md_hst(dog_md_hst);
 				dog.setDog_pht_nm(dog_pht_nm); // 사진 파일명도 지정
 				dog.setOwn_id(own_id); // 견주 ID도 테이블 속성으로 추가
+				dog.setDog_chr(dog_chr); // 강아지 특징 추가 (6/17)
 				
 				OwnerDao od = OwnerDao.getInstance();
 				DogDao dd = DogDao.getInstance();

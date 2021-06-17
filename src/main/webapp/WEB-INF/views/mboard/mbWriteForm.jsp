@@ -7,6 +7,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">@import url("common.css");</style>
+<link href="css/datepicker.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script>
@@ -60,15 +62,20 @@
 			</td>
 		</tr>
 		<tr>
-			<th>산책대행 시작희망일시</th>
+			<th>산책대행 시작희망일시</th>			
 			<td>
+				<div id="datepicker">
 				<input type="text" name="mbd_str_dt" id="mbd_str_dt" required="required">
+				</div>	
 			</td>
+			
 		</tr>
 		<tr>
 			<th>산책대행 종료희망일시</th>
 			<td>
+				<div id="datepicker">
 				<input type="text" name="mbd_fn_dt" id="mbd_fn_dt" required="required">
+				</div>
 			</td>
 		</tr>
 		<tr>

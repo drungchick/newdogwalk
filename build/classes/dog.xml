@@ -46,9 +46,9 @@
 	
 	<insert id="insertDog" parameterType="dog">
 		insert into dog (dog_name, dog_gdr, dog_kind, dog_size, dog_age, dog_len, dog_wgt,
-						dog_ntl_chk, dog_agg, dog_md_hst, dog_pht_nm, own_id)
+						dog_ntl_chk, dog_agg, dog_chr, dog_md_hst, dog_pht_nm, own_id)
 		values (#{dog_name}, #{dog_gdr}, #{dog_kind}, #{dog_size}, #{dog_age},
-				#{dog_len},	#{dog_wgt}, #{dog_ntl_chk}, #{dog_agg}, #{dog_md_hst},
+				#{dog_len},	#{dog_wgt}, #{dog_ntl_chk}, #{dog_agg}, #{dog_chr}, #{dog_md_hst},
 				#{dog_pht_nm}, #{own_id} )
 	</insert>
 
