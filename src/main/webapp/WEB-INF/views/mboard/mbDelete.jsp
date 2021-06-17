@@ -11,13 +11,13 @@
 	<c:if test="${result > 0 }">
 		session.invalidate();
 		<script type="text/javascript">
-			alert("요청글 삭제 완료.");
+			alert("글이 삭제 되었습니다.");
 			location.href="mbList.do";
 		</script>
 	</c:if>
 	<c:if test="${result <= 0 }">
 		<script type="text/javascript">
-			alert("요청글 삭제 실패");
+			alert("글 삭제에 실패하였습니다.");
 			history.back();
 		</script>
 	</c:if>

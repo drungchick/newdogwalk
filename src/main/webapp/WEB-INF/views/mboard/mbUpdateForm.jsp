@@ -46,16 +46,46 @@
 <body>
 <form action="mbUpdate.do" method="post" name="frm" onsubmit="return chk2()">
 <input type="hidden" name="mbd_no" value="${mboard.mbd_no }">
-	<div class="container">
-		<div class="content" align="center">
+	<div class="JoinWrapper">
+		<div class="form-group">
+			<fieldset>
 			<h1 align="center">Update</h1>
 			<br>
-			<table class="table table-striped">
-			<tr align="center">
-      			<th scope="row">Writer</th>
-		      	<td>${mboard.own_id }</td>
-    		</tr>
-    		<tr align="center">
+			
+			<%-- <div class="form-group">
+				<h4><label for="writer">Writer</label></h4>
+      			<input type="text" class="form-control" id="writer" name="own_id" value="${mboard.own_id }" readonly="readonly">
+    		</div> --%>
+    		
+    		<div class="form-group">
+				<h4><label for="subject">Subject</label></h4>
+      			<input type="text" class="form-control" id="subject" name="mbd_sbjt" value="${mboard.mbd_sbjt }" autofocus="autofocus">
+    		</div>
+    		
+    		<div class="form-group">
+      				<h4><label for="start">Start Date</label></h4>
+      				<input type="date" class="form-control" id="start" name="mbd_str_dt" required="required" value="${mboard.mbd_str_dt }">
+    		</div>
+    		
+    		<div class="form-group">
+      				<h4><label for="end">End Date</label></h4>
+      				<input type="date" class="form-control" id="end" name="mbd_fn_dt" required="required" value="${mboard.mbd_fn_dt }">
+    		</div>
+    		
+    		<div class="form-group">
+      				<h4><label for="cont">Content</label></h4>
+      				<textarea class="form-control" name="mbd_cont" id="cont" rows="8" required="required">${mboard.mbd_cont }</textarea>
+    		</div>
+    		
+			<div align="center">
+				<button type="submit" class="btn btn-primary btn-lg">Submit</button>
+				<button type="button" class="btn btn-primary btn-lg" onclick="goBack();">Back</button>
+			</div>
+			</fieldset>
+		</div>
+	</div>
+	
+	<%-- <tr align="center">
       			<th scope="row">Subject</th>
 		      	<td><input type="text" class="form-control" name="mbd_sbjt" required="required" value="${mboard.mbd_sbjt }"></td>
     		</tr>
@@ -70,15 +100,7 @@
     		<tr align="center">
       			<th class="align-middle" scope="row">Content</th>
 		      	<td><textarea rows="5" class="form-control" cols="70" style="border:none;">${mboard.mbd_cont }</textarea></td>
-    		</tr>
-			</table>
-			
-			<div align="center">
-				<button type="submit" class="btn btn-primary btn-lg">Submit</button>
-				<button type="button" class="btn btn-primary btn-lg" onclick="goBack();">Back</button>
-			</div>
-		</div>
-	</div>
+    		</tr> --%>
 	
 	<%-- <table>
 		<caption>회원정보 수정</caption>

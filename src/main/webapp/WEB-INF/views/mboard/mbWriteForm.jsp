@@ -4,9 +4,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<style type="text/css">@import url("common.css");</style>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Insert title here</title>
+	<!-- css 연결 -->
+	<link rel="stylesheet" href="css/bootstrap.css">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script>
@@ -38,21 +41,58 @@
 </head>
 <body>
 <form action="mbWrite.do" method="post" name="frm">
-<%-- <input type="hidden" name="mbd_no" value="${mbd_no}"> --%><!-- 작성시에 mbd_no 필요x -->
 <input type="hidden" name="own_id" value="${own_id}">
 <input type="hidden" name="own_reg_no" value="${own_reg_no}"> <!-- 추가 -->
-<%-- <input type="hidden" name="pageNum" value="${pageNum}"> --%>
+<div class="JoinWrapper">
+		<div class="form-group">
+			<fieldset>
+			<h1 align="center">Write</h1>
+			<br>
+			
+			<%-- <div class="form-group">
+				<h4><label for="writer">Writer</label></h4>
+      			<input type="text" class="form-control" id="writer" name="own_id" value="${mboard.own_id }" readonly="readonly">
+    		</div> --%>
+    		
+    		<div class="form-group">
+				<h4><label for="subject">Subject</label></h4>
+      			<input type="text" class="form-control" id="subject" name="mbd_sbjt" required="required" autofocus="autofocus">
+    		</div>
+    		
+    		<div class="form-group">
+      				<h4><label for="start">Start Date</label></h4>
+      				<input type="date" class="form-control" id="start" name="mbd_str_dt" required="required" value="${mboard.mbd_str_dt }">
+    		</div>
+    		
+    		<div class="form-group">
+      				<h4><label for="end">End Date</label></h4>
+      				<input type="date" class="form-control" id="end" name="mbd_fn_dt" required="required" value="${mboard.mbd_fn_dt }">
+    		</div>
+    		
+    		<div class="form-group">
+      				<h4><label for="cont">Content</label></h4>
+      				<textarea class="form-control" name="mbd_cont" id="cont" rows="8" required="required">${mboard.mbd_cont }</textarea>
+    		</div>
+    		
+			<div align="center">
+				<button type="submit" class="btn btn-primary btn-lg">Write</button>
+				<button type="button" class="btn btn-primary btn-lg" onclick="goBack();">Back</button>
+			</div>
+			</fieldset>
+		</div>
+	</div>
 
-	<table>
+
+<%-- 	<table>
 		<caption>산책 요청 작성</caption>
 		<!-- 작성자, 작성자 등록일은 히든으로 받아서 넘길 예정. -->
-		<%-- <tr>
+		<tr>
 			<th>작성자</th>
 			<td>${own_id }</td>
 			<!-- <td>
 				<input type="text" name="own_id" required="required">
 			</td> -->
-		</tr> --%>
+		</tr>
 		<tr>
 			<th>제목</th>
 			<td>
@@ -82,7 +122,7 @@
 				<input type="submit" value="확인">
 			</th>
 		</tr>
-	</table>
+	</table> --%>
 </form>
 </body>
 </html>

@@ -29,7 +29,7 @@
 			  </thead>
 			<c:if test="${empty list }"> <!-- 만약 DB에 데이터가 없어 list 애트리뷰트 안이 비었을 경우 -->
 				<tr class="table-danger" align="center">
-	      			<th scope="row" colspan="4">등록된 공지사항이 없습니다.</th>
+	      			<th scope="row" colspan="5">등록된 게시글이 없습니다.</th>
 	    		</tr>
     		</c:if>
     		<c:if test="${not empty list }">
