@@ -49,26 +49,26 @@ $(function () {
 		</tr>
 		<tr align="center">
 			<th scope="row">Password</th>
-			<td colspan="3"><input type="password" name="password" id="pass" class="form-control passchk" required="required" autofocus="autofocus">
+			<td><input type="password" name="password" id="pass" class="form-control passchk" required="required" autofocus="autofocus">
 			</td>
 		</tr>
 		<tr align="center">
-			<th>변경할 암호 확인</th>
-			<td colspan="3"><input type="password" name="confirmPass" id="confirmPass" class="form-control passchk" required="required"></td>
+			<th scope="row">변경할 암호 확인</th>
+			<td><input type="password" name="confirmPass" id="confirmPass" class="form-control passchk" required="required"></td>
 		</tr>
 		<tr align="center">
-			<th></th>
+			<th scope="row"></th>
 			<td>
 				<div class="alert_msg" id="alert-success">변경한 암호가 일치합니다.</div>
 				<div class="alert_msg" id="alert-danger">변경한 암호가 일치하지 않습니다.</div>
 			</td>
 		</tr>
 		<tr align="center">
-			<th>Name</th>
+			<th scope="row">Name</th>
 			<td><input class="form-control" type="text" name="own_name" value="${owner.own_name }" readonly="readonly">
 		</tr>
 		<tr align="center">
-			<th>Brithday</th>
+			<th scope="row">Brithday</th>
 			<td id="own_bth_dt" align="left">${owner.own_bth_dt }</td>
 		</tr>
 		<tr align="center">

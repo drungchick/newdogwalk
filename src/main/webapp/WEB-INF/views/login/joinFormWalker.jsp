@@ -12,6 +12,7 @@
 <!-- jquery 경로 지정 주의!!! -->
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript">
+	
 	// 자격증 중복체크
 	function lcchk() {		
 		$.post("confirmLicense.do", "lc_cd=" + frm.lc_cd.value, function(data) {
@@ -54,7 +55,7 @@
 	// jquery 적용한 버튼 추가 기능
 	$(function() {
 		$('#btnAdd').click(function() { // 각 입력자 추가
-			$('#lc_add').append('<tr class="lc_row"><td><input type="text" class="form-control" name="lc_cd" required="required" onkeyup="lcchk()"></td><td><input type="text" class="form-control" name="lc_name" required="required"></td><td><input type="text" class="form-control" name="lc_iss_ogz" required="required"></td></tr>');
+			$('#lc_add').append('<tr class="lc_row"><td><input type="text" class="form-control" name="lc_cd" required="required" maxlength="9" onkeyup="lcchk()"></td><td><input type="text" class="form-control" name="lc_name" required="required"></td><td><input type="text" class="form-control" name="lc_iss_ogz" required="required"></td></tr>');
 		$('#btnDel').on('click', function() { // 각 입력자 삭제
 			$('.lc_row').last().remove();
 			});
@@ -142,7 +143,7 @@
   						<tbody id="lc_add">
   							<tr align="center">
 							    <td>
-							    	<input type="text" class="form-control" name="lc_cd" required="required" onkeyup="lcchk()">
+							    	<input type="text" class="form-control" name="lc_cd" maxlength="9" required="required" onkeyup="lcchk()"> <!--  lcalert()" -->
 							    </td>
 							    <td>
 							    	<input type="text" class="form-control" name="lc_name" required="required">
