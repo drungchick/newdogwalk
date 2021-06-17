@@ -98,9 +98,10 @@
 		<c:if test="${mboard.own_id == sessionScope.own_id }">
 			<a href="mbUpdateForm.do?mbd_no=${mboard.mbd_no }&pageNum=${pageNum} onclick=">내용수정</a>
 		</c:if>
-		
-			<a href="mbDelete.do?mbd_no=${mboard.mbd_no }">요청삭제</a> <a
-				href="logout.do">로그아웃</a>
+		<c:if test="${mboard.own_id == sessionScope.own_id }">
+			<a href="mbDelete.do?mbd_no=${mboard.mbd_no }">요청삭제</a>
+		</c:if>	
+			<a href="logout.do">로그아웃</a>
 		</div>
 </body>
 </html>

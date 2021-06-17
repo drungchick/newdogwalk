@@ -10682,6 +10682,7 @@ div.SearchWrapper {
    bottom:0;
    background:#78c2ad;
    text-align: center;
+   margin: auto;
    color: white;
    font-size: 14pt;
 }

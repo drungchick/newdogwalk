@@ -32,10 +32,9 @@
 <button onclick="location.href='joinChoice.do'">회원가입</button>
 </form> -->
 <form action="wkrLogin.do">
-	<div class="SelectOuterWrapper">
+	<div class="SelectOuterWrapper" align="center">
 		<div class="LoginInnerWrapper" >
 			<h3 align="center">Walker Login</h3>
-		    <br>
 		    <div class="form-group">
 		      <label for="id">ID</label>
 		      <input type="text" class="form-control" id="id" name="wkr_id" required="required" autofocus="autofocus">
@@ -44,7 +43,6 @@
 		      <label for="password">Password</label>
 		      <input type="password" class="form-control" id="password" name="wkr_pwd" required="required">
 		    </div>
-		    <br>
 		    <button type="submit" class="btn btn-primary">Log in</button>
 		</div>
 	</div>

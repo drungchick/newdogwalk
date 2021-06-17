@@ -15,7 +15,7 @@ response.setDateHeader ("Expires", 0);
 </head>
 <body>
 <jsp:include page="mainNav.jsp"></jsp:include>
-
+<jsp:include page="mainCont.jsp"></jsp:include>
 <jsp:include page="footer.jsp"></jsp:include>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
