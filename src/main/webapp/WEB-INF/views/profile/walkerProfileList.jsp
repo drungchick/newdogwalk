@@ -120,7 +120,7 @@
 								<h3>${walker.wkr_id }</h3>
 								<p>${walker.wkr_name }/${walker.wkr_rs_cnt }/${walker.wkr_gd }</p>
 								<p>
-									<a href="walkerProfileView.do?wkr_reg_no=${walker.wkr_reg_no }&pageNum=${currentPage}" class="btn btn-secondary btn-lg" role="button">Owner</a>
+									<a href="walkerProfileView.do?wkr_reg_no=${walker.wkr_reg_no }&pageNum=${currentPage}" class="btn btn-secondary btn-lg" role="button">Walker</a>
 								</p>
 							</div>
 						</div>

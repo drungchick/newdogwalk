@@ -56,8 +56,7 @@
 				</c:forEach>		
 			</c:if>
 		</table>	
-	</div>
-	<br>	
+	</div>	
 	<div align="center" class="pageMiddle">
 	  <ul class="pagination pagination-lg" class="a">
 	    <c:if test="${startPage > pagePerBlock }">

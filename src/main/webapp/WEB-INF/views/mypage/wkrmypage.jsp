@@ -62,6 +62,10 @@
 				</td>
 			</tr>
 			<tr align="center">
+				<th>Rearing Year</th>
+				<td colspan="2"><input class="form-control" type="number" name="wkr_rs_cnt" readonly="readonly" value="${walker.wkr_rs_cnt }"></td>
+			</tr>
+			<tr align="center">
 				<th>Walker Career</th>
 				<td colspan="2"><textarea class="form-control" name="wkr_career" readonly="readonly">${walker.wkr_career }</textarea>
 				</td>
