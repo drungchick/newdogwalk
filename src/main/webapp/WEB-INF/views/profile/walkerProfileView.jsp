@@ -59,11 +59,11 @@
 			</tr>
 			<tr align="center">
       			<th scope="row" class="align-middle">Rearing Experience</th>
-		      	<td><textarea rows="10" cols="70" style="border:none;">${walker.wkr_rs_ex }</textarea></td>
+		      	<td><textarea rows="10" cols="70" style="border:none;" readonly="readonly">${walker.wkr_rs_ex }</textarea></td>
     		</tr>
     		<tr align="center">
       			<th scope="row" class="align-middle">Walker Career</th>
-		      	<td><textarea rows="10" cols="70" style="border:none;">${walker.wkr_career }</textarea></td>
+		      	<td><textarea rows="10" cols="70" style="border:none;" readonly="readonly">${walker.wkr_career }</textarea></td>
     		</tr>
 			<tr align="center">
 				<th scope="row">Registration</th>

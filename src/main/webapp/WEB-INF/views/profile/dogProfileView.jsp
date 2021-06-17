@@ -55,11 +55,11 @@
 			</tr>
 			<tr align="center">
       			<th scope="row" class="align-middle">Character</th>
-		      	<td><textarea rows="10" cols="70" style="border:none;">${dog.dog_chr }</textarea></td>
+		      	<td><textarea rows="10" cols="70" style="border:none;" readonly="readonly">${dog.dog_chr }</textarea></td>
     		</tr>
     		<tr align="center">
       			<th scope="row" class="align-middle">Medical History</th>
-		      	<td><textarea rows="10" cols="70" style="border:none;">${dog.dog_md_hst }</textarea></td>
+		      	<td><textarea rows="10" cols="70" style="border:none;" readonly="readonly">${dog.dog_md_hst }</textarea></td>
     		</tr>
     		<tr align="center">
 				<th scope="row">Owner</th>
