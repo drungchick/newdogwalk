@@ -13,7 +13,7 @@ public class MBList implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		
 		int rowPerPage = 10;
-		int pagePerBlock = 10;
+		int pagePerBlock = 5;
 		String pageNum = request.getParameter("pageNum");
 		if (pageNum == null || pageNum.equals("")) {
 			pageNum = "1";
@@ -26,7 +26,7 @@ public class MBList implements CommandProcess {
 		List<MBoard> list = mbd.list(startRow, endRow);
 		int tot = mbd.total();
 		int total = tot - startRow + 1;
-		int startPage = currentPage - (currentPage - 1) % 10;
+		int startPage = currentPage - (currentPage - 1) % 5;
 		int endPage = startPage + pagePerBlock - 1;
 		int totPage = (int)Math.ceil((double)tot/rowPerPage);
 		if (endPage > totPage) {
