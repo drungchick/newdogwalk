@@ -168,8 +168,8 @@
     			</div>
     			
     			<div class="form-group">
-      				<h4><label for="length">Dog Length(Meter)</label></h4>
-      				<input type="number" class="form-control" id="length" name="dog_len" max="3.00" min="0.00" step="0.01" required="required">
+      				<h4><label for="length">Dog Length(Centimeter)</label></h4>
+      				<input type="number" class="form-control" id="length" name="dog_len" max="250.0" min="0.0" step="0.1" required="required">
     			</div>
     			
     			<div class="form-group">
@@ -207,6 +207,13 @@
 			          		<input type="radio" class="form-check-input" name="dog_agg" id="dog_agg_big" value="HIGH">High</label>
 			      		</div>
     			</fieldset>
+    			<br>
+    			
+    			<div class="form-group">
+      				<h4><label for="mh">Dog Character</label></h4>
+      				<textarea class="form-control" name="dog_chr" id="mh" rows="8" placeholder="Write Dog Character"></textarea>
+    			</div>
+    			
     			<br>
     			
     			<div class="form-group">

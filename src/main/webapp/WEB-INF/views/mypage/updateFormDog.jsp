@@ -23,8 +23,6 @@
 </head>
 <body>
 <form action="updateDog.do" method="post" name="updtfrm" method="post">
-	<a href="Mypage.do">견주회원 정보</a>
-	<a href="deleteOwner.do">회원탈퇴</a><br>
 	<div class="container">
 		<div id="content" align="center">
 		<br>
@@ -57,9 +55,9 @@
 					max="50" min="${dog.dog_age }"></td>
 			</tr>
 			<tr align="center">
-				<th scope="row">Dog Length(Meter)</th>
+				<th scope="row">Dog Length(Centimeter)</th>
 				<td><input class="form-control" type="number" name="dog_len" required="required"
-					max="3.00" min="${dog.dog_len }" step="0.01"></td>
+					max="250.0" min="${dog.dog_len }" step="0.1"></td>
 			</tr>
 			<tr align="center">
 				<th scope="row">Dog Weight(Kg)</th>
@@ -85,6 +83,10 @@
 					<input type="radio" id="dog_agg_high" name="dog_agg" value="HIGH" required="required">
 					<label for="dog_agg_high" >High</label>
 				</td>
+			</tr>
+			<tr align="center">
+				<th scope="row">Dog Character</th>
+				<td><textarea class="form-control" name="dog_chr">${dog.dog_chr }</textarea></td>		
 			</tr>
 			<tr align="center">
 				<th scope="row">Medical History</th>
