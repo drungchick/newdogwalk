@@ -13,6 +13,9 @@
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<!-- <link rel="stylesheet" href="css/jquery-ui.css">
+	<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+	<script type="text/javascript" src="jquery-ui.js"></script> -->
 <script>
 	$(function() {
 		//시작일
@@ -38,10 +41,13 @@
 			}
 		});
 	});
+	function goBack() {
+		history.back();	
+	}
 </script>
 </head>
 <body>
-<jsp:include page="../main/mainNav.jsp"></jsp:include><br><br><br><br><br>
+<%-- <jsp:include page="../main/mainNav.jsp"></jsp:include> --%><br><br>
 <form action="mbWrite.do" method="post" name="frm">
 <input type="hidden" name="own_id" value="${own_id}">
 <input type="hidden" name="own_reg_no" value="${own_reg_no}"> <!-- 추가 -->

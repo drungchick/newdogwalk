@@ -102,6 +102,7 @@ $(function () {
 		<button type="reset" class="btn btn-primary btn-lg" onclick="history.go(-1)">Cancel</button>
 	</div>
 </div>
+<br>
 </form>
 </body>
 </html>

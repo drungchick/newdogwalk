@@ -99,6 +99,7 @@
 			<button type="submit" class="btn btn-primary btn-lg" id="submit">Submit</button>
 			<button type="reset" class="btn btn-primary btn-lg" onclick="history.go(-1)">Cancel</button>
 		</div>
+		<br>
 	</div>
 </form>
 </body>

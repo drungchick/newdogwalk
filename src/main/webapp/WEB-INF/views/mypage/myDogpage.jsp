@@ -86,6 +86,7 @@
 	<div align="center">
 		<button type="button" class="btn btn-primary btn-lg" onclick ="location.href = 'updateFormDog.do'" >정보 수정</button>
 	</div>
+	<br>
 </div>
 </body>
 </html>

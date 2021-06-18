@@ -45,7 +45,7 @@
 	</script>
 </head>
 <body>
-<jsp:include page="../main/mainNav.jsp"></jsp:include><br><br><br><br><br>
+<%-- <jsp:include page="../main/mainNav.jsp"></jsp:include><br><br><br> --%><br><br>
 <form action="mbUpdate.do" method="post" name="frm" onsubmit="return chk2()">
 <input type="hidden" name="mbd_no" value="${mboard.mbd_no }">
 	<div class="JoinWrapper">

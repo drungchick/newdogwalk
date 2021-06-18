@@ -59,7 +59,8 @@
 	<br>	
 	<div align="center">
 		<button type="button" class="btn btn-primary btn-lg" onclick ="location.href = 'updateFormOwner.do'" >정보 수정</button>
-	</div>	
+	</div>
+	<br>
 </div>
 </body>
 </html>
