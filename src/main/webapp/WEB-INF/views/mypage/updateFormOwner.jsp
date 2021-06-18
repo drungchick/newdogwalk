@@ -11,22 +11,25 @@
 <!-- css 연결 -->
 <link rel="stylesheet" href="css/bootstrap.css">
 <script type="text/javascript" src="js/jquery.js"></script>
+<script>
+	var jb = jQuery.noConflict(); // bootstrap의 jquery 와 버전 충돌로 해당 버전에서 사용할 jquery 선택자 변수 지정
+</script>
 <script type="text/javascript">
-$(function () {
-	$("#alert-success").hide();
-	$("#alert-danger").hide();
-	$(".passchk").keyup(function(){
-		var pass = $("#pass").val();
-		var confirmPass = $("#confirmPass").val();
+jb(function () {
+	jb("#alert-success").hide();
+	jb("#alert-danger").hide();
+	jb(".passchk").keyup(function(){
+		var pass = jb("#pass").val();
+		var confirmPass = jb("#confirmPass").val();
 		if(pass != "" || confirmPass != ""){ 
 			if(pass == confirmPass){ 
-				$("#alert-success").show(); 
-				$("#alert-danger").hide(); 
-				$("#submit").removeAttr("disabled"); 
+				jb("#alert-success").show(); 
+				jb("#alert-danger").hide(); 
+				jb("#submit").removeAttr("disabled"); 
 			}else{ 
-				$("#alert-success").hide(); 
-				$("#alert-danger").show(); 
-				$("#submit").attr("disabled", "disabled"); 
+				jb("#alert-success").hide(); 
+				jb("#alert-danger").show(); 
+				jb("#submit").attr("disabled", "disabled"); 
 			} 
 		}
 	});

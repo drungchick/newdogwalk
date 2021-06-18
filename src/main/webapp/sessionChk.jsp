@@ -8,12 +8,19 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<c:set var="id" value="${sessionScope.id }"></c:set>
- 	<c:if test="${empty id }">
+<%-- 	<c:set var="own_id" value="${sessionScope.own_id }"></c:set>
+	<c:set var="wkr_id" value="${sessionScope.wkr_id }"></c:set> --%>
+ 	<c:if test="${sessionScope.mb_clf_cd == null }">
+ 		<script type="text/javascript">
+ 			alert("로그인이 필요합니다.");
+ 			location.href="main.do";
+ 		</script>
+ 	</c:if>
+<%--  	<c:if test="${empty id }">
  		<script type="text/javascript">
  			alert("로그인이 필요합니다.")
  			history.go(-1)
  		</script>
- 	</c:if>
+ 	</c:if> --%>
 </body>
 </html>

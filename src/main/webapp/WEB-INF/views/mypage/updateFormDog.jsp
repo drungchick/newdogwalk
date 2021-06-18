@@ -11,17 +11,21 @@
 <!-- css 연결 -->
 <link rel="stylesheet" href="css/bootstrap.css">
 <script type="text/javascript" src="js/jquery.js"></script>
+<script>
+	var jb = jQuery.noConflict(); // bootstrap의 jquery 와 버전 충돌로 해당 버전에서 사용할 jquery 선택자 변수 지정
+</script>
 <script type="text/javascript">
-	$(function() { // 반려견이 중성화한 상태인 경우 'N' 라디오버튼 비활성화
+	jb(function() { // 반려견이 중성화한 상태인 경우 'N' 라디오버튼 비활성화
 		var dog_ntl_chk = "${dog.dog_ntl_chk}";
 		if (dog_ntl_chk = "Y") {
-			$("#dog_ntl_n").attr('disabled',true);
+			jb("#dog_ntl_n").attr('disabled',true);
 		}
 	})
 </script>
 
 </head>
 <body>
+<jsp:include page="../main/mainNav.jsp"></jsp:include><br><br><br><br><br>
 <form action="updateDog.do" method="post" name="updtfrm" method="post">
 	<div class="container">
 		<div id="content" align="center">

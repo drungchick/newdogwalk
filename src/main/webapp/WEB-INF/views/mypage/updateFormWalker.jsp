@@ -11,38 +11,41 @@
 <!-- css 연결 -->
 <link rel="stylesheet" href="css/bootstrap.css">
 <script type="text/javascript" src="js/jquery.js"></script>
+<script>
+	var jb = jQuery.noConflict(); // bootstrap의 jquery 와 버전 충돌로 해당 버전에서 사용할 jquery 선택자 변수 지정
+</script>
 <script type="text/javascript">
 	// 자격증 중복체크
 	function lcchk() {		
-		$.post("confirmLicense.do", "lc_cd=" + updtfrm.lc_cd.value, function(data) {
+		jb.post("confirmLicense.do", "lc_cd=" + updtfrm.lc_cd.value, function(data) {
 			$("#lc_check").html(data);
 		})
 	}
 	
-	$(function () { // 비밀번호 중복 체크
-		$("#alert-success").hide();
-		$("#alert-danger").hide();
-		$(".passchk").keyup(function(){
-			var pass = $("#pass").val();
-			var confirmPass = $("#confirmPass").val();
+	jb(function () { // 비밀번호 중복 체크
+		jb("#alert-success").hide();
+		jb("#alert-danger").hide();
+		jb(".passchk").keyup(function(){
+			var pass = jb("#pass").val();
+			var confirmPass = jb("#confirmPass").val();
 			if(pass != "" || confirmPass != ""){ 
 				if(pass == confirmPass){ 
-					$("#alert-success").show(); 
-					$("#alert-danger").hide(); 
-					$("#submit").removeAttr("disabled"); 
+					jb("#alert-success").show(); 
+					jb("#alert-danger").hide(); 
+					jb("#submit").removeAttr("disabled"); 
 				}else{ 
-					$("#alert-success").hide(); 
-					$("#alert-danger").show(); 
-					$("#submit").attr("disabled", "disabled"); 
+					jb("#alert-success").hide(); 
+					jb("#alert-danger").show(); 
+					jb("#submit").attr("disabled", "disabled"); 
 				} 
 			}
 		});
 	});
-	$(function() { // 자격증 입력 태그 추가
-		$('#btnAdd').click(function() { // 각 입력자 추가
-			$('#lc_add').append('<tr class="lc_row"><td><input class="form-control" maxlength="9" type="text" name="lc_cd"></td><td><input class="form-control" type="text" name="lc_name"></td><td><input class="form-control" type="text" name="lc_iss_ogz"></td></tr>');
-		$('#btnDel').on('click', function() { // 각 입력자 삭제
-			$('.lc_row').last().remove();
+	jb(function() { // 자격증 입력 태그 추가
+		jb('#btnAdd').click(function() { // 각 입력자 추가
+			jb('#lc_add').append('<tr class="lc_row"><td><input class="form-control" maxlength="9" type="text" name="lc_cd"></td><td><input class="form-control" type="text" name="lc_name"></td><td><input class="form-control" type="text" name="lc_iss_ogz"></td></tr>');
+			jb('#btnDel').on('click', function() { // 각 입력자 삭제
+				jb('.lc_row').last().remove();
 			});
 		});
 	});

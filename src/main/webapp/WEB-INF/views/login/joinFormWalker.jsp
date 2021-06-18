@@ -67,6 +67,7 @@
 </script>
 </head>
 <body>
+<jsp:include page="../main/mainNav.jsp"></jsp:include><br><br><br><br><br>
 <form action="joinWalker.do" method="post" enctype="multipart/form-data" name="frm">
 	<div class="JoinWrapper">
 		<div class="form-group">

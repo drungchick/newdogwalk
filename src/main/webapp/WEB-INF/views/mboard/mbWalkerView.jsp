@@ -68,7 +68,7 @@
 		<div class="container">
 			<div id="content" align="center">
 				<a href="WkrBookingAction.do?mbd_no=${mboard.mbd_no }&wkr_reg_no=${wkr_reg_no }&wkr_id=${wkr_id }" class="btn btn-info btn-lg" role="button">Apply</a>
-    			<button type="button" class="btn btn-primary btn-lg" onclick="goBack();">Back</button>
+    			<button type="button" class="btn btn-primary btn-lg" onclick="location.href='mbList.do'">Back</button>
 			</div>
 		</div>
 		
