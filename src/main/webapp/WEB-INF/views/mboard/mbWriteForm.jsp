@@ -12,32 +12,35 @@
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script>
+		var jb = jQuery.noConflict(); // bootstrap의 jquery 와 버전 충돌로 해당 버전에서 사용할 jquery 선택자 변수 지정
+	</script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<!-- <link rel="stylesheet" href="css/jquery-ui.css">
 	<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
 	<script type="text/javascript" src="jquery-ui.js"></script> -->
 <script>
-	$(function() {
+	jb(function() {
 		//시작일
-		$('#mbd_str_dt').datepicker({
+		jb('#mbd_str_dt').datepicker({
 			// showOn : "both", // 달력을 표시할 타이밍 (both: focus or button)
 			dateFormat : "yy-mm-dd", // 날짜의 형식
 			changeMonth : true, // 월을 이동하기 위한 선택상자 표시여부
 			minDate: 0,  // 선택할수있는 최소날짜, (0: 오늘 이전 날짜 선택 불가)
 			onClose : function(selectedDate) { // 시작일(fromDate) datepicker가 닫힐때
 				// 종료일(toDate)의 선택할수있는 최소 날짜(minDate)를 선택한 시작일로 지정
-				$("#mbd_fn_dt").datepicker("option", "minDate", selectedDate);
+				jb("#mbd_fn_dt").datepicker("option", "minDate", selectedDate);
 			}
 		});
 		//종료일
-		$('#mbd_fn_dt').datepicker({
+		jb('#mbd_fn_dt').datepicker({
 			// showOn : "both",
 			dateFormat : "yy-mm-dd",
 			changeMonth : true,
 			onClose : function(selectedDate) {
 				// 종료일(toDate) datepicker가 닫힐때
 				// 시작일(fromDate)의 선택할수있는 최대 날짜(maxDate)를 선택한 종료일로 지정 
-				$("mbd_str_dt").datepicker("option", "maxDate", selectedDate);
+				jb("mbd_str_dt").datepicker("option", "maxDate", selectedDate);
 			}
 		});
 	});
@@ -47,7 +50,7 @@
 </script>
 </head>
 <body>
-<%-- <jsp:include page="../main/mainNav.jsp"></jsp:include> --%><br><br>
+<jsp:include page="../main/mainNav.jsp"></jsp:include><br><br><br><br><br>
 <form action="mbWrite.do" method="post" name="frm">
 <input type="hidden" name="own_id" value="${own_id}">
 <input type="hidden" name="own_reg_no" value="${own_reg_no}"> <!-- 추가 -->

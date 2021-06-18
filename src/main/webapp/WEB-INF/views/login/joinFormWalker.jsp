@@ -11,12 +11,15 @@
 	<link rel="stylesheet" href="css/bootstrap.css">
 <!-- jquery 경로 지정 주의!!! -->
 <script type="text/javascript" src="js/jquery.js"></script>
+<script>
+	var jb = jQuery.noConflict(); // bootstrap의 jquery 와 버전 충돌로 해당 버전에서 사용할 jquery 선택자 변수 지정
+</script>
 <script type="text/javascript">
 	
 	// 자격증 중복체크
 	function lcchk() {		
-		$.post("confirmLicense.do", "lc_cd=" + frm.lc_cd.value, function(data) {
-			$("#lc_check").html(data);
+		jb.post("confirmLicense.do", "lc_cd=" + frm.lc_cd.value, function(data) {
+			jb("#lc_check").html(data);
 		})
 	}
 	// ID 중복 체크기능
@@ -26,38 +29,38 @@
 			frm.wkr_id.focus();
 			return false;
 		}
-		$.post("confirmWalker.do", "wkr_id=" + frm.wkr_id.value, function(data) {
-			$("#id_check").html(data);
+		jb.post("confirmWalker.do", "wkr_id=" + frm.wkr_id.value, function(data) {
+			jb("#id_check").html(data);
 		})
 	}
 
 	// jquery 적용한 비밀번호 중복확인 기능
-	$(function() {
-		$("#alert-success").hide();
-		$("#alert-danger").hide();
-		$(".passchk").keyup(function() {
-			var pass = $("#pass").val();
-			var confirmPass = $("#confirmPass").val();
+	jb(function() {
+		jb("#alert-success").hide();
+		jb("#alert-danger").hide();
+		jb(".passchk").keyup(function() {
+			var pass = jb("#pass").val();
+			var confirmPass = jb("#confirmPass").val();
 			if (pass != "" || confirmPass != "") {
 				if (pass == confirmPass) {
-					$("#alert-success").show();
-					$("#alert-danger").hide();
-					$("#submit").removeAttr("disabled");
+					jb("#alert-success").show();
+					jb("#alert-danger").hide();
+					jb("#submit").removeAttr("disabled");
 				} else {
-					$("#alert-success").hide();
-					$("#alert-danger").show();
-					$("#submit").attr("disabled", "disabled");
+					jb("#alert-success").hide();
+					jb("#alert-danger").show();
+					jb("#submit").attr("disabled", "disabled");
 				}
 			}
 		});
 	});
 
 	// jquery 적용한 버튼 추가 기능
-	$(function() {
-		$('#btnAdd').click(function() { // 각 입력자 추가
-			$('#lc_add').append('<tr class="lc_row"><td><input type="text" class="form-control" name="lc_cd" required="required" maxlength="9" onkeyup="lcchk()"></td><td><input type="text" class="form-control" name="lc_name" required="required"></td><td><input type="text" class="form-control" name="lc_iss_ogz" required="required"></td></tr>');
-		$('#btnDel').on('click', function() { // 각 입력자 삭제
-			$('.lc_row').last().remove();
+	jb(function() {
+		jb('#btnAdd').click(function() { // 각 입력자 추가
+			jb('#lc_add').append('<tr class="lc_row"><td><input type="text" class="form-control" name="lc_cd" required="required" maxlength="9" onkeyup="lcchk()"></td><td><input type="text" class="form-control" name="lc_name" required="required"></td><td><input type="text" class="form-control" name="lc_iss_ogz" required="required"></td></tr>');
+			jb('#btnDel').on('click', function() { // 각 입력자 삭제
+				jb('.lc_row').last().remove();
 			});
 		});
 	});

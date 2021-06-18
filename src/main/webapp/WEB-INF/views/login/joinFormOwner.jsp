@@ -11,6 +11,9 @@
 	<link rel="stylesheet" href="css/bootstrap.css">
 <!-- jquery 경로 지정 주의!!! -->
 <script type="text/javascript" src="js/jquery.js"></script>
+<script>
+	var jb = jQuery.noConflict(); // bootstrap의 jquery 와 버전 충돌로 해당 버전에서 사용할 jquery 선택자 변수 지정
+</script>
 <script type="text/javascript">
 	// ID 중복 체크기능
 	// 헷갈릴 수 있으니 id-> own_id로 통일할 것!
@@ -20,26 +23,26 @@
 				frm.own_id.focus();
 				return false;
 			}
-			$.post("confirmOwner.do", "own_id=" + frm.own_id.value, function(data) {
-				$("#id_check").html(data);
+			jb.post("confirmOwner.do", "own_id=" + frm.own_id.value, function(data) {
+				jb("#id_check").html(data);
 			})
 		}
 	// jquery 적용한 비밀번호 중복확인 기능
-	$(function () {
-		$("#alert-success").hide();
-		$("#alert-danger").hide();
-		$(".passchk").keyup(function(){
-			var pass = $("#pass").val();
-			var confirmPass = $("#confirmPass").val();
+	jb(function () {
+		jb("#alert-success").hide();
+		jb("#alert-danger").hide();
+		jb(".passchk").keyup(function(){
+			var pass = jb("#pass").val();
+			var confirmPass = jb("#confirmPass").val();
 			if(pass != "" || confirmPass != ""){ 
 				if(pass == confirmPass){ 
-					$("#alert-success").show(); 
-					$("#alert-danger").hide(); 
-					$("#submit").removeAttr("disabled"); 
+					jb("#alert-success").show(); 
+					jb("#alert-danger").hide(); 
+					jb("#submit").removeAttr("disabled"); 
 				}else{ 
-					$("#alert-success").hide(); 
-					$("#alert-danger").show(); 
-					$("#submit").attr("disabled", "disabled"); 
+					jb("#alert-success").hide(); 
+					jb("#alert-danger").show(); 
+					jb("#submit").attr("disabled", "disabled"); 
 				} 
 			}
 		});
@@ -47,6 +50,7 @@
 </script>
 </head>
 <body>
+<jsp:include page="../main/mainNav.jsp"></jsp:include>
 <form action="joinOwner.do" method="post" enctype="multipart/form-data" name="frm">
 	<div class="JoinWrapper">
 		<div class="form-group">
