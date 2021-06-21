@@ -44,7 +44,7 @@ public class LicenseDao {
 			System.out.println("Session 생성시 에러:" + e.getMessage());
 		}
 	}
-
+	// 회원가입 시 자격증 데이터 입력
 	public int insert(List<License> liList) {
 		try {
 			for (int i = 0; i < liList.size(); i++)
@@ -55,13 +55,13 @@ public class LicenseDao {
 		}
 		return 1;
 	}
-	
+	// 마이페이지에서 자격증 조회
 	public List<License> selectLicense(String wkr_id) {
 		HashMap<String, Object> lc_map = new HashMap<>();
 		lc_map.put("wkr_id", wkr_id);
 		return session.selectList("licenseInfo.selectLicense", lc_map);
 	}
-	
+	// 자격증 중복 체크에 사용
 	public License selectLc(String lc_cd) {
 		return (License) session.selectOne("licenseInfo.selectLccd", lc_cd);
 	}

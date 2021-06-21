@@ -41,13 +41,7 @@ public class JoinOwner implements CommandProcess {
 				String own_email = multi.getParameter("email");
 				String own_tel = multi.getParameter("tel");
 				String mb_clf_cd = "1";
-				// 입력 데이터 견주 객체 지정
-//				OwnerDao od_seq = OwnerDao.getInstance();
-				
-//				// 입력 일련번호 추가 시퀀스를 불러옴 
-//				int own_reg_no1 = od_seq.seq_increase();
-//				String own_reg_no = own_reg_no1+"";
-				
+	
 				Owner owner = new Owner();
 				owner.setOwn_id(own_id);
 				owner.setOwn_pwd(own_pwd);
@@ -58,7 +52,6 @@ public class JoinOwner implements CommandProcess {
 				owner.setOwn_email(own_email);
 				owner.setOwn_tel(own_tel);
 				owner.setMb_clf_cd(mb_clf_cd);
-//				owner.setOwn_reg_no(own_reg_no);
 				
 				// 강아지 프로필 입력 데이터를 받아옴
 				String dog_name = multi.getParameter("dog_name");

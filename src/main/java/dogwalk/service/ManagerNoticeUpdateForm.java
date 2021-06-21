@@ -26,10 +26,6 @@ public class ManagerNoticeUpdateForm implements CommandProcess {
 		request.setAttribute("pageNum", pageNum);
 		request.setAttribute("notice", notice);
 		
-//		System.out.println("AdminKnotice pageNum : " + pageNum);
-//		System.out.println("AdminKnotice n_num : " + n_num);
-//		System.out.println("AdminKnotice knotice : " + knotice);
-		
 		return "manager/managerNoticeUpdateForm";
 	}
 }

@@ -11,8 +11,6 @@
 	<c:if test="${result > 0}">
 		<script type="text/javascript">
 			alert("신청 성공");
-			/* location.href = "bookingList.do"; */
-			/* location.href = "mbWalkerView.do?mbd_no=${mbd_no }"; */
 			location.href = "mbWalkerView.do?mbd_no=${mbd_no }&wkr_reg_no=${sessionScope.wkr_reg_no }&wkr_id=${sessionScope.wkr_id }";
 		</script>
 	</c:if>

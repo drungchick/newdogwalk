@@ -35,22 +35,22 @@ public class DogDao {
 		}
 	}
 	
-	public List<Dog> list(int startRow, int endRow) {
+	public List<Dog> list(int startRow, int endRow) {	// 강아지 프로필 목록 조회
 		HashMap<String, Object> hm = new HashMap<>();
 		hm.put("startRow", startRow);
 		hm.put("endRow", endRow);
 		return session.selectList("dogns.list", hm);
 	}
 
-	public int total() {
+	public int total() {	// 강아지 프로필 총 개수 count
 		return (int) session.selectOne("dogns.total");
 	}
 
-	public Dog select(String dog_no) {
+	public Dog select(String dog_no) {	// 강아지 상세 정보 조회
 		return (Dog) session.selectOne("dogns.selectView", dog_no);
 	}
 
-	public List<Dog> searchlist(int startRow, int endRow, String type, String search) {
+	public List<Dog> searchlist(int startRow, int endRow, String type, String search) {	// 검색 창에서 검색 시 해당 강아지 프로필 조회
 		HashMap<String, Object> hm = new HashMap<>();
 		hm.put("startRow", startRow);
 		hm.put("endRow", endRow);
@@ -73,7 +73,7 @@ public class DogDao {
 	}
 
 	// 매칭게시판에서 게시글에서 강아지 프로필 볼때 사용하는 로직
-	public Dog selectbmbdog(String own_id) {
+	public Dog selectmbdog(String own_id) {
 		return (Dog) session.selectOne("dogns.selectmbdog", own_id);
 	}
 	

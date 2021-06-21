@@ -33,7 +33,7 @@ public class ManagerDao {
 			System.out.println("session 생성에러: "+e.getMessage());
 		}
 	}
-	
+	// 관리자 계정 조회
 	public Manager select(String mng_id) {
 		return (Manager) session.selectOne("managerns.select", mng_id);
 	}

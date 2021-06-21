@@ -17,7 +17,6 @@ public class UpdateDog implements CommandProcess {
 		
 		HttpSession session = request.getSession();
 		String dog_no = (String) session.getAttribute("dog_no");
-//		System.out.println(dog_no);
 		
 		// 변하는 값들에 대해서만 파라미터 값을 가져옴
 		int dog_age = Integer.parseInt(request.getParameter("dog_age"));

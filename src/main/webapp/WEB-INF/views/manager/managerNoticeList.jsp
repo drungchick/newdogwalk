@@ -4,13 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<!-- <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1"> -->
 <title>Insert title here</title>
-<!-- <link href="../../css/bootstrap.min.css" rel="stylesheet">
-<script type="text/javascript" src="../../js/jquery.js"></script>
-<script src="../../js/bootstrap.min.js"></script> -->
 <style type="text/css">
 	@import url("common.css");
 </style>
@@ -55,15 +49,12 @@
 		
 		<div align="center">
 			<c:if test="${startPage > pagePerBlock }">
-				<%-- <a href="managerNoticeList.do?pageNum=${startPage - 1 }">[이전]</a> --%>
 				<button onclick="location.href='managerNoticeList.do?pageNum=${startPage - 1 }'">[이전]</button>
 			</c:if>
 			<c:forEach var="i" begin="${startPage }" end="${endPage }">
-				<%-- <a href="managerNoticeList.do?pageNum=${i }">${i }</a> --%>
 				<button onclick="location.href='managerNoticeList.do?pageNum=${i }'">${i }</button>
 			</c:forEach>
 			<c:if test="${endPage < totPage }">
-				<%-- <a href="managerNoticeList.do?pageNum=${endPage + 1 }">[다음]</a> --%>
 				<button onclick="location.href='managerNoticeList.do?pageNum=${endPage + 1 }'">[다음]</button>
 			</c:if>
 		</div>

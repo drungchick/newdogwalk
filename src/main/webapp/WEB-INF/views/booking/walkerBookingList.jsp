@@ -1,6 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ include file="/sessionChk.jsp" %>
+<%
+response.setHeader("Cache-Control","no-cache");
+response.setHeader("Cache-Control","no-store");
+response.setHeader("Pragma","no-cache");
+response.setDateHeader ("Expires", 0);
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,7 +47,6 @@
 			<c:if test="${not empty wkrlist}">
 				<c:forEach var="booking" items="${wkrlist }">
 					<tr align="center">
-						<%-- <td>${booking.bk_no }<c:set var="bk_no" value="${booking.bk_no}"></c:set></td> --%>
 						<td>${booking.mbd_no }</td>
 						<td>
 							<!-- 요청 상세보기 --> <a
@@ -48,9 +54,6 @@
 						</td>
 						<td>${booking.own_id }</td>
 						<td>${booking.mbd_reg_dt }</td>
-						<%-- <td><!-- 도우미 프로필 상세보기 -->
-							<a href="wpView.do?wkr_reg_no=${booking.wkr_reg_no }">${booking.wkr_id }</a>
-						</td> --%>
 						<td>
 							<c:choose>
 								<c:when test="${booking.bk_mc_chk == 'N' and booking.bk_chk == 'Y'}">매칭 진행 중</c:when>
@@ -67,19 +70,16 @@
 		<div align="center" class="pageMiddle">
 			<ul class="pagination pagination-lg" class="a">
 				<c:if test="${startPage > PAGE_PER_BLOCK}">
-					<%-- <button onclick="location.href='MyBooking.do?pageNum=${startPage - 1}'">이전</button> --%>
 					<li class="page-item">
 	      				<a class="page-link" href="MyBooking.do?pageNum=${startPage - 1}">&laquo;</a>
 	    			</li>
 				</c:if>
 				<c:forEach var="i" begin="${startPage }" end="${endPage }">
-					<%-- <button onclick="location.href='MyBooking.do?pageNum=${i}'">${i }</button> --%>
 					<li class="page-item">
 						<a class="page-link" href="MyBooking.do?pageNum=${i}">${i }</a>
 					</li>
 				</c:forEach>
 				<c:if test="${startPage< totalPage}">
-					<%-- <button onclick="location.href='MyBooking.do?pageNum=${endPage + 1 }'">다음</button> --%>
 					<li class="page-item">
 	     	 			<a class="page-link" href="MyBooking.do?pageNum=${endPage + 1 }">&raquo;</a>
 	    			</li>
@@ -87,10 +87,5 @@
 			</ul>
 		</div>
 	</div>
-	<!-- <div align="center">
-		<br>
-		<button onclick="location.href='Membermain.do'">메인화면</button>
-		<button onclick="history.back()">이전화면</button>
-	</div> -->
 </body>
 </html>

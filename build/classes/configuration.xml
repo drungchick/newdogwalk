@@ -4,8 +4,7 @@
 <configuration>
 	<properties resource="dbconnect.properties" />
 	<typeAliases>
- 		<typeAlias alias="booking" type="dogwalk.model.Booking" />
- 		<typeAlias alias="wbooking" type="dogwalk.model.WBooking" />		
+ 		<typeAlias alias="booking" type="dogwalk.model.Booking" />		
 		<typeAlias alias="dog" type="dogwalk.model.Dog" />
  		<typeAlias alias="license" type="dogwalk.model.License" />
 		<typeAlias alias="manager" type="dogwalk.model.Manager" />
@@ -35,6 +34,5 @@
 		<mapper resource="manager.xml" />
 		<mapper resource="license.xml" />
 		<mapper resource="booking.xml" />
-		<mapper resource="wbooking.xml" />
 	</mappers>
 </configuration>

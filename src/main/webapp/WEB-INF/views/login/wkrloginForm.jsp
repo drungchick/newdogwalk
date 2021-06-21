@@ -12,26 +12,6 @@
 </head>
 <body>
 <jsp:include page="../main/mainNav.jsp"></jsp:include><br><br><br><br><br>
-<!-- <form action="wkrLogin.do">
-<table>
-	<caption>도우미 로그인</caption>
-	<tr>
-		<th>아이디</th>
-		<td>
-			<input type="text" name="wkr_id" required="required" autofocus="autofocus">
-		</td>
-	</tr>
-	<tr>
-		<th>비밀번호</th>
-		<td>
-			<input type="password" name="wkr_pwd" required="required">
-	</tr>
-	<tr>
-		<th colspan="2"><input type="submit" value="확인"></th>
-	</tr>
-</table>
-<button onclick="location.href='joinChoice.do'">회원가입</button>
-</form> -->
 <form action="wkrLogin.do">
 	<div class="SelectOuterWrapper" align="center">
 		<div class="LoginInnerWrapper" >
@@ -48,9 +28,5 @@
 		</div>
 	</div>
 </form>
-	<!-- <div align="left">
-		<button type="button" class="btn btn-outline-primary" onclick="location.href='main.do'">Main</button>
-		<button type="button" class="btn btn-primary" onclick="location.href='joinChoice.do'">Join</button>
-	</div> -->
 </body>
 </html>

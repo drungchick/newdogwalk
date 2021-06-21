@@ -8,9 +8,7 @@ import dogwalk.model.MBoard;
 
 public class MBWalkerView implements CommandProcess {
 	@Override
-	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
-		//HttpSession session = request.getSession();
-		
+	public String requestPro(HttpServletRequest request, HttpServletResponse response) {		
 		String mbd_no = request.getParameter("mbd_no");
 		String wkr_id = request.getParameter("wkr_id");
 		String wkr_reg_no = request.getParameter("wkr_reg_no");

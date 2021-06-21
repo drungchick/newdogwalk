@@ -12,7 +12,6 @@ public class MBUpdate implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
-		// TODO Auto-generated method stub
 		String own_id = request.getParameter("own_id");
 		String mbd_sbjt = request.getParameter("mbd_sbjt");
 		String mbd_str_dt = request.getParameter("mbd_str_dt");

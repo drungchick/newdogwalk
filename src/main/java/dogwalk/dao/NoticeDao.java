@@ -47,27 +47,27 @@ public class NoticeDao {
 		hm.put("endRow", endRow);
 		return session.selectList("noticens.list", hm); // notice.xml파일의 이름이 noticens 함수와 같은 것이 list
 	}
-
+	// 공지사항 총 개수 count
 	public int total() {
 		return (int) session.selectOne("noticens.total"); // notice.xml파일의 이름이 noticens 함수와 같은 것이 total
 	}
-
+	// 공지사항 상세글
 	public Notice select(String nt_no) {
 		return (Notice) session.selectOne("noticens.select", nt_no); // notice.xml파일의 이름이 noticens 함수와 같은 것이 select
 	}
-	
+	// 공지사항 조회수
 	public int readCountUpdate(String nt_no) {
 		return (int) session.update("noticens.rcupdate", nt_no);
 	}
-
+	// 공지사항 수정
 	public int update(Notice notice) {
 		return session.update("noticens.update", notice);
 	}
-
+	// 공지사항 삭제
 	public int delete(String nt_no) {
 		return session.update("noticens.delete", nt_no);
 	}
-
+	// 공지사항 작성 시 입력
 	public int insert(Notice notice) {
 		return session.insert("noticens.insert", notice);
 	}

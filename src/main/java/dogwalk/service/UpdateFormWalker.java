@@ -31,7 +31,6 @@ public class UpdateFormWalker implements CommandProcess {
 		
 		// 6월 7일
 		String wkr_reg_no = walker.getWkr_reg_no();
-//		request.setAttribute("wkr_reg_no", wkr_reg_no);
 		session.setAttribute("wkr_reg_no", wkr_reg_no);
 		return "mypage/updateFormWalker";
 	}

@@ -26,9 +26,6 @@ public class OwnerBookingList implements CommandProcess {
 		String own_id = request.getParameter("own_id");
 		String own_reg_no = request.getParameter("own_reg_no");
 		
-//		BookingDao bd = BookingDao.getInstance();
-//		List<Booking> ownlist = bd.ownlist(startRow, endRow, own_id, own_reg_no);
-		
 		MBoardDao mbd = MBoardDao.getInstance();
 		List<MBoard> ownlist = mbd.ownlist(startRow, endRow, own_id, own_reg_no);
 		

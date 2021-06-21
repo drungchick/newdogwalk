@@ -22,16 +22,6 @@ public class MemberMainAction implements CommandProcess {
 		// 세션 구분을 위한 mb_clf_cd를 가져오고 보내줌
 		String mb_clf_cd = (String) session.getAttribute("mb_clf_cd");
 		
-//		if (mb_clf_cd == "1") {
-//			session.setAttribute("own_id", id);
-//			session.setAttribute("mb_clf_cd", mb_clf_cd);
-//		}
-//		else if (mb_clf_cd == "2") {
-//			session.setAttribute("wkr_id", id);
-//			session.setAttribute("wkr_reg_no", wkr_reg_no);
-//			session.setAttribute("mb_clf_cd", mb_clf_cd);
-//		}		
-		
 		return "main/main";
 	}
 

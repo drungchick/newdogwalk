@@ -1,6 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%-- <%@ include file="sessionChk.jsp" %> --%>
+<%@ include file="/sessionChk.jsp" %>
+<%
+response.setHeader("Cache-Control","no-cache");
+response.setHeader("Cache-Control","no-store");
+response.setHeader("Pragma","no-cache");
+response.setDateHeader ("Expires", 0);
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -54,15 +60,6 @@
     				<a href="ownerProfileView.do?own_id=${mboard.own_id }" class="btn btn-secondary btn-lg" role="button">Owner</a>
     			</td>
     		</tr>
-    		<%-- <c:if test="${mboard.own_id == sessionScope.own_id }">
-    		<tr align="center">
-    			<th class="align-middle" scope="row">Update/Delete</th>
-    			<td>
-    				<a href="mbUpdateForm.do?mbd_no=${mboard.mbd_no }&pageNum=${pageNum}" class="btn btn-primary btn-sm" role="button">Update</a>
-    				<a href="mbDelete.do?mbd_no=${mboard.mbd_no }" class="btn btn-secondary btn-sm" role="button">Delete</a>
-    			</td>
-    		</tr>
-    		</c:if> --%>
 		</table>
 		
 		<div class="container">

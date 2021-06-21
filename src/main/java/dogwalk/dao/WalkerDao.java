@@ -35,22 +35,22 @@ public class WalkerDao {
 			System.out.println("session 생성에러: "+e.getMessage());
 		}
 	}
-	
+	// 도우미 프로필 목록 조회
 	public List<Walker> list(int startRow, int endRow) {
 		HashMap<String, Object> hm = new HashMap<>();
 		hm.put("startRow", startRow);
 		hm.put("endRow", endRow);
 		return session.selectList("walkerns.list", hm);
 	}
-
+	// 도우미 프로필 총 개수
 	public int total() {
 		return (int) session.selectOne("walkerns.total");
 	}
-
+	// 도우미 상세정보 조회
 	public Walker select(String wkr_reg_no) {
 		return (Walker) session.selectOne("walkerns.selectWalkerNo", wkr_reg_no);
 	}
-
+	// 도우미 프로필 검색
 	public List<Walker> searchlist(int startRow, int endRow, String type, String search) {
 		HashMap<String, Object> hm = new HashMap<>();
 		hm.put("startRow", startRow);
@@ -64,6 +64,7 @@ public class WalkerDao {
 	public Walker selectAll(String wkr_id) {
 		return (Walker)session.selectOne("walkerns.selectAll", wkr_id);
 	}
+	// 도우미 로그인 시 조회
 	public Walker selectWalker(String wkr_id) {
 		return (Walker)session.selectOne("walkerns.selectWalkerId", wkr_id);
 	}

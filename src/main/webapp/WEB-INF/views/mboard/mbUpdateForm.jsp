@@ -1,6 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%-- <%@ include file="sessionChk.jsp" %> --%>
+<%@ include file="/sessionChk.jsp" %>
+<%
+response.setHeader("Cache-Control","no-cache");
+response.setHeader("Cache-Control","no-store");
+response.setHeader("Pragma","no-cache");
+response.setDateHeader ("Expires", 0);
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -56,12 +62,6 @@
 			<fieldset>
 			<h1 align="center">Update</h1>
 			<br>
-			
-			<%-- <div class="form-group">
-				<h4><label for="writer">Writer</label></h4>
-      			<input type="text" class="form-control" id="writer" name="own_id" value="${mboard.own_id }" readonly="readonly">
-    		</div> --%>
-    		
     		<div class="form-group">
 				<h4><label for="subject">Subject</label></h4>
       			<input type="text" class="form-control" id="subject" name="mbd_sbjt" value="${mboard.mbd_sbjt }" autofocus="autofocus">
@@ -93,65 +93,6 @@
 			</fieldset>
 		</div>
 	</div>
-	
-	<%-- <tr align="center">
-      			<th scope="row">Subject</th>
-		      	<td><input type="text" class="form-control" name="mbd_sbjt" required="required" value="${mboard.mbd_sbjt }"></td>
-    		</tr>
-    		<tr align="center">
-      			<th scope="row">Start Date</th>
-		      	<td><input type="text" name="mbd_str_dt" id="mbd_str_dt" required="required" value="${mboard.mbd_str_dt }"></td>
-    		</tr>
-    		<tr align="center">
-      			<th scope="row">End Date</th>
-		      	<td><input type="text" name="mbd_fn_dt" id="mbd_fn_dt" required="required" value="${mboard.mbd_fn_dt }"></td>
-    		</tr>
-    		<tr align="center">
-      			<th class="align-middle" scope="row">Content</th>
-		      	<td><textarea rows="5" class="form-control" cols="70" style="border:none;">${mboard.mbd_cont }</textarea></td>
-    		</tr> --%>
-	
-	<%-- <table>
-		<caption>회원정보 수정</caption>
-		<tr>
-			<th>작성자</th>
-			<td>
-				${mboard.own_id }
-			</td>
-		</tr>
-		<tr>
-			<th>제목</th>
-			<td>
-				<input type="text" name="mbd_sbjt" required="required" value="${mboard.mbd_sbjt }">
-			</td>
-		</tr>
-		<tr>
-			<th>산책대행 시작희망일시</th>
-			<td>
-				<input type="text" name="mbd_str_dt" id="mbd_str_dt" required="required" value="${mboard.mbd_str_dt }">
-			</td>
-		</tr>
-		<tr>
-			<th>산책대행 종료희망일시</th>
-			<td>
-				<input type="text" name="mbd_fn_dt" id="mbd_fn_dt" required="required" value="${mboard.mbd_fn_dt }">
-			</td>
-		</tr>
-		<tr>
-			<th>내용</th>
-			<td>
-				<textarea name="mbd_cont" required="required">${mboard.mbd_cont }</textarea>
-			</td>
-		</tr>
-		<tr>
-			<th colspan="2">
-				<input type="submit" value="수정">
-				<input type="button" value="취소" onclick="history.back()">
-			</th>
-		</tr>
-		<tr>
-		</tr>
-	</table> --%>
 </form>
 </body>
 </html>

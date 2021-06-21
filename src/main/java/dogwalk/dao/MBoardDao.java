@@ -30,7 +30,7 @@ public class MBoardDao {
 			System.out.println(e.getMessage());
 		}
 	}
-	
+	// 매칭게시판 목록 조회
 	@SuppressWarnings("unchecked")
 	public List<MBoard> list(int startRow, int endRow) {
 		// 파라미터로는 단수개의 정보만 전달 가능
@@ -47,26 +47,30 @@ public class MBoardDao {
 	public int total() {
 		return (int) session.selectOne("mboardns.total");
 	}
-	
+	// 상세글 조회 시 사용
 	public MBoard select(String mbd_no) {
 		return (MBoard) session.selectOne("mboardns.select", mbd_no);
 	}
-	
+	// 매칭글 작성 시 데이터 입력
 	public int insert(MBoard mboard) {
 		// TODO Auto-generated method stub
 		return session.insert("mboardns.insert", mboard);
 	}
+	// 매칭글 수정
 	public int update(MBoard mboard) {
 		// TODO Auto-generated method stub
 		return session.update("mboardns.update", mboard);
 	}
+	// 매칭글 삭제
 	public int delete(String mbd_no) {
 		// TODO Auto-generated method stub
 		return session.delete("mboardns.delete", mbd_no);
 	}
+	// 매칭게시글 조회수
 	public int readCountUpdate(String mbd_no) {
 		return (int) session.update("mboardns.rcupdate", mbd_no);
 	}
+	// 견주 자신이 쓴 글 조회 시 사용
 	public List<MBoard> ownlist(int startRow, int endRow, String own_id, String own_reg_no) {
 			HashMap<String, Object> hm = new HashMap<>();
 			hm.put("startRow", startRow);

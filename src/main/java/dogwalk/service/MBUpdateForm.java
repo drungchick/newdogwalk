@@ -10,7 +10,6 @@ public class MBUpdateForm implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
-		// TODO Auto-generated method stub
 		String mbd_no = request.getParameter("mbd_no");
 		String pageNum = request.getParameter("pageNum");
 		

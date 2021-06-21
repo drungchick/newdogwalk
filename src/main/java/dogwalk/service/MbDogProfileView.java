@@ -16,7 +16,7 @@ public class MbDogProfileView implements CommandProcess {
 		String own_id = request.getParameter("own_id");
 		
 		DogDao dd = DogDao.getInstance();
-		Dog dog = dd.selectbmbdog(own_id);
+		Dog dog = dd.selectmbdog(own_id);
 		
 		request.setAttribute("dog", dog);
 		return "profile/dogProfileView";

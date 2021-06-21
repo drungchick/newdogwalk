@@ -28,9 +28,5 @@
 		</div>
 	</div>
 </form>
-	<!-- <div align="left">
-		<button type="button" class="btn btn-outline-primary" onclick="location.href='main.do'">Main</button>
-		<button type="button" class="btn btn-primary" onclick="location.href='joinChoice.do'">Join</button>
-	</div> -->
 </body>
 </html>

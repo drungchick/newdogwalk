@@ -34,6 +34,7 @@ public class OwnerDao {
 			System.out.println("session 생성에러: "+e.getMessage());
 		}
 	}
+	// 견주 로그인 시 조회
 	public Owner select(String own_id) {
 		return (Owner) session.selectOne("ownerns.selectOwnerId", own_id);
 
@@ -59,14 +60,14 @@ public class OwnerDao {
 	public int deleteOwner(String own_id) {
 		return session.update("ownerns.delete", own_id);
 	}
-
+	// 견주 프로필 목록 조회
 	public List<Owner> list(int startRow, int endRow) {
 		HashMap<String, Object> hm = new HashMap<>();
 		hm.put("startRow", startRow);
 		hm.put("endRow", endRow);
 		return session.selectList("ownerns.list", hm);
 	}
-
+	// 견주 프로필 총 개수
 	public int total() {
 		return (int) session.selectOne("ownerns.total");
 	}

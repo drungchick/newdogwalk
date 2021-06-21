@@ -19,7 +19,6 @@ public class ManagerNoticeView implements CommandProcess {
 		Notice notice = nd.select(nt_no);
 		// 최근페이지의 대한 정보와 상세 데이터 정보를 저장한 notice객체를 /views/notice/noticeView.jsp로 데이터를 전달
 		request.setAttribute("pageNum", pageNum);
-//				System.out.println("view pageNum : " + pageNum);
 		request.setAttribute("notice", notice);
 		
 		return "manager/managerNoticeView";

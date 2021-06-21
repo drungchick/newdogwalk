@@ -1,6 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ include file="/sessionChk.jsp" %>
+<%
+response.setHeader("Cache-Control","no-cache");
+response.setHeader("Cache-Control","no-store");
+response.setHeader("Pragma","no-cache");
+response.setDateHeader ("Expires", 0);
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -87,39 +94,5 @@
 			</c:if>
 		</ul>
 	</div>
-
-	<%-- 
-	<div id="content" align="center">
-		<h3 align="center">Dog Profile</h3>
-		<table class="table table-hover">
-			<c:if test="${empty list }">
-			<tr>
-				<td colspan="4">등록된 반려견이 없습니다.</td>
-			</tr>
-			</c:if>
-			<c:if test="${not empty list }">
-				<c:forEach var="dog" items="${list }">
-					<tr>
-						<c:set var="total" value="${total }"></c:set>
-						<td>${total }<c:set var="total" value="${total-1 }" /></td>
-						<td><a href="dogProfileView.do?dog_no=${dog.dog_no }&pageNum=${currentPage}">${dog.dog_name }</a></td>
-						<td>${dog.dog_gdr }</td>
-						<td>${dog.dog_age }</td>
-					</tr>
-					<div class="row">
-					  <div class="col-sm-6 col-md-4">
-					    <div class="thumbnail">
-					      <img src="..." alt="...">
-					      <div class="caption">
-					        <h3>Thumbnail label</h3>
-					        <p>...</p>
-					        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-					      </div>
-					    </div>
-					  </div>
-					</div>
-				</c:forEach>		
-			</c:if>
-		</table> --%>
 </body>
 </html>

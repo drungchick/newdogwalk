@@ -16,13 +16,17 @@ public class MypageDog implements CommandProcess {
 			throws UnsupportedEncodingException {
 		HttpSession session = request.getSession();
 		String own_id = (String) session.getAttribute("own_id");
+		if (own_id == null) {
+			return "main/main";
+		} else {
+			DogDao dd = DogDao.getInstance();
+			Dog dog = dd.selectDog(own_id); // 견주 id로 강아지 정보를 모두 찾아옴
+			request.setAttribute("dog", dog);
+			session.setAttribute("own_id",own_id);
+			
+			return "/mypage/myDogpage";
+		}
 		
-		DogDao dd = DogDao.getInstance();
-		Dog dog = dd.selectDog(own_id); // 견주 id로 강아지 정보를 모두 찾아옴
-		request.setAttribute("dog", dog);
-		session.setAttribute("own_id",own_id);
-		
-		return "/mypage/myDogpage";
 	}
 
 }

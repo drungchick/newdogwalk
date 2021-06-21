@@ -10,7 +10,6 @@ public class WkrBookingAction implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
-//		HttpSession session = request.getSession();
 		String mbd_no = request.getParameter("mbd_no");
 		String wkr_reg_no = request.getParameter("wkr_reg_no");
 		String wkr_id = request.getParameter("wkr_id");
@@ -21,7 +20,7 @@ public class WkrBookingAction implements CommandProcess {
 		
 		if (bkcheck == 1) { // 오류나면 지워
 			return "booking/checkBooking"; // 중복신청 불가하게
-		} else { // 오류나면 지워
+		} else {
 			if (accheck == 1) {
 				return "booking/rejectBooking"; // 매칭완료글 신청 못하게
 			} else {
