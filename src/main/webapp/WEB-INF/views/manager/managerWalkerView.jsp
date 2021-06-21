@@ -4,65 +4,82 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-<style type="text/css">
-	@import url("common.css");
-</style>
-<script type="text/javascript">
-	function goBack() {
-		history.back();	
-	}
-</script>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Insert title here</title>
+	<!-- css 연결 -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<script type="text/javascript">
+		function goBack() {
+			history.back();	
+		}
+	</script>
 </head>
 <body>
-<h3 align="center">${walker.wkr_name }의 정보</h3>
-<hr>
-<table border="1">
-	<tr>
-		<th>ID</th>
-		<td>${walker.wkr_id }</td>
-	</tr>
-	<tr>
-		<th>이름</th>
-		<td>${walker.wkr_name }</td>
-	</tr>
-	<tr>
-		<th>생년월일</th>
-		<td>${walker.wkr_bth_dt }</td>
-	</tr>
-	<tr>
-		<th>주소</th>
-		<td>${walker.wkr_addr }</td>
-	</tr>
-	<tr>
-		<th>이메일</th>
-		<td>${walker.wkr_email }</td>
-	</tr>
-	<tr>
-		<th>전화번호</th>
-		<td>${walker.wkr_tel }</td>
-	</tr>
-	<tr>
-		<th>양육년수</th>
-		<td>${walker.wkr_rs_cnt }</td>
-	</tr>
-	<tr>
-		<th>양육경험</th>
-		<td>${walker.wkr_rs_ex }</td>
-	</tr>
-	<tr>
-		<th>경력사항</th>
-		<td>${walker.wkr_career }</td>
-	</tr>
-	<tr>
-		<th>가입일</th>
-		<td>${walker.wkr_reg_dt }</td>
-	</tr>
-</table>
+<div class="container">
+	<div id="content align="center>
+		<h1 align="center">${walker.wkr_id } Profile</h1>
+		<br>
+		<table class="table table-striped">
+			<tr align="center">
+				<th scope="row">ID</th>
+				<td>${walker.wkr_id }</td>
+			</tr>
+			<tr align="center">
+				<th scope="row">Name</th>
+				<td>${walker.wkr_name }</td>
+			</tr>
+			<tr align="center">
+				<th scope="row">Gender</th>
+				<td>${walker.wkr_gdr }</td>
+			</tr>
+			<tr align="center">
+				<th scope="row">Birthday</th>
+				<td>${walker.wkr_bth_dt }</td>
+			</tr>
+			<tr align="center">
+				<th scope="row">Address</th>
+				<td>${walker.wkr_addr }</td>
+			</tr>
+			<tr align="center">
+				<th scope="row">Email</th>
+				<td>${walker.wkr_email }</td>
+			</tr>
+			<tr align="center">
+				<th scope="row">Phone</th>
+				<td>${walker.wkr_tel }</td>
+			</tr>
+			<tr align="center">
+				<th scope="row">Phone</th>
+				<td>${walker.wkr_tel }</td>
+			</tr>
+			<tr align="center">
+				<th scope="row">Rearing Period(Year)</th>
+				<td>${walker.wkr_rs_cnt }</td>
+			</tr>
+			<tr align="center">
+      			<th scope="row" class="align-middle">Rearing Experience</th>
+		      	<td><textarea rows="10" cols="70" style="border:none;" readonly="readonly">${walker.wkr_rs_ex }</textarea></td>
+    		</tr>
+    		<tr align="center">
+      			<th scope="row" class="align-middle">Walker Career</th>
+		      	<td><textarea rows="10" cols="70" style="border:none;" readonly="readonly">${walker.wkr_career }</textarea></td>
+    		</tr>
+			<tr align="center">
+				<th scope="row">Registration</th>
+				<td>${walker.wkr_reg_dt }</td>
+			</tr>
+		</table>
+	</div>
+	
+	<br>
+	
+	<div align="center">
+		<button type="button" class="btn btn-primary btn-lg" onclick="goBack();">Back</button>
+	</div>
 
-<div align="center">
-	<input type="button" value="뒤로" onclick="goBack();" />
 </div>
 
+<br>
 </body>
 </html>

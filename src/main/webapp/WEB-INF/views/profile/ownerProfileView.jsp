@@ -73,7 +73,5 @@ response.setDateHeader ("Expires", 0);
 </div>
 
 <br>
-<br>
-<br>
 </body>
 </html>

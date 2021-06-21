@@ -33,7 +33,7 @@
     		</tr>
     		<tr align="center">
       			<th class="align-middle" scope="row">Content</th>
-		      	<td><textarea rows="10" cols="70" style="border:none;">${notice.nt_reg_dt }</textarea></td>
+		      	<td><textarea rows="5" cols="70" style="border:none;">${notice.nt_reg_dt }</textarea></td>
     		</tr>
 		</table>
 	</div>

@@ -3,58 +3,67 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<style type="text/css">
-	@import url("common.css");
-</style>
-<script type="text/javascript">
-	function goBack() {
-		history.back();	
-	}
-</script>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Insert title here</title>
+	<!-- css 연결 -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<script type="text/javascript">
+		function goBack() {
+			history.back();	
+		}
+	</script>
 </head>
 <body>
-<h3 align="center">${owner.own_id }의 정보</h3>
-<hr>
-<table border="1">
-	<tr>
-		<th>ID</th>
-		<td>${owner.own_id }</td>
-	</tr>
-	<tr>
-		<th>이름</th>
-		<td>${owner.own_name }</td>
-	</tr>
-	<tr>
-		<th>성별</th>
-		<td>${owner.own_gdr }</td>
-	</tr>
-	<tr>
-		<th>생년월일</th>
-		<td>${owner.own_bth_dt }</td>
-	</tr>
-	<tr>
-		<th>주소</th>
-		<td>${owner.own_addr }</td>
-	</tr>
-	<tr>
-		<th>이메일</th>
-		<td>${owner.own_email }</td>
-	</tr>
-	<tr>
-		<th>전화번호</th>
-		<td>${owner.own_tel }</td>
-	</tr>
-	<tr>
-		<th>가입일</th>
-		<td>${owner.own_reg_dt }</td>
-	</tr>
-</table>
+<div class="container">
+	<div id="content" align="center">
+		<h1 align="center">${owner.own_id } Profile</h1>
+		<br>
+		<table class="table table-striped">
+			<tr align="center">
+				<th scope="row">ID</th>
+				<td>${owner.own_id }</td>
+			</tr>
+			<tr align="center">
+				<th scope="row">Name</th>
+				<td>${owner.own_name }</td>
+			</tr>
+			<tr align="center">
+				<th scope="row">Gender</th>
+				<td>${owner.own_gdr }</td>
+			</tr>
+			<tr align="center">
+				<th scope="row">Birthday</th>
+				<td>${owner.own_bth_dt }</td>
+			</tr>
+			<tr align="center">
+				<th scope="row">Address</th>
+				<td>${owner.own_addr }</td>
+			</tr>
+			<tr align="center">
+				<th scope="row">Email</th>
+				<td>${owner.own_email }</td>
+			</tr>
+			<tr align="center">
+				<th scope="row">Phone</th>
+				<td>${owner.own_tel }</td>
+			</tr>
+			<tr align="center">
+				<th scope="row">Registration</th>
+				<td>${owner.own_reg_dt }</td>
+			</tr>
+		</table>
+	</div>
+	
+	<br>
+	
+	<div align="center">
+		<button type="button" class="btn btn-primary btn-lg" onclick="goBack();">Back</button>
+	</div>
 
-<div align="center">
-	<input type="button" value="뒤로" onclick="goBack();" />
 </div>
 
+<br>
 </body>
 </html>
