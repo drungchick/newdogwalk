@@ -1,30 +1,41 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Insert title here</title>
-<style type="text/css">
-	@import url("common.css");
-</style>
+<!-- css 연결 -->
+<link rel="stylesheet" href="css/bootstrap.css">
 </head>
 <body>
-<h1 align="center">매니저 메인</h1>
-<table>
+	<div class="container">
+		<h1 align="center">Manager Main</h1>
+		<h2 align="center">정보 관리</h2>
+		<table class="table table-hover">
 	<tr>
-		<th>공지사항 관리</th>
-		<th>매칭정보 관리</th>
-		<th>견주정보 관리</th>
-		<th>반려견정보 관리</th>
-		<th>도우미정보 관리</th>
+		<th>Notice</th>
+		<td><a href="managerNoticeList.do">Notice</a></td>
 	</tr>
 	<tr>
-		<th><a href="managerNoticeList.do">공지사항</a></th>
-		<th>매칭정보</th>
-		<th><a href="managerOwnerList.do">견주정보</a></th>
-		<th><a href="managerDogList.do">반려견 정보</a></th>
-		<th><a href="managerWalkerList.do">도우미정보</a></th>
+		<th>Walk!</th>
+		<td><a href=""></a></td>
+	</tr>
+	<tr>
+		<th>Owner</th>
+		<td><a href="managerOwnerList.do">Owner</a></td>
+	</tr>
+	<tr>
+		<th>Dog</th>
+		<td><a href="managerDogList.do">Dog</a></td>
+	</tr>
+	<tr>
+		<th>Walker</th>
+		<td><a href="managerWalkerList.do">Walker</a></td>
+	</tr>
 </table>
+</div>
 </body>
 </html>

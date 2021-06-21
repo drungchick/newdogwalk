@@ -3,33 +3,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<style type="text/css">
-	@import url("common.css");
-</style>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Insert title here</title>
+	<!-- css 연결 -->
+	<link rel="stylesheet" href="css/bootstrap.css">
 </head>
 <body>
 <form action="managerLogin.do">
-<h1>관리자 로그인</h1>
-<table>
-	<tr>
-		<th>아이디</th>
-		<td>
-			<input type="text" name="mng_id" required="required" autofocus="autofocus">
-		</td>
-	</tr>
-	<tr>
-		<th>비밀번호</th>
-		<td>
-			<input type="text" name="mng_pwd" required="required">
-		</td>
-	</tr>
-	<tr>
-		<th colspan="2">
-			<input type="submit" value="로그인">
-		</th>
-</table>
+	<div class="SelectOuterWrapper" align="center">
+		<div class="LoginInnerWrapper" >
+			<h3 align="center">Manager Login</h3>
+		    <div class="form-group">
+		      <label for="id">ID</label>
+		      <input type="text" class="form-control" id="id" name="mng_id" required="required" autofocus="autofocus">
+		    </div>
+		    <div class="form-group">
+		      <label for="password">Password</label>
+		      <input type="password" class="form-control" id="password" name="mng_pwd" required="required">
+		    </div>
+		    <button type="submit" class="btn btn-primary">Log in</button>
+		</div>
+	</div>
 </form>
 </body>
 </html>
