@@ -21,7 +21,7 @@
 	</tr>
 	<tr>
 		<th>Walk!</th>
-		<td><a href=""></a></td>
+		<td><a href="managerMboardList.do">Walk!</a></td>
 	</tr>
 	<tr>
 		<th>Owner</th>
