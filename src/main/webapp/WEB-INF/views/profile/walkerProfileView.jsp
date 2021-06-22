@@ -13,7 +13,7 @@ response.setDateHeader ("Expires", 0);
 <meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Insert title here</title>
+	<title>도우미 프로필 상세보기</title>
 	<!-- css 연결 -->
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<script type="text/javascript">

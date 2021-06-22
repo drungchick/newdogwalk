@@ -13,7 +13,7 @@ response.setDateHeader ("Expires", 0);
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Insert title here</title>
+	<title>매칭게시판 견주</title>
 	<!-- css 연결 -->
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">

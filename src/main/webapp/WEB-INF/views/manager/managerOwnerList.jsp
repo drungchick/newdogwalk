@@ -7,7 +7,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Insert title here</title>
+	<title>관리자 견주 프로필</title>
 	<!-- css 연결 -->
 	<link rel="stylesheet" href="css/bootstrap.css">
 </head>
@@ -42,7 +42,7 @@
 						<c:if test="${owner.own_del == 'N' }">
 						<td>${owner.own_reg_no }</td>
 						<td><a href="managerOwnerView.do?own_id=${owner.own_id }&pageNum=${currentPage }">${owner.own_id }</a></td>
-						<td>${owner.own_id }</td>
+						<td>${owner.own_name }</td>
 						<td>${owner.own_bth_dt }</td>
 						</c:if>
 					</tr>

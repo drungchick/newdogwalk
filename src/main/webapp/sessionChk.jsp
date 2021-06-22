@@ -5,7 +5,6 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
 </head>
 <body>
 <%-- 	<c:set var="own_id" value="${sessionScope.own_id }"></c:set>

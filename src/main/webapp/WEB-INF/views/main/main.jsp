@@ -11,7 +11,7 @@ response.setDateHeader ("Expires", 0);
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>반려견 산책 프로젝트 DogWalk</title>
 </head>
 <body>
 <jsp:include page="mainNav.jsp"></jsp:include>
